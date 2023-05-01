@@ -1,4 +1,4 @@
-package com.example.chessgameteam10;
+package com.example.chessboard;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
