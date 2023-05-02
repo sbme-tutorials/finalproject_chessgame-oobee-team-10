@@ -16,7 +16,7 @@ public class loginView extends Application {
 
         Parent root = fxmlLoader.load();
 
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+        Scene scene = new Scene((Parent) fxmlLoader.load(), 1920, 1080);
         stage.setTitle("login and register");
         stage.setScene(scene);
         stage.show();

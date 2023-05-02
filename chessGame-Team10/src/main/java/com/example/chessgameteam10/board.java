@@ -1,5 +1,6 @@
 package com.example.chessgameteam10;
 
+import com.example.chessboard.gameApp;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

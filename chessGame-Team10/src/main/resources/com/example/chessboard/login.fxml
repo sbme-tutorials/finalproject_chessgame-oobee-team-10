@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<<<<<<< HEAD:chessGame-Team10/src/main/resources/com/example/chessgameteam10/login.fxml
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1337.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <ImageView fx:id="bG" fitHeight="720.0" fitWidth="758.0" layoutX="325.0" pickOnBounds="true" preserveRatio="true">
@@ -75,11 +74,4 @@
       <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="-511.0" layoutY="-19.0" />
       <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="-511.0" layoutY="-19.0" />
    </children>
-=======
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.chessboard.Login"
-            prefHeight="400.0" prefWidth="600.0">
-
->>>>>>> 4265b1c953f7490e92cb8c8afd84f0bf5d9d597c:chessGame-Team10/src/main/resources/com/example/chessboard/login.fxml
 </AnchorPane>
