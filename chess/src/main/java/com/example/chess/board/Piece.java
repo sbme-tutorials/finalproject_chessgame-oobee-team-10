@@ -33,7 +33,7 @@ public class Piece extends ImageView {
     }
 
     public void setImage(){
-        String path = "E:/SBME/2nd term/OOP/chess/images";
+        String path = "G:/AHMED/SBME 1st Year/OOP/finalproject_chessgame-oobee-team-10/chess/images";
         if (this.type == "Pawn")
             if (this.color == "black")
 //              this.setPiece(new Image("images/pieces/" + this .color + "" + this.type + ".png"));

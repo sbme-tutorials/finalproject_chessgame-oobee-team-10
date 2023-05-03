@@ -1,68 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.*?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chess.gameControl">
-   <children>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-      <GridPane gridLinesVisible="true" hgap="1.0" layoutX="4.0" layoutY="74.0" opacity="0.67" prefHeight="508.0" prefWidth="516.0" style="-fx-background-color:: red;" vgap="1.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#afd3e2" height="165.0" layoutX="535.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="291.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#afd3e2" height="179.0" layoutX="533.0" layoutY="466.0" stroke="BLACK" strokeType="INSIDE" width="291.0" />
-      <TextField alignment="CENTER" layoutX="606.0" layoutY="22.0" text="PLAYER 1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="837.0" style="-fx-background-color: #ffebbd;" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chess.gameControl">
+   <children>
+      <Rectangle fx:id="player2" arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="202.0" layoutX="634.0" layoutY="403.0" stroke="BLACK" strokeType="INSIDE" width="156.0" />
+      <AnchorPane layoutX="59.0" layoutY="-70.0" prefHeight="775.0" prefWidth="619.0">
+         <children>
+            <ImageView fx:id="board" fitHeight="529.0" fitWidth="556.0" layoutX="-36.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../wallpapers/Web%20capture_3-5-2023_111027_play.google.com.jpeg" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="57.0" layoutX="-36.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="522.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="57.0" layoutX="-36.0" layoutY="680.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="522.0" />
+         </children>
+      </AnchorPane>
+      <Rectangle fx:id="player21" arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="202.0" layoutX="640.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
+      <ImageView fitHeight="158.0" fitWidth="156.0" layoutX="634.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../java/com/example/chess/board/avatar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="175.0" fitWidth="168.0" layoutX="628.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../java/com/example/chess/board/avatar.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="647.0" layoutY="189.0" prefHeight="37.0" prefWidth="131.0" style="-fx-alignment: center; -fx-background-color: #eeede6; -fx-background-radius: 25;" text="Player Name">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Microsoft Sans Serif" size="20.0" />
          </font>
       </TextField>
-      <TextField alignment="CENTER" layoutX="601.0" layoutY="480.0" text="PLAYER 2">
+      <TextArea layoutX="638.0" layoutY="545.0" prefHeight="45.0" prefWidth="149.0" style="-fx-background-color: #0e1414; -fx-background-radius: 25;" />
+      <Text fill="#eeede6" fontSmoothingType="LCD" layoutX="631.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="162.0">
          <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </TextField>
-      <TextField alignment="CENTER" layoutX="648.0" layoutY="107.0" prefHeight="26.0" prefWidth="65.0" text="TIMER">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </TextField>
-      <Text layoutX="654.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="645.0" layoutY="569.0" prefHeight="26.0" prefWidth="66.0" text="TIMER">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </TextField>
-      <Text layoutX="654.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font>
-      </Text>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#beccd4" height="57.0" layoutX="3.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="522.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#beccd4" height="57.0" layoutX="3.0" layoutY="590.0" stroke="BLACK" strokeType="INSIDE" width="522.0" />
-      <BorderPane prefHeight="654.0" prefWidth="833.0" />
    </children>
-</AnchorPane>
+</fx:root>

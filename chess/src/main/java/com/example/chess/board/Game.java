@@ -3,7 +3,6 @@ package com.example.chess.board;
 
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
@@ -18,7 +17,7 @@ public class Game extends Parent {
     private boolean game;
 
     public Game(GridPane chessBoard, String theme){
-        cb = new ChessBoard(chessBoard, theme);
+        cb = new ChessBoard();
         currentPiece = null;
         currentPlayer = "white";
         this.game = true;

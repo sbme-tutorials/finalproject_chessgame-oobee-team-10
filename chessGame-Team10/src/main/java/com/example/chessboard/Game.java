@@ -3,12 +3,14 @@ package com.example.chessboard;
 
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-public class Game {
+public class Game extends Parent {
 
     public static Piece currentPiece;
     public static String currentPlayer;
@@ -147,5 +149,8 @@ public class Game {
     }
 
 
-
+    @Override
+    public Node getStyleableNode() {
+        return super.getStyleableNode();
+    }
 }
