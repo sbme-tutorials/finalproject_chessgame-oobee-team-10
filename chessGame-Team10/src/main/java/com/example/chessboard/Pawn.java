@@ -34,7 +34,7 @@ public class Pawn extends Piece {
             if(getSquareByName(move) != null){
                 if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)) continue;
 
-                if(!getSquareByName(move).occupied && getSquareByName(move).x != posX) continue;
+                if(!getSquareByName(move).occupied && getSquareByName(move).y != posY &&getSquareByName(move).x != posX) continue;
 
                 possibleMoves.add(move);
 

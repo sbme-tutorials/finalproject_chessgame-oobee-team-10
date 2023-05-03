@@ -33,42 +33,44 @@ public class Piece extends ImageView {
     }
 
     public void setImage(){
+
+        String path ="E:/SBME/2nd term/OOP/Doctonners_Testing/chessGame-Team10/";
         if (this.type == "Pawn")
             if (this.color == "black")
 //              this.setPiece(new Image("images/pieces/" + this .color + "" + this.type + ".png"));
-                this.setPiece(new Image("D:/ChessBoard/images/pawn_b.png"));
+                this.setPiece(new Image(path+"images/pawn_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/pawn_w.png"));
+                this.setPiece(new Image(path+"images/pawn_w.png"));
 
         else if (this.type == "Bishop")
             if (this.color == "black")
-                this.setPiece(new Image("D:/ChessBoard/images/bishop_b.png"));
+                this.setPiece(new Image(path+"images/bishop_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/bishop_w.png"));
+                this.setPiece(new Image(path+"images/bishop_w.png"));
 
         else if (this.type == "King")
             if (this.color == "black")
-                this.setPiece(new Image("D:/ChessBoard/images/king_b.png"));
+                this.setPiece(new Image(path+"images/king_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/king_w.png"));
+                this.setPiece(new Image(path+"images/king_w.png"));
 
         else if (this.type == "Queen")
             if (this.color == "black")
-                this.setPiece(new Image("D:/ChessBoard/images/queen_b.png"));
+                this.setPiece(new Image(path+"images/queen_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/queen_w.png"));
+                this.setPiece(new Image(path+"images/queen_w.png"));
 
         else if (this.type == "Rook")
             if (this.color == "black")
-                this.setPiece(new Image("D:/ChessBoard/images/rook_b.png"));
+                this.setPiece(new Image(path+"images/rook_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/rook_w.png"));
+                this.setPiece(new Image(path+"images/rook_w.png"));
 
         else if (this.type == "Knight")
             if (this.color == "black")
-                this.setPiece(new Image("D:/ChessBoard/images/knight_b.png"));
+                this.setPiece(new Image(path+"images/knight_b.png"));
             else
-                this.setPiece(new Image("D:/ChessBoard/images/knight_w.png"));
+                this.setPiece(new Image(path+"images/knight_w.png"));
 
     }
 
@@ -88,7 +90,7 @@ public class Piece extends ImageView {
     public void showAllPossibleMoves(boolean val){
         if(val){
             Glow glow = new Glow();
-            glow.setLevel(0.3);
+            glow.setLevel(1);
             for(String move : possibleMoves){
                 Square square = getSquareByName(move);
                 square.setEffect(glow);

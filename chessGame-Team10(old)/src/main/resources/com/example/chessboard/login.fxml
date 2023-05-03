@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1337.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <ImageView fx:id="bG" fitHeight="720.0" fitWidth="758.0" layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../java/com/example/chessgameteam10/giphy.gif" />
+         </image>
+      </ImageView>
+      <Pane layoutX="83.0" layoutY="167.0" prefHeight="275.0" prefWidth="200.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" height="410.0" layoutX="2.0" layoutY="89.0" stroke="BLACK" strokeLineJoin="BEVEL" strokeType="INSIDE" width="333.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9800000190734863" green="0.7550899982452393" blue="0.18619999289512634" opacity="0.6183205842971802" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.20381813717466027">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.7550899982452393" blue="0.18619999289512634" opacity="0.6183205842971802" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9798657718120806">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.7480915784835815" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.7480915784835815" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button layoutX="123.0" layoutY="456.0" mnemonicParsing="false" opacity="0.79" prefHeight="33.0" prefWidth="92.0" text="Sign-up" textOverrun="CLIP">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="86.0" layoutY="129.0" prefHeight="32.0" prefWidth="164.0" text="LOG-IN" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="61.0" />
+         </font>
+      </Label>
+      <Button blendMode="SRC_ATOP" layoutX="108.0" layoutY="401.0" mnemonicParsing="false" opacity="0.79" prefHeight="33.0" prefWidth="119.0" text="Log In" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="Impact" size="21.0" />
+         </font>
+      </Button>
+      <Text fill="#fcfcfc" layoutX="57.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1" wrappingWidth="221.13671875">
+         <font>
+            <Font name="Impact" size="26.0" />
+         </font>
+      </Text>
+      <Text fill="#fcfcfc" layoutX="57.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2" wrappingWidth="221.13671875">
+         <font>
+            <Font name="Impact" size="26.0" />
+         </font>
+      </Text>
+      <TextField layoutX="57.0" layoutY="261.0" opacity="0.75" prefHeight="33.0" prefWidth="221.0" />
+      <TextField layoutX="57.0" layoutY="341.0" opacity="0.74" prefHeight="33.0" prefWidth="221.0" />
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="-511.0" layoutY="-19.0" />
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="-511.0" layoutY="-19.0" />
+   </children>
+</AnchorPane>

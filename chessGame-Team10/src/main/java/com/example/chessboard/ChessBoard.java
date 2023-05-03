@@ -67,6 +67,10 @@ public class ChessBoard {
                 color1 = Color.web("#e4c16f");
                 color2 = Color.web("#b88b4a");
             }
+            case "Ahmed" -> {
+                color1 = Color.web("#EBEBD0FF");
+                color2 = Color.web("#779455FF");
+            }
         }
 
         if((i+j)%2==0) {

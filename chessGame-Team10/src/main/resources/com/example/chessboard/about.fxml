@@ -8,11 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-<<<<<<< HEAD:chessGame-Team10/src/main/resources/com/example/chessgameteam10/about.fxml
-            fx:controller="com.example.chessgameteam10.aboutView"
-=======
             fx:controller="com.example.chessboard.About"
->>>>>>> 4265b1c953f7490e92cb8c8afd84f0bf5d9d597c:chessGame-Team10/src/main/resources/com/example/chessboard/about.fxml
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
