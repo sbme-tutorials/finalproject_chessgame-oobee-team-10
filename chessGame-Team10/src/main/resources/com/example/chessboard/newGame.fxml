@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="837.0" style="-fx-background-color: #ffebbd;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.gameControl">
+   <children>
+      <Rectangle fx:id="player2" arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="202.0" layoutX="634.0" layoutY="403.0" stroke="BLACK" strokeType="INSIDE" width="156.0" />
+      <AnchorPane layoutX="59.0" layoutY="-70.0" prefHeight="775.0" prefWidth="619.0">
+         <children>
+            <ImageView fx:id="board" fitHeight="529.0" fitWidth="556.0" layoutX="-36.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../wallpapers/Web%20capture_3-5-2023_111027_play.google.com.jpeg" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="57.0" layoutX="-36.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="522.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="57.0" layoutX="-36.0" layoutY="680.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="522.0" />
+         </children>
+      </AnchorPane>
+      <Rectangle fx:id="player21" arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="202.0" layoutX="640.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
+      <TextField layoutX="647.0" layoutY="189.0" prefHeight="37.0" prefWidth="131.0" style="-fx-alignment: center; -fx-background-color: #eeede6; -fx-background-radius: 25;" text="Player Name">
+         <font>
+            <Font name="Microsoft Sans Serif" size="20.0" />
+         </font>
+      </TextField>
+      <TextArea layoutX="638.0" layoutY="545.0" prefHeight="45.0" prefWidth="149.0" style="-fx-background-color: #0e1414; -fx-background-radius: 25;" />
+      <Text fill="#eeede6" fontSmoothingType="LCD" layoutX="631.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="162.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</fx:root>

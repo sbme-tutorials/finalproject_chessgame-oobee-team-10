@@ -22,8 +22,8 @@ public class ChessBoard {
             for(int j=0; j<8; j++){
                 Square square = new Square(i,j);
                 square.setName("Square" + i + j);
-                square.setPrefHeight(100);
-                square.setPrefWidth(100);
+                square.setPrefHeight(70);
+                square.setPrefWidth(70);
                 square.setBorder(new Border(new BorderStroke(Color.BLACK,
                         BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 setTheme(square, theme, i, j);
