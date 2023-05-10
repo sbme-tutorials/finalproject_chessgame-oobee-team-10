@@ -3,18 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ImageInput?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="10.0" layoutY="10.0" prefHeight="544.0" prefWidth="74.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;">
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="740.0" prefWidth="74.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;">
          <children>
             <Pane prefHeight="79.0" prefWidth="74.0" style="-fx-background-radius: 15 0 15 15;" />
             <Button fx:id="mainButt" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mainClicked" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Profile" textFill="#a868a0">
@@ -55,31 +58,9 @@
             </Button>
          </children>
       </VBox>
-      <AnchorPane layoutX="94.0" layoutY="25.0" prefHeight="531.0" prefWidth="886.0" style="-fx-background-color: #131022; -fx-background-radius: 10;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
+      <AnchorPane layoutX="94.0" layoutY="25.0" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #131022; -fx-background-radius: 10;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
          <children>
-            <Label layoutX="39.0" layoutY="34.0" text="Buy Wow" textFill="WHITE">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <Label layoutX="157.0" layoutY="34.0" text="Gold" textFill="#fff600">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <Label layoutX="39.0" layoutY="81.0" text="The most sophisticated and efficient way of buying gold" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="39.0" layoutY="144.0" text="Select options in order to find the best offer" textFill="#9a9292">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <ComboBox layoutX="39.0" layoutY="186.0" prefHeight="29.0" prefWidth="155.0" styleClass="combo-box" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css" />
-            <ComboBox layoutX="229.0" layoutY="186.0" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css" />
-            <Pane layoutX="39.0" layoutY="324.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
+            <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
                <children>
                   <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -92,25 +73,6 @@
                      </font>
                   </Label>
                   <Label layoutX="58.0" layoutY="34.0" text="Save 0.03 per gold if you buy more 100 more gold" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane layoutX="39.0" layoutY="414.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
-               <children>
-                  <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../javafx-sample-dashboard-master/src/icons/chart.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="58.0" layoutY="9.0" text="TRACK PRICES" textFill="#41951c">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="58.0" layoutY="27.0" text="Save this search and get a notification when price changes" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -167,36 +129,69 @@
                   </Label>
                </top>
             </BorderPane>
-            <Pane layoutX="39.0" layoutY="241.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
+            <VBox alignment="TOP_CENTER" layoutX="61.0" layoutY="57.0" prefHeight="438.0" prefWidth="428.0" style="-fx-background-color: #1A172A; -fx-background-radius: 15;">
                <children>
-                  <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../javafx-sample-dashboard-master/src/icons/eruro.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="58.0" layoutY="14.0" text="QUANTITY TIPS:" textFill="#41951c">
+                  <Text fill="#ebeaea" strokeType="OUTSIDE" strokeWidth="0.0" text="New GAME" textAlignment="CENTER" wrappingWidth="284.13671875">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Impact" size="48.0" />
                      </font>
-                  </Label>
-                  <Label layoutX="58.0" layoutY="34.0" text="Save 0.03 per gold if you buy more 100 more gold" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
+                     <effect>
+                        <ImageInput />
+                     </effect>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="428.0">
+                     <children>
+                        <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="ChessBoard Design:        " wrappingWidth="219.017578125">
+                           <font>
+                              <Font name="Impact" size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="boardDesign" prefHeight="29.0" prefWidth="179.0" promptText="DEMO" styleClass="combo-box" stylesheets="@fullpackstyling.css" visibleRowCount="5" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="428.0">
+                     <children>
+                        <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Peices Design:" wrappingWidth="219.017578125">
+                           <font>
+                              <Font name="Impact" size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="pieceDesign" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="54.0" prefWidth="428.0">
+                     <children>
+                        <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the timer" wrappingWidth="219.017578125">
+                           <font>
+                              <Font name="Impact" size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="timerSetter" prefHeight="29.0" prefWidth="179.0" promptText="5:00" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="118.0" prefHeight="54.0" prefWidth="428.0">
+                     <children>
+                        <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
+                           <font>
+                              <Font name="Impact" size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="fistAvattar" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="142.0" prefHeight="54.0" prefWidth="428.0">
+                     <children>
+                        <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
+                           <font>
+                              <Font name="Impact" size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="secondAvatar" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                     </children>
+                  </HBox>
                </children>
-            </Pane>
+            </VBox>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="101.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../javafx-sample-dashboard-master/src/icons/logo.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="144.0" layoutY="39.0" text="KeepToo FX" textFill="WHITE">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

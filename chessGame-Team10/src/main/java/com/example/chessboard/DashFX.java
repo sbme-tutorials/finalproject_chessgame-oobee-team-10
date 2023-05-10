@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashFX implements Initializable {
+    //sideBar buttons
     @FXML
     Button mainButt;
     @Override
