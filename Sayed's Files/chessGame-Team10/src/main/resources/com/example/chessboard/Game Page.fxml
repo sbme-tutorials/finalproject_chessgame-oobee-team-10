@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="-98.0" layoutY="124.0" prefHeight="646.0" prefWidth="938.0">
+         <children>
+            <ImageView fitHeight="523.0" fitWidth="513.0" layoutX="110.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="C:\Users\abdelrahman sayed\Videos\Captures\chess gui.png" />
+               </image>
+            </ImageView>
+            <BorderPane layoutY="-71.0" prefHeight="654.0" prefWidth="833.0" />
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#afd3e2" height="165.0" layoutX="535.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="291.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#afd3e2" height="179.0" layoutX="533.0" layoutY="466.0" stroke="BLACK" strokeType="INSIDE" width="291.0" />
+      <TextField alignment="CENTER" layoutX="606.0" layoutY="22.0" text="PLAYER 1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="601.0" layoutY="480.0" text="PLAYER 2">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="648.0" layoutY="107.0" prefHeight="26.0" prefWidth="65.0" text="TIMER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="654.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField alignment="CENTER" layoutX="645.0" layoutY="569.0" prefHeight="26.0" prefWidth="66.0" text="TIMER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="654.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#beccd4" height="57.0" layoutX="3.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="522.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#beccd4" height="57.0" layoutX="3.0" layoutY="590.0" stroke="BLACK" strokeType="INSIDE" width="522.0" />
+      <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="30.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="D:\ChessBoard\images\rook_w.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="57.0" fitWidth="66.0" layoutX="107.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="D:\ChessBoard\images\knight_w.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="48.0" layoutX="27.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="D:\ChessBoard\images\pawn_b.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="66.0" layoutX="90.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="D:\ChessBoard\images\bishop_b.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="48.0" layoutX="170.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="D:\ChessBoard\images\pawn_b.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

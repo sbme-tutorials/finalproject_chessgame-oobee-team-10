@@ -1,0 +1,199 @@
+package com.example.chessboard;
+
+import javafx.animation.Timeline;
+import javafx.geometry.Insets;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import javafx.animation.Timeline;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+
+public class ChessBoard {
+    GridPane chessBoard;
+    String theme;
+
+    StatusBar statusBar = new StatusBar();
+    Timer timer = new Timer(this);
+
+    public static ArrayList<Square> squares = new ArrayList<>();
+    public ChessBoard(){}
+    public ChessBoard(GridPane chessBoard, String theme){
+        this.chessBoard = chessBoard;
+        this.theme = theme;
+
+        makeBoard(this.chessBoard, theme);
+
+        statusBar.whitePlayerAlert.setText("White Player turn");
+        statusBar.blackPlayerAlert.setText("");
+        statusBar.whitePlayerTimer.setText("White timer: 15:00");
+        statusBar.blackPlayerTimer.setText("Black timer: 15:00");
+
+
+        timer.timeline.setCycleCount(Timeline.INDEFINITE);
+        timer.timeline.play();
+//        timer.playerTurn =  ;
+    }
+    // بعمل بانال بسميها container بعد كدا بخلي الكونستراكتور فيها null
+    // panal container = new panal(null)
+    // بعد كدا بستخدم setbound عشان احدد مكانها
+    private void makeBoard(GridPane chessBoard, String theme){
+        for(int i=0; i<8; i++){
+            for(int j=0; j<8; j++){
+                Square square = new Square(i,j);
+                square.setName("Square" + i + j);
+                square.setPrefHeight(100);
+                square.setPrefWidth(100);
+                square.setBorder(new Border(new BorderStroke(Color.BLACK,
+                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                setTheme(square, theme, i, j);
+                chessBoard.add(square, i, j, 1, 1);
+                squares.add(square);
+            }
+        }
+        addPieces();
+    }
+
+    private void setTheme(Square square, String theme, int i, int j){
+        Color color1 = Color.web("#ffffff00");
+        Color color2 = Color.web("#ffffff00");
+
+        switch (theme) {
+            case "Sayed" -> {
+                color1 = Color.web("#210062");
+                color2 = Color.web("#FFD93D");
+            }
+            case "Demo" -> {
+                color1 = Color.web("#146C94");
+                color2 = Color.web("#AFD3E2");
+            }
+            case "Coral" -> {
+                color1 = Color.web("#b1e4b9");
+                color2 = Color.web("#70a2a3");
+            }
+            case "Dusk" -> {
+                color1 = Color.web("#cbb7ae");
+                color2 = Color.web("#716677");
+            }
+            case "Wheat" -> {
+                color1 = Color.web("#eaefce");
+                color2 = Color.web("#bbbe65");
+            }
+            case "Marine" -> {
+                color1 = Color.web("#9dacff");
+                color2 = Color.web("#6f74d2");
+            }
+            case "Emerald" -> {
+                color1 = Color.web("#adbd90");
+                color2 = Color.web("#6e8f72");
+            }
+            case "Sandcastle" -> {
+                color1 = Color.web("#e4c16f");
+                color2 = Color.web("#b88b4a");
+            }
+            case "Ahmed" -> {
+                color1 = Color.web("#EBEBD0FF");
+                color2 = Color.web("#779455FF");
+            }
+        }
+
+        if((i+j)%2==0) {
+            square.setBackground(new Background(new BackgroundFill(color1, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else {
+            square.setBackground(new Background(new BackgroundFill(color2, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+
+    }
+
+    public void addPiece(Square square, Piece piece){
+        square.getChildren().add(piece);
+        square.occupied = true;
+    }
+
+    private void addPieces(){
+        for(Square square : squares){
+            if(square.occupied) continue;
+            if(square.y == 1){
+                addPiece(square, new Pawn("black", square.x, square.y));
+            }
+            else if(square.y == 6){
+                addPiece(square, new Pawn("white", square.x, square.y));
+            }
+            else if(square.y == 0){
+                if(square.x == 4){
+                    addPiece(square, new King("black", square.x, square.y));
+                }
+                if(square.x == 3){
+                    addPiece(square, new Queen("black", square.x, square.y));
+                }
+                if(square.x == 2 || square.x == 5){
+                    addPiece(square, new Bishop("black", square.x, square.y));
+                }
+                if(square.x == 1 || square.x == 6){
+                    addPiece(square, new Knight("black", square.x, square.y));
+                }
+                if(square.x == 0 || square.x == 7){
+                    addPiece(square, new Rook("black", square.x, square.y));
+                }
+            }
+            else if(square.y == 7){
+                if(square.x == 4){
+                    addPiece(square, new King("white", square.x, square.y));
+                }
+                if(square.x == 3){
+                    addPiece(square, new Queen("white", square.x, square.y));
+                }
+                if(square.x == 2 || square.x == 5){
+                    addPiece(square, new Bishop("white", square.x, square.y));
+                }
+                if(square.x == 1 || square.x == 6){
+                    addPiece(square, new Knight("white", square.x, square.y));
+                }
+                if(square.x == 0 || square.x == 7){
+                    addPiece(square, new Rook("white", square.x, square.y));
+                }
+            }
+
+
+        }
+    }
+
+    public static void clearHighlighting() {
+        for (Square square : squares) {
+            square.setStyle("");
+        }
+    }
+
+
+    public void timerOver(int playerOutOfTime)
+    {
+        timer.timeline.stop();
+        StatusBar statusBar;
+        if (playerOutOfTime == 1)
+        {
+//            statusBar.whitePlayerAlert.setText("White player run out of time");
+//            statusBar.winner.setText("Black player won !");
+        }
+        else if (playerOutOfTime == 2)
+        {
+//            statusBar.blackPlayerAlert.setText("Black player run out of time");
+//            statusBar.winner.setText("White player won !");
+        }
+    }
+
+    public StatusBar getStatusBar()
+    {
+        return (statusBar);
+    }
+
+}
