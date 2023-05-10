@@ -15,11 +15,11 @@ public class gameControl implements Initializable {
     public Rectangle player1;
     public Rectangle player2;
     GridPane board= new GridPane();
-    @FXML
-    private Label welcomeText;
+    private String gameTheme,playerOneName,playerTwoName;
 
     @FXML
     private Pane gameBoard; Game newgame = new Game(board,"Demo");
+
     @Override
 
     public void initialize(URL url, ResourceBundle resourceBundle) {

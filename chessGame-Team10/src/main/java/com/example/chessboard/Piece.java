@@ -38,39 +38,39 @@ public class Piece extends ImageView {
         if (this.type.equals("Pawn"))
             if (this.color.equals("black"))
 //              this.setPiece(new Image("images/pieces/" + this .color + "" + this.type + ".png"));
-                this.setPiece(new Image("File: images/pawn_b.png"));
+                this.setPiece(new Image("File:images/pawn_b.png"));
             else
-                this.setPiece(new Image("File: images/pawn_w.png"));
+                this.setPiece(new Image("File:images/pawn_w.png"));
 
         else if (this.type.equals("Bishop"))
             if (this.color.equals("black"))
-                this.setPiece(new Image("File: images/bishop_b.png"));
+                this.setPiece(new Image("File:images/bishop_b.png"));
             else
-                this.setPiece(new Image("File: images/bishop_w.png"));
+                this.setPiece(new Image("File:images/bishop_w.png"));
 
         else if (this.type.equals("King"))
             if (this.color.equals("black"))
-                this.setPiece(new Image("File: images/king_b.png"));
+                this.setPiece(new Image("File:images/king_b.png"));
             else
-                this.setPiece(new Image("File: images/king_w.png"));
+                this.setPiece(new Image("File:images/king_w.png"));
 
         else if (this.type.equals("Queen"))
             if (this.color.equals("black"))
-                this.setPiece(new Image("File: images/queen_b.png"));
+                this.setPiece(new Image("File:images/queen_b.png"));
             else
-                this.setPiece(new Image("File: images/queen_w.png"));
+                this.setPiece(new Image("File:images/queen_w.png"));
 
         else if (this.type.equals("Rook"))
             if (this.color.equals("black"))
-                this.setPiece(new Image("File: images/rook_b.png"));
+                this.setPiece(new Image("File:images/rook_b.png"));
             else
-                this.setPiece(new Image("File: images/rook_w.png"));
+                this.setPiece(new Image("File:images/rook_w.png"));
 
         else if (this.type.equals("Knight"))
             if (this.color.equals("black"))
-                this.setPiece(new Image("File: images/knight_b.png"));
+                this.setPiece(new Image("File:images/knight_b.png"));
             else
-                this.setPiece(new Image("File: images/knight_w.png"));
+                this.setPiece(new Image("File:images/knight_w.png"));
 
     }
 

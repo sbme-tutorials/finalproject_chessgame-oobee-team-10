@@ -6,17 +6,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1000.0" style="-fx-background-color: #abe7f1;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.gameControl">
-   <children>
-      <ImageView fitHeight="703.0" fitWidth="1000.0" layoutX="1.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../wallpapers/newGameBG.png" />
-         </image>
-      </ImageView>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="57.0" layoutX="50.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="560.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="57.0" layoutX="50.0" layoutY="659.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="560.0" />
-      <Pane fx:id="gameBoard" layoutX="50.0" layoutY="85.0" prefHeight="560.0" prefWidth="560.0" style="-fx-background-color: #1eee;" />
-      <Rectangle fx:id="player1" arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="202.0" layoutX="803.0" layoutY="43.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" width="143.0" />
-      <Rectangle fx:id="player2" arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="202.0" layoutX="797.0" layoutY="443.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" width="156.0" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1000.0" style="-fx-background-color: #abe7f1; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.gameControl">
+   <ImageView fitHeight="703.0" fitWidth="1000.0" layoutX="1.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../../../wallpapers/newGameBG.png" />
+   </ImageView>
+   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="57.0" layoutX="50.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="560.0" />
+   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="57.0" layoutX="50.0" layoutY="659.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="560.0" />
+   <Pane fx:id="gameBoard" layoutX="50.0" layoutY="85.0" prefHeight="560.0" prefWidth="560.0" style="-fx-background-color: #1eee; -fx-border-width: 8; -fx-border-color: #a6623e; -fx-border-radius: 5;" />
+   <Rectangle fx:id="player1" arcHeight="20.0" arcWidth="20.0" fill="#0e1414" height="202.0" layoutX="803.0" layoutY="43.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" width="143.0" />
+   <Rectangle fx:id="player2" arcHeight="20.0" arcWidth="20.0" fill="#eeede6" height="202.0" layoutX="797.0" layoutY="443.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" width="156.0" />
 </AnchorPane>
