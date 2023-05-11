@@ -84,9 +84,12 @@ public class Game {
 
                         // Selecting other piece of same color || Killing a piece
                         else {
-                            if (currentPiece.color.equals(newPiece.color) && newPiece.type.equals("King") && currentPiece.type.equals("Rook")) {//this is edit
+                            if (currentPiece.color.equals(newPiece.color)
+                                    && newPiece.type.equals("King")
+                                    && currentPiece.type.equals("Rook")
+                                    &&! (newPiece.hasMoved)
+                                    &&! (currentPiece.hasMoved)) {//this is edited
                                 Castling(square);
-                                clearHighlighting();
                             } else if (currentPiece.color.equals(newPiece.color)) {
                                 clearHighlighting();
                                 deselectPiece(false);
@@ -122,8 +125,11 @@ public class Game {
 
                     // Selecting other piece of same color || Killing a piece
                     else {
-                        if (currentPiece.color.equals(newPiece.color) && newPiece.type.equals("King") && currentPiece.type.equals("Rook")) {//this is edit
-                            clearHighlighting();
+                        if (currentPiece.color.equals(newPiece.color)
+                                && newPiece.type.equals("King")
+                                && currentPiece.type.equals("Rook")
+                                &&! (newPiece.hasMoved)
+                                &&! (currentPiece.hasMoved)) {//this is edited
                             Castling(square);
                         } else if (currentPiece.color.equals(newPiece.color)) {
                             deselectPiece(false);
@@ -197,185 +203,68 @@ public class Game {
         deselectPiece(true);
     }
 
+    public void Castling(Square square) {
+        if (!currentPiece.possibleMoves.contains(square.name)) return;
+        Piece casteledKing = (Piece) square.getChildren().get(0);
+        Square initialSquare = (Square) currentPiece.getParent();
+        Square rookNewSquare = null;
+        Square kingNewSquare = null;
+        //  square.getChildren().remove(0);
 
-        public void Castling(Square square) {
-            if (!currentPiece.possibleMoves.contains(square.name)) return;
-            Piece casteledKing = (Piece) square.getChildren().get(0);   // get the king as an object
-            Square initialSquare = (Square) currentPiece.getParent();   //  get the position of rook
-            //  square.getChildren().remove(0);
-            Square rookNewSquare = new Square(0, 7);       //    Create the new Position of the pieces  دا الجزء اللي متوقعين فيه الخطأ
-            Square kingNewSquare = new Square(0, 7);       //                                  الجزء اللي متوقعين فيه الخطأ
-
-            if (casteledKing.color.equals("white") && currentPiece.posX == 7) {    //&& currentPiece.posX==7    removed because of hasMoved
-                kingNewSquare.x = 6;
-                rookNewSquare.x = 5;
-
-                //remove old position of the king and put new one.
-                square.getChildren().remove(0);
-                square.occupied = false;
-                kingNewSquare.getChildren().add(casteledKing);
-                kingNewSquare.occupied = true;
-
-                //remove the position of the rook and put new one.
-//                initialSquare.getChildren().removeAll();
-                initialSquare.occupied = false;
-                rookNewSquare.getChildren().add(currentPiece);
-                rookNewSquare.occupied = true;
-
-                //Add the squares to our board     //مش شغالة
-                cb.squares.add(kingNewSquare);
-                cb.squares.add(rookNewSquare);
-
-
-                currentPiece.posX = rookNewSquare.x;
-                currentPiece.posY = rookNewSquare.y;
-                casteledKing.posX = kingNewSquare.x;
-                casteledKing.posY = kingNewSquare.y;
-                casteledKing.setPiece(new Image("D:/ChessBoard/images/pawn_b.png"));
-                currentPiece.setPiece(new Image("D:/ChessBoard/images/pawn_b.png"));
-
+        if (casteledKing.color.equals("white")) {
+            if (currentPiece.posX == 7) {
+                rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 7);
+                kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 7);
             }
-            else if (casteledKing.color.equals("black") && currentPiece.posX == 7) {
-                kingNewSquare.x = 6;
-                kingNewSquare.y = 0;
-                rookNewSquare.x = 5;
-                rookNewSquare.y = 0;
-                square.getChildren().remove(0);
-                kingNewSquare.getChildren().add(casteledKing);
-                square.occupied = false;
-                kingNewSquare.occupied = true;
-                initialSquare.getChildren().removeAll();
-                initialSquare.occupied = false;
-                rookNewSquare.occupied = true;
-                rookNewSquare.getChildren().add(currentPiece);
-                currentPiece.posX = rookNewSquare.x;
-                currentPiece.posY = rookNewSquare.y;
-                casteledKing.posX = kingNewSquare.x;
-                casteledKing.posY = kingNewSquare.y;
+            if (currentPiece.posX == 0) {
+                rookNewSquare = (Square) Piece.getSquareByName("Square" + 3 + 7);
+                kingNewSquare = (Square) Piece.getSquareByName("Square" + 2 + 7);
             }
-            deselectPiece(true);
+            square.getChildren().remove(0);
+            square.occupied = false;
+            kingNewSquare.getChildren().add(casteledKing);
+            kingNewSquare.occupied = true;
 
+            initialSquare.getChildren().remove(0);
+            initialSquare.occupied = false;
+            rookNewSquare.getChildren().add(currentPiece);
+            rookNewSquare.occupied = true;
+
+
+            currentPiece.posX = rookNewSquare.x;
+            currentPiece.posY = rookNewSquare.y;
+            casteledKing.posX = kingNewSquare.x;
+            casteledKing.posY = kingNewSquare.y;
+
+
+        } else if (casteledKing.color.equals("black")) {
+            if (currentPiece.posX == 7) {
+                rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 7);
+                kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 7);
+            }
+            if (currentPiece.posX == 0) {
+                rookNewSquare = (Square) Piece.getSquareByName("Square" + 3 + 7);
+                kingNewSquare = (Square) Piece.getSquareByName("Square" + 2 + 7);
+            }
+            rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 0);
+            kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 0);
+            square.getChildren().remove(0);
+            square.occupied = false;
+            kingNewSquare.getChildren().add(casteledKing);
+            kingNewSquare.occupied = true;
+
+            initialSquare.getChildren().remove(0);
+            initialSquare.occupied = false;
+            rookNewSquare.getChildren().add(currentPiece);
+            rookNewSquare.occupied = true;
+
+
+            currentPiece.posX = rookNewSquare.x;
+            currentPiece.posY = rookNewSquare.y;
+            casteledKing.posX = kingNewSquare.x;
+            casteledKing.posY = kingNewSquare.y;
+        }
+        deselectPiece(true);
     }
 
-////
-////    private static boolean isCheckmate() {
-////        for (Square square : Game.cb.squares) {
-////            if (square.getChildren().size() > 0) {
-////                Piece piece = (Piece) square.getChildren().get(0);
-////                if (piece.color.equals(currentPlayer)) {
-////                    for (String move : piece.possibleMoves) {
-////                        Square targetSquare = piece.getSquareByName(move);
-////                        // Try making the move
-////                        boolean canEscapeCheck = tryMove(piece, square, targetSquare);
-////                        if (canEscapeCheck) {
-////                            // The player can escape check, so it's not checkmate
-////                            return false;
-////                        }
-////                    }
-////                }
-////            }
-////        }
-////        // No valid move found, it's checkmate
-////        return true;
-////
-////    }
-////
-////    private static boolean tryMove(Piece piece, Square currentSquare, Square targetSquare) {
-////        // Store the current state
-////        boolean currentOccupied = targetSquare.occupied;
-////        Piece capturedPiece = null;
-////        if (currentOccupied) {
-////            capturedPiece = (Piece) targetSquare.getChildren().get(0);
-////        }
-////
-////        // Move the piece
-////        targetSquare.getChildren().add(piece);
-////        targetSquare.occupied = true;
-////        currentSquare.getChildren().removeAll();
-////        currentSquare.occupied = false;
-////        piece.posX = targetSquare.x;
-////        piece.posY = targetSquare.y;
-////
-////        // Check if the move results in check
-////        boolean inCheck = isCheck();
-////
-////        // Restore the previous state
-////        targetSquare.getChildren().remove(piece);
-////        targetSquare.occupied = currentOccupied;
-////        currentSquare.getChildren().add(piece);
-////        currentSquare.occupied = true;
-////        piece.posX = currentSquare.x;
-////        piece.posY = currentSquare.y;
-////        if (currentOccupied) {
-////            targetSquare.getChildren().add(capturedPiece);
-////        }
-////
-////        // Return if the move resulted in check
-////        return inCheck;
-////    }
-////
-////    private static boolean isCheck() {
-////        String opponentColor = currentPlayer.equals("white") ? "black" : "white";
-////
-////        // Find the current player's king square
-////        Square kingSquare = findKingSquare(currentPlayer);
-////
-////        // Check if any opponent's piece is attacking the king
-////        for (Square square : Game.cb.squares) {
-////            if (square.getChildren().size() > 0) {
-////                Piece piece = (Piece) square.getChildren().get(0);
-////                if (piece.color.equals(opponentColor) && piece.isAttackingKing()) {
-////                    return true;
-////                }
-////            }
-////        }
-////
-////        return false;
-////    }
-////
-////    private static Square findKingSquare(String playerColor) {
-////        for (Square square : Game.cb.squares) {
-////            if (square.getChildren().size() > 0) {
-////                Piece piece = (Piece) square.getChildren().get(0);
-////                if (piece.type.equals("King") && piece.color.equals(playerColor)) {
-////                    return square;
-////                }
-////            }
-////        }
-////        return null;
-////    }
-//    public static boolean isCheck(){
-//        Square KingSquare = Game.FindKing();
-//
-//        String name = "Square" + KingSquare.x + KingSquare.y;
-////      String currentPLayer2 = currentPlayer.equals("white") ? "black" : "white";
-//        Piece targetPiece = (Piece) KingSquare.getChildren().get(0);
-//        for (Square square : Game.cb.squares){
-//            if (square.getChildren().size() > 0){
-//            Piece piece = (Piece) square.getChildren().get(0);
-//            if (piece == null)
-//                continue;
-//            if (piece.color != targetPiece.color){
-//                for (String name2 :piece.possibleMoves)
-//                {
-//                    if(name==name2)
-//                        return true;
-//                }
-//            }
-//        }}
-//        return false;
-//    }
-//
-//
-//    public static Square FindKing(){
-//        for(Square square : Game.cb.squares){
-//            if (square.getChildren().size() > 0){
-//                Piece piece = (Piece) square.getChildren().get(0);
-//                if (square.occupied && piece.color != currentPiece.color && piece.type == "King"){
-//                    return square;
-//            }}
-//        }
-
-//        return null;
-//    }
 }
