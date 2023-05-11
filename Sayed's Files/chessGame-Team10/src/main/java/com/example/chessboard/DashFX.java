@@ -29,7 +29,7 @@ public class DashFX implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
+        boardDesign.getItems().addAll("ٍSayed", "Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
             board = boardDesign.getSelectionModel().getSelectedItem();});
 

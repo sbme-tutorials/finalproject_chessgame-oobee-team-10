@@ -14,7 +14,7 @@ public class MainMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Menu-View.fxml"));
-        primaryStage.setTitle("Chess");
+        primaryStage.setTitle("Chess Game");
         primaryStage.setScene(new Scene(root, 1000, 750));
         primaryStage.setResizable(true);
         primaryStage.show();

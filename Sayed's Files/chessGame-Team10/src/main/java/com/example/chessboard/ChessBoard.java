@@ -5,25 +5,12 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import java.util.ArrayList;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
-import javafx.animation.Timeline;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 
 public class ChessBoard {
     GridPane chessBoard;
     String theme;
-
     StatusBar statusBar = new StatusBar();
-    Timer timer = new Timer(this);
 
     public static ArrayList<Square> squares = new ArrayList<>();
     public ChessBoard(){}
@@ -38,14 +25,8 @@ public class ChessBoard {
         statusBar.whitePlayerTimer.setText("White timer: 15:00");
         statusBar.blackPlayerTimer.setText("Black timer: 15:00");
 
-
-        timer.timeline.setCycleCount(Timeline.INDEFINITE);
-        timer.timeline.play();
-//        timer.playerTurn =  ;
     }
-    // بعمل بانال بسميها container بعد كدا بخلي الكونستراكتور فيها null
-    // panal container = new panal(null)
-    // بعد كدا بستخدم setbound عشان احدد مكانها
+
     private void makeBoard(GridPane chessBoard, String theme){
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
@@ -174,22 +155,6 @@ public class ChessBoard {
         }
     }
 
-
-    public void timerOver(int playerOutOfTime)
-    {
-        timer.timeline.stop();
-        StatusBar statusBar;
-        if (playerOutOfTime == 1)
-        {
-//            statusBar.whitePlayerAlert.setText("White player run out of time");
-//            statusBar.winner.setText("Black player won !");
-        }
-        else if (playerOutOfTime == 2)
-        {
-//            statusBar.blackPlayerAlert.setText("Black player run out of time");
-//            statusBar.winner.setText("White player won !");
-        }
-    }
 
     public StatusBar getStatusBar()
     {

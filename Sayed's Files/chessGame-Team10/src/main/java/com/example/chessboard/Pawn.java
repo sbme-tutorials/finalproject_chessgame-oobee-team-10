@@ -18,7 +18,8 @@ public class Pawn extends Piece {
         int y = this.posY;
         String name;
         ArrayList<String> moves = new ArrayList<>();
-        this.possibleMoves = new ArrayList<>();
+        this.possibleMoves= new ArrayList<>();
+        this.unpossibleMoves = new ArrayList<>();
 
         if ((color == "white" && y == 0) || (color == "black" && y == 7)) {
             if (color.equals("black"))
@@ -32,39 +33,45 @@ public class Pawn extends Piece {
             for(int i=x-1 ; i>=0 ; i--){
                 name = "Square" + i + y;
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
-                else
-                    possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                possibleMoves.add(name);
+
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    break;
+                }
             }
 
             for(int i=x+1; i<8; i++){
 
                 name = "Square" + i + y;
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    break;
+                }
             }
 
             for(int j=y-1; j>=0; j--){
 
                 name = "Square" + x + j;
+
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
@@ -73,12 +80,12 @@ public class Pawn extends Piece {
                 name = "Square" + x + j;
 
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
@@ -87,12 +94,12 @@ public class Pawn extends Piece {
                 name = "Square" + i + j;
 
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
@@ -100,12 +107,12 @@ public class Pawn extends Piece {
             for(int i=x+1, j=y+1; i<8 && j<8; i++, j++){
                 name = "Square" + i + j;
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
@@ -114,12 +121,12 @@ public class Pawn extends Piece {
                 name = "Square" + i + j;
 
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
@@ -128,19 +135,19 @@ public class Pawn extends Piece {
                 name = "Square" + i + j;
 
                 if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                    unpossibleMoves.add(name);
                     showAllUnPossibleMoves(true);
                     break;
                 }
 
-                else
-                    possibleMoves.add(name);
+                possibleMoves.add(name);
 
                 if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
             }
 
         }
 
-        else {
+        else  {
 
             if (color.equals("black")) {
                 moves.add("Square" + (x + 1) + (y + 1));
@@ -157,12 +164,14 @@ public class Pawn extends Piece {
             for (String move : moves) {
                 if (getSquareByName(move) != null) {
                     if (getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)){
+                        unpossibleMoves.add(move);
                         showAllUnPossibleMoves(true);
                     }
-
-                    if (!getSquareByName(move).occupied && getSquareByName(move).y != posY && getSquareByName(move).x != posX)
+                    else if (!getSquareByName(move).occupied && getSquareByName(move).y != posY && getSquareByName(move).x != posX)
                         continue;
-                    possibleMoves.add(move);
+
+                    else
+                        possibleMoves.add(move);
 
                 }
             }
