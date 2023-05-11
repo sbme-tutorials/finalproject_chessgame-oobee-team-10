@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.menuControl">
+    <Rectangle arcHeight="70.0" arcWidth="70.0" fill="WHITE" height="171.0" layoutX="249.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="523.0" />
+    <VBox layoutX="403.0" layoutY="342.0" prefHeight="303.0" prefWidth="216.0" style="-fx-background-color: #0E1414; -fx-opacity: 0.75; -fx-border-color: #0E1414; -fx-border-radius: 70; -fx-border-width: 15;">
+        <Button fx:id="newGameButton" focusTraversable="false" mnemonicParsing="false" onAction="#newGameClicked" onMouseEntered="#buttonEffect" prefHeight="58.0" prefWidth="217.0" style="-fx-background-color: #eeede6;" text="newGame" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font name="Impact" size="34.0" />
+            </font>
+        </Button>
+    </VBox>
+    <Pane layoutX="463.0" layoutY="123.0" prefHeight="106.0" prefWidth="95.0">
+        <ImageView fitHeight="148.0" fitWidth="95.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../images/CHESSLOGO.gif" />
+            </image>
+        </ImageView>
+    </Pane>
+    <Label layoutX="268.0" layoutY="29.0" prefHeight="313.0" prefWidth="465.0" text="CHESS    GAME">
+        <font>
+          <Font name="Impact" size="85.0" />
+        </font>
+    </Label>
+   <ChoiceBox prefWidth="150.0" />
+</AnchorPane>
