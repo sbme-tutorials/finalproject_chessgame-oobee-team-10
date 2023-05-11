@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Login">
+    <children>
+        <ImageView fx:id="background" fitHeight="500.0" fitWidth="800.0" layoutY="-1.0" opacity="0.92" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/chess-board-game-concept-business-ideas-competition-strategy-new-ideas-concept.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="44.0" layoutY="125.0" prefHeight="30.0" prefWidth="122.0" text="Username ">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" layoutX="162.0" layoutY="126.0" prefHeight="28.0" prefWidth="550.0" promptText="Username">
+            <effect>
+                <Reflection />
+            </effect>
+        </TextField>
+        <PasswordField fx:id="passwordField" layoutX="162.0" layoutY="256.0" prefHeight="26.0" prefWidth="550.0" promptText="Password">
+            <effect>
+                <Reflection />
+            </effect>
+        </PasswordField>
+        <Button fx:id="login" layoutX="309.0" layoutY="334.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#userLogin" opacity="0.94" prefHeight="32.0" prefWidth="152.0" text="Log In" textFill="#080808">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+            <effect>
+                <DropShadow />
+            </effect>
+        </Button>
+        <Label fx:id="wronglogin" layoutX="208.0" layoutY="21.0" prefHeight="8.0" prefWidth="433.0" textFill="#e70606">
+            <font>
+                <Font name="System Italic" size="20.0" />
+            </font></Label>
+        <Label layoutX="44.0" layoutY="252.0" prefHeight="30.0" prefWidth="107.0" text="Password">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="register" layoutX="309.0" layoutY="407.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#newAccount" prefHeight="32.0" prefWidth="152.0" text="Create Account">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+            <effect>
+                <DropShadow />
+            </effect>
+        </Button>
+      <Label layoutX="54.0" layoutY="21.0" text="Login">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Login">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="750.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/chess-board-game-concept-business-ideas-competition%20(1).jpg" />
+         </image>
+      </ImageView>
+      <ProgressBar blendMode="LIGHTEN" layoutX="79.0" layoutY="423.0" opacity="0.86" prefHeight="18.0" prefWidth="612.0">
+         <effect>
+            <Reflection />
+         </effect>
+      </ProgressBar>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="32.0" layoutY="31.0" opacity="0.8" prefHeight="206.0" prefWidth="534.0" style="-fx-background-color: FFFFFF;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <BoxBlur />
+         </effect>
+         <children>
+            <TextArea layoutX="14.0" layoutY="3.0" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea layoutX="306.0" layoutY="3.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="32.0" layoutY="249.0" opacity="0.83" prefHeight="142.0" prefWidth="534.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="80.0" layoutX="19.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField layoutX="14.0" layoutY="85.0" prefHeight="26.0" prefWidth="89.0" text="Team Leader" />
+            <TextField layoutX="430.0" layoutY="85.0" prefHeight="26.0" prefWidth="89.0" text="Member 4" />
+            <TextField layoutX="320.0" layoutY="85.0" prefHeight="26.0" prefWidth="89.0" text="Member 3" />
+            <TextField layoutX="113.0" layoutY="85.0" prefHeight="26.0" prefWidth="89.0" text="Member 1" />
+            <TextField layoutX="222.0" layoutY="85.0" prefHeight="26.0" prefWidth="89.0" text="Member 2" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="236.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Page">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
