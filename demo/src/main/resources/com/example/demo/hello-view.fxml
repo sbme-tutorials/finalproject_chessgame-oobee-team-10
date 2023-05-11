@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/chess-board-game-concept-business-ideas-competition%20(1).jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="31.0" layoutY="33.0" opacity="0.73" prefHeight="245.0" prefWidth="540.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <Text layoutX="41.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Moves !">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="27.0" layoutX="14.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/download.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="10.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/images.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="43.0" layoutX="3.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OOP%20project/finalproject_chessgame-oobee-team-10/wallpapers/360_F_101484857_g2UHD4z3aqmB8ABIB3Axiz1g03tyN4Fu.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="31.0" layoutY="302.0" opacity="0.73" prefHeight="84.0" prefWidth="540.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <Text fx:id="name" layoutX="29.0" layoutY="58.0" onMouseEntered="#mouseinName" strokeType="OUTSIDE" strokeWidth="0.0" text="Team leader">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="148.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="442.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="345.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="245.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text layoutX="71.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="● A pawn captures (eats) the squares diagonally or the piece in front." />
+      <Text layoutX="73.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="● The elephant (bishop) can only move three steps on the diagonal and bypass anypieces." />
+      <Text layoutX="84.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The elephant also has a new special move, which is to move one square on the horizontal axis so it changes the diagonal color." wrappingWidth="475.1367187500001" />
+      <Text layoutX="73.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="● The knight can move in an L shape, with two squares horizontally or vertically, and then three squares in the perpendicular direction." wrappingWidth="457.55078125" />
+   </children>
+</AnchorPane>
