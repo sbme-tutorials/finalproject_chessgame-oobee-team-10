@@ -16,6 +16,8 @@ public class DashBoard extends Application {
     private double yOffset = 0;
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        //Parent loginView= FXMLLoader.load("") ;
         Parent root = FXMLLoader.load(getClass().getResource("Dash.fxml"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 

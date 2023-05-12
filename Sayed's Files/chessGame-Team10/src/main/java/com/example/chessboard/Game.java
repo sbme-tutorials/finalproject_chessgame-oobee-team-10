@@ -132,6 +132,7 @@ public class Game {
                                 &&! (currentPiece.hasMoved)) {//this is edited
                             Castling(square);
                         } else if (currentPiece.color.equals(newPiece.color)) {
+                            clearHighlighting();
                             deselectPiece(false);
                             currentPiece = newPiece;
                             selectPiece(game);
@@ -183,6 +184,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
+        PawnPromotion(square);
         deselectPiece(true);
     }
 
@@ -200,16 +202,18 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
+        PawnPromotion(square);
         deselectPiece(true);
     }
 
     public void Castling(Square square) {
         if (!currentPiece.possibleMoves.contains(square.name)) return;
+
+
         Piece casteledKing = (Piece) square.getChildren().get(0);
         Square initialSquare = (Square) currentPiece.getParent();
         Square rookNewSquare = null;
         Square kingNewSquare = null;
-        //  square.getChildren().remove(0);
 
         if (casteledKing.color.equals("white")) {
             if (currentPiece.posX == 7) {
@@ -235,6 +239,9 @@ public class Game {
             currentPiece.posY = rookNewSquare.y;
             casteledKing.posX = kingNewSquare.x;
             casteledKing.posY = kingNewSquare.y;
+
+            currentPiece.hasMoved= true;
+            casteledKing.hasMoved = true;
 
 
         } else if (casteledKing.color.equals("black")) {
@@ -265,6 +272,28 @@ public class Game {
             casteledKing.posY = kingNewSquare.y;
         }
         deselectPiece(true);
+
+        currentPiece.hasMoved = true;
+        casteledKing.hasMoved = true;
     }
 
+
+    public void PawnPromotion(Square square) {
+        Queen queen = new Queen(currentPlayer, square.x, square.y);
+        if (currentPiece.type.equals("Pawn") && currentPiece.color.equals("white")) {
+            if (currentPiece.posY == 0) {
+                square.getChildren().remove(currentPiece);
+                square.occupied = false;
+                square.getChildren().add(queen);
+                square.occupied = true;
+            }
+        } else if (currentPiece.type.equals("Pawn") && currentPiece.color.equals("black")) {
+            if (currentPiece.posY == 7) {
+                square.getChildren().remove(currentPiece);
+                square.occupied = false;
+                square.getChildren().add(queen);
+                square.occupied = true;
+            }
+        }
+    }
 }
