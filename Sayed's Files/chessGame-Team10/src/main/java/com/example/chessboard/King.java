@@ -70,15 +70,15 @@ public class King extends Piece{
 
         setImage();
     }
-    public void ismoved()
-    {
-        if (color.equals("black")&&posX!=4&&posY!=0)
-        {
-            hasMoved=true;
-        } else if (color.equals("white")&&posX!=4&&posY!=7) {
-            hasMoved=true;
-        }
-    }
+//    public void ismoved()
+//    {
+//        if (color.equals("black")&&posX!=4&&posY!=0)
+//        {
+//            this.hasMoved=true;
+//        } else if (color.equals("white")&&posX!=4&&posY!=7) {
+//            this.hasMoved=true;
+//        }
+//    }
 
     @Override
     public void getAllPossibleMoves() {
@@ -106,20 +106,9 @@ public class King extends Piece{
         for(String move : moves){
             if(getSquareByName(move) != null){
                 if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)) continue;
-
                 possibleMoves.add(move);
-
             }
         }
-//        if (color.equals("black")&&posX!=4&&posY!=0)
-//        {
-//            hasMoved=true;
-//        } else if (color.equals("white")&&posX!=4&&posY!=7) {
-//            hasMoved=true;
-//        }
-
-
-
     }
     public void isCheck ()
     {

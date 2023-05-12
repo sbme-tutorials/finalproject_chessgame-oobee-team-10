@@ -132,6 +132,7 @@ public class Game {
                                 &&! (currentPiece.hasMoved)) {//this is edited
                             Castling(square);
                         } else if (currentPiece.color.equals(newPiece.color)) {
+                            clearHighlighting();
                             deselectPiece(false);
                             currentPiece = newPiece;
                             selectPiece(game);
@@ -239,7 +240,8 @@ public class Game {
             casteledKing.posX = kingNewSquare.x;
             casteledKing.posY = kingNewSquare.y;
 
-
+            currentPiece.hasMoved= true;
+            casteledKing.hasMoved = true;
 
 
         } else if (casteledKing.color.equals("black")) {
@@ -270,6 +272,9 @@ public class Game {
             casteledKing.posY = kingNewSquare.y;
         }
         deselectPiece(true);
+
+        currentPiece.hasMoved = true;
+        casteledKing.hasMoved = true;
     }
 
 
