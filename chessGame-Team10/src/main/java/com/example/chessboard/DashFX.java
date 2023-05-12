@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,13 +26,13 @@ public class DashFX implements Initializable {
     @FXML
     private ComboBox<String> boardDesign;
 
-    private String board;
+    public String boardtheme;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
-            board = boardDesign.getSelectionModel().getSelectedItem();});
+            boardtheme = boardDesign.getSelectionModel().getSelectedItem();});
 
 
 
@@ -39,14 +40,11 @@ public class DashFX implements Initializable {
         startButt.setOnAction(e -> {
             startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
 
-            try{
-                FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("hello-view.fxml"));
-                Main.setCenter(gameScene.load());
+            GridPane board= new GridPane();
+            Game newgame = new Game(board,boardtheme);
+            FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("hello-view.fxml"));
+            Main.setCenter(board);
 
-
-            } catch (IOException E) {
-                E.printStackTrace();
-            }
 
         });
 
