@@ -7,9 +7,9 @@ This is a chess game built using JavaFX and SceneBuilder. It includes special mo
 To run this game, you'll need to have JavaFX and Java 20 or later installed. You can download JavaFX from here [JavaFx ](https://openjfx.io/).
 
 ## Features
-* Play against another player
-* Choose between different difficulty levels
-* Save and load games
+* A number of GUI Event Handlers were implemented
+* GUI Developed using JavaFx
+* Backtracking to determine all possible moves of a piece
 * Highlight available moves
 * Special moves for some pieces, including the knight's L-shaped move and the pawn's en passant capture
 
