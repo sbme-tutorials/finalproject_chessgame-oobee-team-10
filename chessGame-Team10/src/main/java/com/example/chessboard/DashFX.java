@@ -16,7 +16,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashFX implements Initializable {
+    public Button newGamePageButt;
+    public Button Home;
+    public Button scoresPageButt;
+    public Button aboutPageButt;
     //sideBar buttons
+
     @FXML
     Button mainButt, startButt;
     @FXML
@@ -68,8 +73,27 @@ public class DashFX implements Initializable {
     }
 
     public void startIn(MouseEvent mouseEvent) {
+
     }
 
     public void startOut(MouseEvent mouseEvent) {
+    }
+    @FXML
+    private AnchorPane homePage;
+    public void displayHome (ActionEvent event) throws IOException{
+        homePage.toFront();
+
+    }
+    @FXML
+    private AnchorPane newGamePage;
+    public void displayGame (ActionEvent event) throws IOException{
+        newGamePage.toFront();
+
+    }
+    @FXML
+    private AnchorPane aboutPage;
+    public void displayAbout (ActionEvent event) throws IOException{
+        aboutPage.toFront();
+
     }
 }
