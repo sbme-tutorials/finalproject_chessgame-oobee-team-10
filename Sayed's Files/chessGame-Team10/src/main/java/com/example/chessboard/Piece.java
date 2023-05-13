@@ -19,6 +19,8 @@ public class Piece extends ImageView {
     ArrayList<String> unpossibleMoves;
     ArrayList<String> possibleMoves;
 
+
+
     public Piece(String color, int posX, int posY){
         this.color = color;
         this.posX = posX;
@@ -34,6 +36,8 @@ public class Piece extends ImageView {
         this.setImage(image);
     }
 
+
+    //Set iamge of each Piece
     public void setImage(){
         if (this.type == "Pawn")
             if (this.color == "black")
@@ -73,6 +77,8 @@ public class Piece extends ImageView {
 
     }
 
+
+    // When we click on a square include piece => get all possible moves of this piece
     private void addEventHandler(){
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -84,11 +90,12 @@ public class Piece extends ImageView {
 
     }
 
-
+    //get all possible moves of each piece - logic of this fuction depends on the type of Piece
     public void getAllPossibleMoves() {
 
     }
 
+    //Take this Possible moves and then display it on screen with green color
     public void showAllPossibleMoves(boolean val){
         clearHighlighting();
         Glow glow = new Glow();
@@ -123,6 +130,8 @@ public class Piece extends ImageView {
         }
     }
 
+
+    //Same idea but in Unpossible moves
     public void showAllUnPossibleMoves(boolean val) {
         clearHighlighting();
         Glow glow = new Glow();
@@ -157,6 +166,8 @@ public class Piece extends ImageView {
     }
 
 
+
+    //get the position of Square as a String
     public static Square getSquareByName(String name){
         for(Square square : Game.cb.squares){
             if(square.name.equals(name)){
@@ -167,6 +178,7 @@ public class Piece extends ImageView {
         return null;
     }
 
+    //get the name of the piece -> we will use it in many functions and Conditions
     public Piece getPieceByName(String name){
         for(Square square : Game.cb.squares){
             if(square.getChildren().size() == 0) continue;
@@ -178,7 +190,7 @@ public class Piece extends ImageView {
         return null;
     }
 
-
+    //Clear the possible and unpossible moves after drop , deselect or kill a Piece
     public void clearHighlighting() {
         for (String move : this.possibleMoves) {
             Square square = this.getSquareByName(move);

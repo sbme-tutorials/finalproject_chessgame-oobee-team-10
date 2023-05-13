@@ -4,6 +4,7 @@ import javafx.scene.layout.StackPane;
 public class Square extends StackPane {
 
     int x,y;
+    //occupied mean that this Square contain a Piece
     boolean occupied;
     public String name;
     public Square(){}
@@ -31,4 +32,3 @@ public class Square extends StackPane {
 }
 
 
-//        return "Square" + this.x + this.y + " - " + status;

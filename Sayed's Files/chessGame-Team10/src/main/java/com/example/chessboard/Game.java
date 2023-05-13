@@ -22,7 +22,7 @@ public class Game {
     private static boolean game;
     private Square selectedSquare;
 
-
+    //Default Constructor
     public Game() {
     }
 
@@ -43,12 +43,14 @@ public class Game {
         highlightAvailableMoves(square);
     }
 
-
+    //Unused
     public void highlightAvailableMoves(Square square) {
         // logic for highlighting available moves
         // update the style of each square with setStyle method
     }
 
+
+    //Event Handler
     private void addEventHandlers(GridPane chessBoard) {
 
 
@@ -155,11 +157,13 @@ public class Game {
         currentPiece.showAllPossibleMoves(true);
     }
 
+
+
     private void deselectPiece(boolean changePlayer) {
-//        currentPiece.clearHighlighting();
+        //currentPiece.clearHighlighting();
         currentPiece.setEffect(null);
         currentPiece.showAllPossibleMoves(false);
-        currentPiece.showAllUnPossibleMoves(false);    ////////////////////////////
+        currentPiece.showAllUnPossibleMoves(false);
         currentPiece = null;
         if (changePlayer) currentPlayer = currentPlayer.equals("white") ? "black" : "white";
     }
@@ -180,6 +184,7 @@ public class Game {
         deselectPiece(true);
     }
 
+
     private void killPiece(Square square) {
         if (!currentPiece.possibleMoves.contains(square.name)) return;
 
@@ -197,6 +202,7 @@ public class Game {
         promotePawn(square);
         deselectPiece(true);
     }
+
 
     public void Castling(Square square) {
         if (!currentPiece.possibleMoves.contains(square.name)) return;
@@ -269,132 +275,11 @@ public class Game {
     }
 
 
-//    public void PawnPromotion(Square square) {
-//
-//        Queen queen = new Queen(currentPlayer, square.x, square.y);
-//        if (currentPiece.type.equals("Pawn") && currentPiece.color.equals("white")) {
-//            if (currentPiece.posY == 0) {
-//                Stage stage = new Stage();
-//                PawnPromotionWindow pawnPromotionWindow = new PawnPromotionWindow();
-//                pawnPromotionWindow.start(stage);
-//                String PromotionType = pawnPromotionWindow.handlePromotionGetType();
-//                if (PromotionType.equals("Queen")) {
-//                    System.out.println(PromotionType);
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(queen);
-//                    square.occupied = true;
-//                }
-//            }
-//        } else if (currentPiece.type.equals("Pawn") && currentPiece.color.equals("black")) {
-//            if (currentPiece.posY == 7) {
-//                Stage stage = new Stage();
-//                PawnPromotionWindow pawnPromotionWindow = new PawnPromotionWindow();
-//                pawnPromotionWindow.start(stage);
-//                String PromotionType = pawnPromotionWindow.handlePromotionGetType();
-//                if (PromotionType.equals("Queen")) {
-//                    System.out.println(PromotionType);
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(queen);
-//                    square.occupied = true;
-//                }
-//            }
-//        }
-//    }
-
-
-//    public void PawnPromotion(Square square) {
-//
-//        if (currentPiece.type.equals("Pawn") && (currentPiece.posY == 0 || currentPiece.posY == 7)) {
-//            Queen queen = new Queen(currentPlayer, square.x, square.y);
-//            Bishop bishop = new Bishop(currentPlayer, square.x, square.y);
-//            Knight knight = new Knight(currentPlayer, square.x, square.y);
-//            Rook rook = new Rook(currentPlayer, square.x, square.y);
-////            Stage stage = new Stage();
-//            PawnPromotionWindow pawnPromotionWindow = new PawnPromotionWindow();
-////            pawnPromotionWindow.start(stage);
-//            String PromotionType = pawnPromotionWindow.handlePromotionGetType();
-//            switch (PromotionType) {
-//                case "Queen":
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(queen);
-//                    square.occupied = true;
-//                    break;
-//                case "Bishop":
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(bishop);
-//                    square.occupied = true;
-//                    break;
-//                case "Knight":
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(knight);
-//                    square.occupied = true;
-//                    break;
-//                case "Rook":
-//                    square.getChildren().remove(currentPiece);
-//                    square.occupied = false;
-//                    square.getChildren().add(rook);
-//                    square.occupied = true;
-//                    break;
-//                default:
-//                    break;
-//            }
-//
-//        }
-//    }
-
-
-//    public void PawnPromotion(Square square){
-//
-//        if (currentPiece.type.equals("Pawn") && currentPiece.posY == 0 && currentPiece.color.equals("white")) {
-//            Stage stage = new Stage();
-//            PawnPromotionWindow pawnPromotionWindow = new PawnPromotionWindow();
-//            pawnPromotionWindow.start(stage);
-//            String PromotionType = pawnPromotionWindow.handlePromotionGetType();
-//
-//            if (PromotionType.equals("Rook")) {
-//                Rook promotedRook = new Rook(currentPiece.color, square.x, square.y);
-//                square.getChildren().remove(currentPiece);
-//                square.occupied = false;
-//                square.getChildren().add(promotedRook);
-//                square.occupied = true;
-//            }
-//            else if (PromotionType.equals("Queen")) {
-//                Queen promotedQueen = new Queen(currentPiece.color, square.x, square.y);
-//                square.getChildren().remove(currentPiece);
-//                square.occupied = false;
-//                square.getChildren().add(promotedQueen);
-//                square.occupied = true;
-//            }
-//            else if (PromotionType.equals("Knight")) {
-//                Knight promotedKnight = new Knight(currentPiece.color, square.x, square.y);
-//                square.getChildren().remove(currentPiece);
-//                square.occupied = false;
-//                square.getChildren().add(promotedKnight);
-//                square.occupied = true;
-//            }
-//            else if (PromotionType.equals("Bishop")) {
-//                Bishop promotedBishop = new Bishop(currentPiece.color, square.x, square.y);
-//                square.getChildren().remove(currentPiece);
-//                square.occupied = false;
-//                square.getChildren().add(promotedBishop);
-//                square.occupied = true;
-//            }
-//
-//        }
-//    }
-//}
-
-
     public void promotePawn(Square square) {
-        // Perform the pawn promotion logic here
-        // For example, update the pawn's piece type to the selected piece
 
         if (currentPiece.type.equals("Pawn") && (currentPiece.posY == 0 || currentPiece.posY == 7)) {
+
+            //Parts to be Promoted
             Queen queen = new Queen(currentPlayer, square.x, square.y);
             Bishop bishop = new Bishop(currentPlayer, square.x, square.y);
             Knight knight = new Knight(currentPlayer, square.x, square.y);
@@ -432,7 +317,9 @@ public class Game {
                 }
             };
 
+            //Remove Pawn Piece
             square.getChildren().remove(currentPiece);
+
             // Create the promotion window and pass the callback
             Stage stage = new Stage();
             PawnPromotionWindow pawnPromotionWindow = new PawnPromotionWindow(callback);
@@ -440,13 +327,6 @@ public class Game {
         }
     }
 
-    // Other game-related methods and variables
-//
-//    public static void main(String[] args) {
-//        // Initialize and start the game
-//        Game game = new Game();
-//        game.start();
-//    }
 
     // Define a callback interface
     interface PromotionCallback {

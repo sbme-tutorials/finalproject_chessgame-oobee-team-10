@@ -20,6 +20,7 @@ public class ChessBoard {
 
         makeBoard(this.chessBoard, theme);
 
+        //Set the Settings of the timer
         statusBar.whitePlayerAlert.setText("White Player turn");
         statusBar.blackPlayerAlert.setText("");
         statusBar.whitePlayerTimer.setText("White timer: 15:00");
@@ -27,6 +28,8 @@ public class ChessBoard {
 
     }
 
+
+    //Design Game Board
     private void makeBoard(GridPane chessBoard, String theme){
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
@@ -44,6 +47,8 @@ public class ChessBoard {
         addPieces();
     }
 
+
+    //Themes of the Board
     private void setTheme(Square square, String theme, int i, int j){
         Color color1 = Color.web("#ffffff00");
         Color color2 = Color.web("#ffffff00");
@@ -96,11 +101,14 @@ public class ChessBoard {
 
     }
 
+
+    //Add a new Piece in the Board
     public void addPiece(Square square, Piece piece){
         square.getChildren().add(piece);
         square.occupied = true;
     }
 
+    //Initializing the position of Pieces
     private void addPieces(){
         for(Square square : squares){
             if(square.occupied) continue;
@@ -149,6 +157,8 @@ public class ChessBoard {
         }
     }
 
+
+    //Same Function of the other clearing Highlight
     public static void clearHighlighting() {
         for (Square square : squares) {
             square.setStyle("");
@@ -160,5 +170,4 @@ public class ChessBoard {
     {
         return (statusBar);
     }
-
 }
