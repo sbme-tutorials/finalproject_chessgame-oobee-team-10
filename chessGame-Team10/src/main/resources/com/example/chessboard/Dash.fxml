@@ -18,12 +18,15 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.DashFX">
    <children>
-      <BorderPane fx:id="Main" prefHeight="765.0" prefWidth="1030.0" style="-fx-background-color: black; -fx-background-radius: 25;">
+      <BorderPane fx:id="Main" prefHeight="765.0" prefWidth="1030.0" style="-fx-background-color: A6623E; -fx-background-radius: 25;">
          <left>
-            <VBox prefHeight="740.0" prefWidth="74.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="740.0" prefWidth="74.0" style="-fx-background-color: A6623E;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="112.0" prefWidth="74.0" style="-fx-background-radius: 15 0 15 15;" />
-                  <Button fx:id="homePageButt" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mainClicked" prefHeight="100.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Home" textFill="#a868a0">
+                  <Pane prefHeight="112.0" prefWidth="74.0" style="-fx-background-radius: 15 0 15 15; -fx-background-color: A6623E;" />
+                  <AnchorPane fx:id="" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: A6623E;">
+                     <!-- Pane content -->
+                  </AnchorPane>
+                  <Button fx:id="Home" contentDisplay="TOP" mnemonicParsing="false" onAction="#displayHome" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: A6623E;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Home" textFill="#fffdff">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -32,7 +35,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="newGamePageButt" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mainClicked" prefHeight="100.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="New Game" textFill="#a868a0">
+                  <Button fx:id="newGamePageButt" contentDisplay="TOP" mnemonicParsing="false" onAction="#displayGame" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: A6623E;" styleClass="button3" stylesheets="@fullpackstyling.css" text="New Game" textFill="#fffdff">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="scoresPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Scores" textFill="#a868a0">
+                  <Button fx:id="scoresPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: A6623E;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Scores" textFill="#fffdff">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -50,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="aboutPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="About " textFill="#a868a0">
+                  <Button fx:id="aboutPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#displayAbout" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: A6623E;" styleClass="button3" stylesheets="@fullpackstyling.css" text="About " textFill="#fffdff">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -59,7 +62,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Contact Us" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="74.0" style="-fx-background-color: A6623E;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Contact Us" textFill="#fffdff">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -77,9 +80,10 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </BorderPane.margin>
                <children>
-                  <AnchorPane fx:id="newGamePage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #131022; -fx-background-radius: 25;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
+                  <AnchorPane fx:id="aboutPage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: ABE7F1; -fx-border-radius: 25;" stylesheets="@fullpackstyling.css" />
+                  <AnchorPane fx:id="newGamePage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: ABE7F1; -fx-background-radius: 25;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
                      <children>
-                        <Pane layoutX="214.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
+                        <Pane layoutX="214.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: A6623E; -fx-background-radius: 10;">
                            <children>
                               <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -100,7 +104,7 @@
                         </Pane>
                         <Line endX="100.0" layoutX="445.0" layoutY="54.0" startX="100.0" startY="418.0" stroke="#b9b1b1" strokeDashOffset="2.0" />
                         <BorderPane layoutX="569.0" layoutY="404.0" prefHeight="66.0" prefWidth="270.0" />
-                        <VBox alignment="TOP_CENTER" layoutX="126.0" layoutY="54.0" prefHeight="438.0" prefWidth="635.0" style="-fx-background-color: #1A172A; -fx-background-radius: 15;">
+                        <VBox alignment="TOP_CENTER" layoutX="126.0" layoutY="54.0" prefHeight="438.0" prefWidth="635.0" style="-fx-background-color: A6623E; -fx-background-radius: 15;">
                            <children>
                               <Text fill="#f2eeee" strokeType="OUTSIDE" strokeWidth="0.0" text="New GAME" textAlignment="CENTER" wrappingWidth="284.13671875">
                                  <font>
@@ -117,7 +121,7 @@
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="boardDesign" prefHeight="29.0" prefWidth="179.0" promptText="DEMO" styleClass="combo-box" stylesheets="@fullpackstyling.css" visibleRowCount="5" />
+                                    <ComboBox fx:id="boardDesign" prefHeight="29.0" prefWidth="179.0" promptText="DEMO" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" visibleRowCount="5" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="428.0">
@@ -127,7 +131,7 @@
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="pieceDesign" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="pieceDesign" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="54.0" prefWidth="428.0">
@@ -137,7 +141,7 @@
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="timerSetter" prefHeight="29.0" prefWidth="179.0" promptText="5:00" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="timerSetter" prefHeight="29.0" prefWidth="179.0" promptText="5:00" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="118.0" prefHeight="54.0" prefWidth="428.0">
@@ -147,7 +151,7 @@
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="fistAvattar" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="fistAvattar" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="142.0" prefHeight="70.0" prefWidth="428.0">
@@ -157,10 +161,10 @@
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="secondAvatar" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="secondAvatar" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
-                              <Button fx:id="startButt" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#startClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: white;" text="Start" textAlignment="CENTER" textFill="#131022" textOverrun="CENTER_ELLIPSIS">
+                              <Button fx:id="startButt" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#startClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: white;" text="Start" textAlignment="CENTER" textFill="#5dc7d7" textOverrun="CENTER_ELLIPSIS">
                                  <font>
                                     <Font name="Impact" size="27.0" />
                                  </font>
@@ -169,9 +173,9 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="homePage" layoutX="10.0" layoutY="10.0" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #131022; -fx-background-radius: 25;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css" visible="false">
+                  <AnchorPane fx:id="homePage" layoutX="10.0" layoutY="10.0" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: ABE7F1; -fx-background-radius: 25;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
                      <children>
-                        <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1A172A; -fx-background-radius: 10;">
+                        <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: A6623E; -fx-background-radius: 10;">
                            <children>
                               <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -240,7 +244,7 @@
                               </Label>
                            </top>
                         </BorderPane>
-                        <VBox alignment="TOP_CENTER" layoutX="61.0" layoutY="57.0" prefHeight="438.0" prefWidth="428.0" style="-fx-background-color: #1A172A; -fx-background-radius: 15;">
+                        <VBox alignment="TOP_CENTER" layoutX="61.0" layoutY="57.0" prefHeight="438.0" prefWidth="428.0" style="-fx-background-color: ABE7F1; -fx-background-radius: 15;">
                            <children>
                               <Text fill="#f2eeee" strokeType="OUTSIDE" strokeWidth="0.0" text="New GAME" textAlignment="CENTER" wrappingWidth="284.13671875">
                                  <font>
@@ -250,57 +254,57 @@
                                     <ImageInput />
                                  </effect>
                               </Text>
-                              <HBox alignment="CENTER" prefHeight="63.0" prefWidth="428.0">
+                              <HBox alignment="CENTER" prefHeight="63.0" prefWidth="428.0" style="-fx-background-color: ABE7F1;">
                                  <children>
-                                    <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="ChessBoard Design:        " wrappingWidth="219.017578125">
+                                    <Text fill="#a6623e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="ChessBoard Design:        " wrappingWidth="219.017578125">
                                        <font>
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="boardDesign1" prefHeight="29.0" prefWidth="179.0" promptText="DEMO" styleClass="combo-box" stylesheets="@fullpackstyling.css" visibleRowCount="5" />
+                                    <ComboBox fx:id="boardDesign1" prefHeight="29.0" prefWidth="179.0" promptText="DEMO" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" visibleRowCount="5" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="428.0">
                                  <children>
-                                    <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Peices Design:" wrappingWidth="219.017578125">
+                                    <Text fill="#a6623e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Peices Design:" wrappingWidth="219.017578125">
                                        <font>
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="pieceDesign1" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="pieceDesign1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="54.0" prefWidth="428.0">
                                  <children>
-                                    <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the timer" wrappingWidth="219.017578125">
+                                    <Text fill="#a6623e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the timer" wrappingWidth="219.017578125">
                                        <font>
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="timerSetter1" prefHeight="29.0" prefWidth="179.0" promptText="5:00" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="timerSetter1" prefHeight="29.0" prefWidth="179.0" promptText="5:00" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="118.0" prefHeight="54.0" prefWidth="428.0">
                                  <children>
-                                    <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
+                                    <Text fill="#a6623e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
                                        <font>
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="fistAvattar1" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="fistAvattar1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="142.0" prefHeight="70.0" prefWidth="428.0">
                                  <children>
-                                    <Text fill="#fcf9f9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
+                                    <Text fill="#a6623e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
                                        <font>
                                           <Font name="Impact" size="20.0" />
                                        </font>
                                     </Text>
-                                    <ComboBox fx:id="secondAvatar1" prefHeight="29.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                    <ComboBox fx:id="secondAvatar1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
-                              <Button fx:id="startButt1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#startClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: white;" text="Start" textAlignment="CENTER" textFill="#131022" textOverrun="CENTER_ELLIPSIS">
+                              <Button fx:id="startButt1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#mainClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: white;" text="Start" textAlignment="CENTER" textFill="#a6623e" textOverrun="CENTER_ELLIPSIS">
                                  <font>
                                     <Font name="Impact" size="27.0" />
                                  </font>
@@ -309,7 +313,6 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="aboutPage" layoutX="161.0" layoutY="133.0" prefHeight="320.0" prefWidth="416.0" style="-fx-background-color: white;" visible="false" />
                </children>
             </AnchorPane>
          </center>
