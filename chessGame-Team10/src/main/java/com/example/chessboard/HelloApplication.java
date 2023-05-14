@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         stg=stage;
         stage.setResizable(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1030, 765);
        // stage.setTitle("Login Page!");
         stage.initStyle(StageStyle.UNDECORATED);
