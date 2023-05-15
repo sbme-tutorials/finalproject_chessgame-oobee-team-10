@@ -42,16 +42,7 @@ public class DashFX implements Initializable {
 
 
         // Change color and text color when button is clicked
-        startButt.setOnAction(e -> {
-            startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
-
-            GridPane board= new GridPane();
-            Game newgame = new Game(board,boardtheme);
-            FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("hello-view.fxml"));
-            Main.setCenter(board);
-
-
-        });
+        startButt.setOnAction(this::handle);
 
         // Change background color when mouse enters
         startButt.setOnMouseEntered(e -> {
@@ -94,6 +85,17 @@ public class DashFX implements Initializable {
     private AnchorPane aboutPage;
     public void displayAbout (ActionEvent event) throws IOException{
         aboutPage.toFront();
+
+    }
+
+    private void handle(ActionEvent e) {
+        startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
+
+        GridPane board = new GridPane();
+        Game newgame = new Game(board, boardtheme);
+        FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
+        Main.setCenter(board);
+
 
     }
 }

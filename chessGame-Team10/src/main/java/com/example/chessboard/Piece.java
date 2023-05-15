@@ -15,7 +15,11 @@ public class Piece extends ImageView {
     String type;
     String color;
     int posX, posY;
+    boolean hasMoved = false;
+    ArrayList<String> unpossibleMoves;
     ArrayList<String> possibleMoves;
+
+
 
     public Piece(String color, int posX, int posY){
         this.color = color;
@@ -32,48 +36,49 @@ public class Piece extends ImageView {
         this.setImage(image);
     }
 
-    public void setImage(){
 
-        String path ="File: ";
-        if (this.type.equals("Pawn"))
-            if (this.color.equals("black"))
-//              this.setPiece(new Image("images/pieces/" + this .color + "" + this.type + ".png"));
+    //Set iamge of each Piece
+    public void setImage(){
+        if (this.type == "Pawn")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/pawn_b.png"));
             else
                 this.setPiece(new Image("File:images/pawn_w.png"));
 
-        else if (this.type.equals("Bishop"))
-            if (this.color.equals("black"))
+        else if (this.type == "Bishop")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/bishop_b.png"));
             else
                 this.setPiece(new Image("File:images/bishop_w.png"));
 
-        else if (this.type.equals("King"))
-            if (this.color.equals("black"))
+        else if (this.type == "King")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/king_b.png"));
             else
                 this.setPiece(new Image("File:images/king_w.png"));
 
-        else if (this.type.equals("Queen"))
-            if (this.color.equals("black"))
+        else if (this.type == "Queen")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/queen_b.png"));
             else
                 this.setPiece(new Image("File:images/queen_w.png"));
 
-        else if (this.type.equals("Rook"))
-            if (this.color.equals("black"))
+        else if (this.type == "Rook")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/rook_b.png"));
             else
                 this.setPiece(new Image("File:images/rook_w.png"));
 
-        else if (this.type.equals("Knight"))
-            if (this.color.equals("black"))
+        else if (this.type == "Knight")
+            if (this.color == "black")
                 this.setPiece(new Image("File:images/knight_b.png"));
             else
                 this.setPiece(new Image("File:images/knight_w.png"));
 
     }
 
+
+    // When we click on a square include piece => get all possible moves of this piece
     private void addEventHandler(){
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -85,19 +90,27 @@ public class Piece extends ImageView {
 
     }
 
-    public void getAllPossibleMoves() {}
+    //get all possible moves of each piece - logic of this fuction depends on the type of Piece
+    public void getAllPossibleMoves() {
 
+    }
+
+    //Take this Possible moves and then display it on screen with green color
     public void showAllPossibleMoves(boolean val){
+        clearHighlighting();
+        Glow glow = new Glow();
         if(val){
-            Glow glow = new Glow();
-            glow.setLevel(1);
+          glow.setLevel(0.25);
+            // Set the background color of a block to green
+
             for(String move : possibleMoves){
                 Square square = getSquareByName(move);
                 square.setEffect(glow);
-
+                square.setStyle("-fx-background-color: green;");
                 Piece piece = getPieceByName(move);
                 if(piece == null) continue;
                 if(piece.type.equals("King")){
+//
                     square.setBorder(new Border(new BorderStroke(Color.DARKRED,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
                 }
@@ -117,7 +130,45 @@ public class Piece extends ImageView {
         }
     }
 
-    public Square getSquareByName(String name){
+
+    //Same idea but in Unpossible moves
+    public void showAllUnPossibleMoves(boolean val) {
+        clearHighlighting();
+        Glow glow = new Glow();
+        if(val){
+            glow.setLevel(0.25);
+            // Set the background color of a block to red
+            for(String move : unpossibleMoves){
+                Square square = getSquareByName(move);
+                square.setEffect(glow);
+                square.setStyle("-fx-background-color: red;");
+                Piece piece = getPieceByName(move);
+                if(piece == null) continue;
+                if(piece.type.equals("King")){
+//
+                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
+                }
+                else{
+                    square.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.2))));
+                }
+            }
+        }
+        else{
+            for(String move : possibleMoves){
+                Square square = getSquareByName(move);
+                square.setEffect(null);
+                square.setBorder(new Border(new BorderStroke(Color.BLACK,
+                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            }
+        }
+    }
+
+
+
+    //get the position of Square as a String
+    public static Square getSquareByName(String name){
         for(Square square : Game.cb.squares){
             if(square.name.equals(name)){
                 return square;
@@ -127,6 +178,7 @@ public class Piece extends ImageView {
         return null;
     }
 
+    //get the name of the piece -> we will use it in many functions and Conditions
     public Piece getPieceByName(String name){
         for(Square square : Game.cb.squares){
             if(square.getChildren().size() == 0) continue;
@@ -138,9 +190,22 @@ public class Piece extends ImageView {
         return null;
     }
 
+    //Clear the possible and unpossible moves after drop , deselect or kill a Piece
+    public void clearHighlighting() {
+        for (String move : this.possibleMoves) {
+            Square square = this.getSquareByName(move);
+            square.setEffect(null);
+            square.setStyle(""); // دي معناها ان الللون هيبقي شفاف او فاضي
+        }
+
+    }
+
+
     @Override
     public String toString() {
         return this.color + " " + this.type;
     }
 
+
 }
+
