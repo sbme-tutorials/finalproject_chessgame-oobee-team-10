@@ -53,7 +53,7 @@ public class HelloController {
             try (PrintWriter writer = new PrintWriter(new FileWriter("users.txt", true))) {
                 writer.println(user.getUsername() + "," + user.getPassword());
                 signupMessageLabel.setText("SignUp Completed!");
-                m.changeScene("login.fxml");
+                m.changeScene("LoginPage.fxml");
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -3,6 +3,7 @@ package com.example.chessboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,6 +11,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Login  {
+    public AnchorPane LogIn;
+
     public Login() throws IOException {
     }
 
