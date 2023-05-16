@@ -8,15 +8,7 @@ public class Rook extends Piece{
         this.type = "Rook";
         setImage();
     }
-//    public void ismoved()
-//    {
-//        if (color.equals("black")&&(posX!=0||posX!=7)&&posY!=0)
-//        {
-//            this.hasMoved=true;
-//        } else if (color.equals("white")&&(posX!=0||posX!=7)&&posY!=7) {
-//            this.hasMoved=true;
-//        }
-//    }
+
     @Override
     public void getAllPossibleMoves() {
         int x = this.posX;
@@ -51,7 +43,7 @@ public class Rook extends Piece{
                 }
                 else {
                     this.possibleMoves.add(name);
-
+                    break;
                 }
             }
             else
@@ -82,7 +74,7 @@ public class Rook extends Piece{
                 }
                 else {
                     this.possibleMoves.add(name);
-
+                    break;
                 }
             }
             else
@@ -113,7 +105,7 @@ public class Rook extends Piece{
                 }
                 else {
                     this.possibleMoves.add(name);
-
+                    break;
                 }
             }
             else
@@ -145,7 +137,7 @@ public class Rook extends Piece{
                 }
                 else {
                     this.possibleMoves.add(name);
-
+                    break;
                 }
             }
             else

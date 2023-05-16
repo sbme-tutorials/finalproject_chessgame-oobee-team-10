@@ -111,8 +111,10 @@ public class Piece extends ImageView {
                 if(piece == null) continue;
                 if(piece.type.equals("King")){
 //
-                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
-                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
+//                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
+//                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
+                    square.setEffect(glow);
+                    square.setStyle("-fx-background-color: blue;");
                 }
                 else{
                     square.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -144,15 +146,7 @@ public class Piece extends ImageView {
                 square.setStyle("-fx-background-color: red;");
                 Piece piece = getPieceByName(move);
                 if(piece == null) continue;
-                if(piece.type.equals("King")){
 //
-                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
-                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
-                }
-                else{
-                    square.setBorder(new Border(new BorderStroke(Color.BLACK,
-                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.2))));
-                }
             }
         }
         else{

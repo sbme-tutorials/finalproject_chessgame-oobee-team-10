@@ -4,6 +4,7 @@ package com.example.chessboard;
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -13,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import static com.example.chessboard.ChessBoard.clearHighlighting;
+import static com.example.chessboard.Piece.getSquareByName;
 
 
 public class Game {
@@ -200,6 +202,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
+        InCheck(square , true);
         promotePawn(square);
         deselectPiece(true);
         gameData.setCurrentPlayer(currentPlayer);
@@ -225,6 +228,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
+        InCheck(square , true);
         promotePawn(square);
         deselectPiece(true);
         if (killedPiece.type.equals("King")) this.game = false;
@@ -252,12 +256,12 @@ public class Game {
 
         if (casteledKing.color.equals("white")) {
             if (currentPiece.posX == 7) {
-                rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 7);
-                kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 7);
+                rookNewSquare = (Square) getSquareByName("Square" + 5 + 7);
+                kingNewSquare = (Square) getSquareByName("Square" + 6 + 7);
             }
             if (currentPiece.posX == 0) {
-                rookNewSquare = (Square) Piece.getSquareByName("Square" + 3 + 7);
-                kingNewSquare = (Square) Piece.getSquareByName("Square" + 2 + 7);
+                rookNewSquare = (Square) getSquareByName("Square" + 3 + 7);
+                kingNewSquare = (Square) getSquareByName("Square" + 2 + 7);
             }
             square.getChildren().remove(0);
             square.occupied = false;
@@ -281,15 +285,15 @@ public class Game {
 
         } else if (casteledKing.color.equals("black")) {
             if (currentPiece.posX == 7) {
-                rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 7);
-                kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 7);
+                rookNewSquare = (Square) getSquareByName("Square" + 5 + 7);
+                kingNewSquare = (Square) getSquareByName("Square" + 6 + 7);
             }
             if (currentPiece.posX == 0) {
-                rookNewSquare = (Square) Piece.getSquareByName("Square" + 3 + 7);
-                kingNewSquare = (Square) Piece.getSquareByName("Square" + 2 + 7);
+                rookNewSquare = (Square) getSquareByName("Square" + 3 + 7);
+                kingNewSquare = (Square) getSquareByName("Square" + 2 + 7);
             }
-            rookNewSquare = (Square) Piece.getSquareByName("Square" + 5 + 0);
-            kingNewSquare = (Square) Piece.getSquareByName("Square" + 6 + 0);
+            rookNewSquare = (Square) getSquareByName("Square" + 5 + 0);
+            kingNewSquare = (Square) getSquareByName("Square" + 6 + 0);
             square.getChildren().remove(0);
             square.occupied = false;
             kingNewSquare.getChildren().add(casteledKing);
@@ -367,6 +371,24 @@ public class Game {
 
 
 
+    public void InCheck(Square square ,boolean val){
+        Glow glow = new Glow();
+        if (val){
+            glow.setLevel(0.25);
+            Piece piece = (Piece) square.getChildren().get(0);
+            piece.getAllPossibleMoves();
+            for(String move : piece.possibleMoves){
+                Square square_pointer = getSquareByName(move);
+                if (square_pointer.occupied){
+                    Piece checked = (Piece) square_pointer.getChildren().get(0);
+                    if (checked.type.equals("King")){
+                        System.out.println("Game.InCheck");
+                        square_pointer.setEffect(glow);
+                        square_pointer.setStyle("-fx-background-color:  #ff0000;");
+                }
+            }}
+        }
+    }
 
     // Define a callback interface
     interface PromotionCallback {
