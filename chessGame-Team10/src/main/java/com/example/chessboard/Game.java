@@ -4,8 +4,11 @@ package com.example.chessboard;
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -13,6 +16,18 @@ import static com.example.chessboard.ChessBoard.clearHighlighting;
 
 
 public class Game {
+    GameDataModel gameData;
+
+    public HBox wKilledPiecesBox = new HBox(15);
+    public HBox bKilledPiecesBox = new HBox(15); // container for killed pieces
+
+    int killedW= 0;
+    int killedB=0;
+
+    private ImageView[] killedPieces = new ImageView[32]; // array to hold image views of killed pieces
+    public ChessTimer whiteTimer = new ChessTimer();
+
+    public ChessTimer blackTimer = new ChessTimer();
 
     public static Piece currentPiece;
     public static String currentPlayer;
@@ -25,12 +40,13 @@ public class Game {
     }
 
 
-    public Game(GridPane chessBoard, String theme) {
+    public Game(GridPane chessBoard, String theme,GameDataModel gameDataModel) {
         cb = new ChessBoard(chessBoard, theme);
         currentPiece = null;
         currentPlayer = "white";
         this.game = true;
         addEventHandlers(cb.chessBoard);
+        this.gameData =gameDataModel;
     }
 
     public void selectSquare(Square square) {
@@ -86,9 +102,11 @@ public class Game {
                                 deselectPiece(false);
                                 currentPiece = newPiece;
                                 currentPiece.getAllPossibleMoves();
+
                                 selectPiece(game);
                             } else {
                                 killPiece(square);
+
                             }
                         }
 
@@ -163,13 +181,15 @@ public class Game {
         currentPiece.showAllPossibleMoves(false);
         currentPiece.showAllUnPossibleMoves(false);
         currentPiece = null;
-        if (changePlayer) currentPlayer = currentPlayer.equals("white") ? "black" : "white";
-        ChessTimer currentPlayerTimer = currentPlayer.equals("white") ? Controller.getWhiteTimer() : Controller.getBlackTimer();
-        currentPlayerTimer.stopTimer();
+        if (changePlayer) {
+            currentPlayer = currentPlayer.equals("white") ? "black" : "white";
+        }
+
     }
 
     private void dropPiece(Square square) {
         if (!currentPiece.possibleMoves.contains(square.name)) {
+
             return;
         }
 
@@ -182,6 +202,12 @@ public class Game {
         currentPiece.posY = square.y;
         promotePawn(square);
         deselectPiece(true);
+        gameData.setCurrentPlayer(currentPlayer);
+        whiteTimer.pauseAndPlay(currentPlayer);
+        blackTimer.pauseAndPlay(currentPlayer);
+
+
+
     }
 
 
@@ -189,7 +215,7 @@ public class Game {
         if (!currentPiece.possibleMoves.contains(square.name)) return;
 
         Piece killedPiece = (Piece) square.getChildren().get(0);
-        if (killedPiece.type.equals("King")) this.game = false;
+
 
         Square initialSquare = (Square) currentPiece.getParent();
         square.getChildren().remove(0);
@@ -201,6 +227,18 @@ public class Game {
         currentPiece.posY = square.y;
         promotePawn(square);
         deselectPiece(true);
+        if (killedPiece.type.equals("King")) this.game = false;
+
+        if(killedPiece.color.equals("white")) {
+            Piece killed = killedPiece;
+            wKilledPiecesBox.getChildren().add(killed);
+        }
+        else
+        if(killedPiece.color.equals("black")){
+            Piece killed = killedPiece;
+            bKilledPiecesBox.getChildren().add(killed);
+
+        }
     }
 
 
@@ -326,6 +364,8 @@ public class Game {
             pawnPromotionWindow.start(stage);
         }
     }
+
+
 
 
     // Define a callback interface

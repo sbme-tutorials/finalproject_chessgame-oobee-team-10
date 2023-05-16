@@ -4,3 +4,4 @@ haJar,123
 hajar,123
 haggar,1234
 HAJAR,1234
+sayed,123

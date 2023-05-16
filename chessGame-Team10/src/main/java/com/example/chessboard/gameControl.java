@@ -18,7 +18,7 @@ public class gameControl implements Initializable {
     private String gameTheme,playerOneName,playerTwoName;
 
     @FXML
-    private Pane gameBoard; Game newgame = new Game(board,"Demo");
+    private Pane gameBoard; Game newgame = new Game(board,"Demo",new GameDataModel());
 
     @Override
 

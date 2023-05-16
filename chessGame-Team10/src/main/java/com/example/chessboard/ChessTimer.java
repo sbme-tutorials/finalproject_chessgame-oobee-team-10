@@ -2,14 +2,12 @@ package com.example.chessboard;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class ChessTimer {
+    private String timerColor;
+    public Timeline timeline;
     private GameDataModel newGameData;
     private  final int GAME_DURATION_MINUTES = 15;
     private static final int SECONDS_PER_MINUTE = 60;
@@ -17,14 +15,22 @@ public class ChessTimer {
     private Label timerLabel;
     private int remainingTime;
 
-    public ChessTimer(Label timerLabel) {
+
+    public void setTimerColor(String color) {
+        this.timerColor =color;
+    }
+
+    public String getTimerColor(){
+        return timerColor;
+    }
+    public void setTimerLabel(Label timerLabel) {
         this.timerLabel = timerLabel;
     }
 
     public void startTimer() {
         remainingTime = GAME_DURATION_MINUTES * SECONDS_PER_MINUTE;
 
-        Timeline timeline = new Timeline();
+        timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.getKeyFrames().add(
                 new KeyFrame(Duration.seconds(1), event -> {
@@ -32,7 +38,7 @@ public class ChessTimer {
 
                     if (remainingTime <= 0) {
                         // Time's up! The current player loses the game.
-                        stopTimer();
+                        //stopTimer();
                         handleTimeUp();
                     } else {
                         updateTimerLabel();
@@ -43,16 +49,20 @@ public class ChessTimer {
         timeline.play();
     }
 
-    public void stopTimer() {
-        // Stop the timer if needed
-        // You can implement the necessary logic here
+    public void pauseAndPlay(String playerColor) {
+        if(timerColor.equals(playerColor))
+            timeline.play();
+        else timeline.pause();
+
     }
 
     private void handleTimeUp() {
         // Handle the case when the time is up for a player
         // You can implement the necessary logic here
     }
-
+    public Timeline getTilmeline(){
+        return this.timeline;
+    }
     private void updateTimerLabel() {
         int minutes = remainingTime / SECONDS_PER_MINUTE;
         int seconds = remainingTime % SECONDS_PER_MINUTE;

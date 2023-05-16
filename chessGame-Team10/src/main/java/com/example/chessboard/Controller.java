@@ -21,29 +21,29 @@ public class Controller {
     public Label bTimerLabel;
     private String boardtheme;
 
-    private ChessTimer whiteTimer;
-    private ChessTimer blackTimer;
+
     GameDataModel newGameData;
 
     public void initialize() {
-        whiteTimer = new ChessTimer(wTimerLabel);
-        blackTimer = new ChessTimer(bTimerLabel);
-        whiteTimer.startTimer();
         newGameData = new GameDataModel();
         boardtheme = newGameData.getTheme();
-        Game game = new Game(boardGrid, "Sayed");
+        Game game = new Game(boardGrid, "Sayed",newGameData);
+        bKilled.getChildren().add(game.bKilledPiecesBox);
 
-        if (Game.currentPlayer.equals("")) {
-            whiteTimer.stopTimer();
-        }
+        wKilled.getChildren().add(game.wKilledPiecesBox);
+        game.blackTimer.setTimerLabel(bTimerLabel);
+        game.whiteTimer.setTimerLabel(wTimerLabel);
+
+        game.whiteTimer.startTimer();
+        game.blackTimer.startTimer();
+        game.whiteTimer.setTimerColor("white");
+        game.blackTimer.setTimerColor("black");
+
+
     }
 
 
-    public ChessTimer getBlackTimer() {
-        return blackTimer;
-    }
 
-    public ChessTimer getWhiteTimer() {
-        return whiteTimer;
-    }
+
+
 }

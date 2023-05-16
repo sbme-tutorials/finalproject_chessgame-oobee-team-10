@@ -92,7 +92,7 @@ public class DashFX implements Initializable {
         startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
 
         GridPane board = new GridPane();
-        Game newgame = new Game(board, boardtheme);
+        Game newgame = new Game(board, boardtheme,new GameDataModel());
         FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
         Main.setCenter(board);
 

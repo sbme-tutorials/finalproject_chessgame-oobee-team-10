@@ -7,6 +7,15 @@ public class GameDataModel {
     private String background;
     private String pieceTheme;
     private int gameTimer= 15;
+    private String currentPlayer= "white";
+
+    public void setCurrentPlayer(String player){
+        this.currentPlayer= player;
+    }
+    public String getCurrentPlayer(){
+        return currentPlayer;
+    }
+
 
     public void setGameTimer(String s){
         this.gameTimer= Integer.parseInt(s);
