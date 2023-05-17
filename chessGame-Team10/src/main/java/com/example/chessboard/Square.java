@@ -1,6 +1,8 @@
 package com.example.chessboard;
 
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+
 public class Square extends StackPane {
 
     int x,y;
@@ -28,6 +30,12 @@ public class Square extends StackPane {
     private void setSquareColor() {
         String color = (x + y) % 2 == 0 ? "#ffffff" : "#000000";
         this.setStyle("-fx-background-color: " + color + ";");
+    }
+
+
+    public void setBackgroundColor(Color color) {
+        String hexColor = "#" + color.toString().substring(2, 8);
+        this.setStyle("-fx-fill: " + hexColor + ";");
     }
 }
 

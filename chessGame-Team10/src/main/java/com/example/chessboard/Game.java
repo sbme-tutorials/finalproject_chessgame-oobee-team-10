@@ -12,6 +12,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 import static com.example.chessboard.ChessBoard.clearHighlighting;
 import static com.example.chessboard.Piece.getSquareByName;
@@ -36,6 +38,8 @@ public class Game {
     public static ChessBoard cb;
     private static boolean game;
     private Square selectedSquare;
+
+
 
     //Default Constructor
     public Game() {
@@ -372,9 +376,10 @@ public class Game {
 
 
     public void InCheck(Square square ,boolean val){
+        clearHighlighting();
         Glow glow = new Glow();
         if (val){
-            glow.setLevel(0.25);
+            glow.setLevel(1);
             Piece piece = (Piece) square.getChildren().get(0);
             piece.getAllPossibleMoves();
             for(String move : piece.possibleMoves){
@@ -384,8 +389,12 @@ public class Game {
                     if (checked.type.equals("King")){
                         System.out.println("Game.InCheck");
                         square_pointer.setEffect(glow);
-                        square_pointer.setStyle("-fx-background-color:  #ff0000;");
-                }
+                        square_pointer.setBackgroundColor(Color.BLUE);
+                        Stage stage = new Stage();
+                        CheckingWindow checking = new CheckingWindow();
+                        checking.start(stage);// Set the background color to red
+                        break;
+                    }
             }}
         }
     }
