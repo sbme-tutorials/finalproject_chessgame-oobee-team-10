@@ -13,11 +13,15 @@ import java.util.ArrayList;
 
 public class Piece extends ImageView {
     String type;
+    static String piecDesign="alpha";
     String color;
     int posX, posY;
     boolean hasMoved = false;
     ArrayList<String> unpossibleMoves;
     ArrayList<String> possibleMoves;
+    public static void setPieceDesign(String s){
+        piecDesign= s;
+    }
 
 
 
@@ -34,6 +38,8 @@ public class Piece extends ImageView {
 
     public void setPiece(Image image){
         this.setImage(image);
+        this.setFitWidth(40);
+        this.setFitHeight(60);
     }
 
 
@@ -41,39 +47,39 @@ public class Piece extends ImageView {
     public void setImage(){
         if (this.type == "Pawn")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/pawn_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bp.png"));
             else
-                this.setPiece(new Image("File:images/pawn_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wp.png"));
 
         else if (this.type == "Bishop")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/bishop_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bb.png"));
             else
-                this.setPiece(new Image("File:images/bishop_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wb.png"));
 
         else if (this.type == "King")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/king_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bk.png"));
             else
-                this.setPiece(new Image("File:images/king_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wk.png"));
 
         else if (this.type == "Queen")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/queen_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bq.png"));
             else
-                this.setPiece(new Image("File:images/queen_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wq.png"));
 
         else if (this.type == "Rook")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/rook_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/br.png"));
             else
-                this.setPiece(new Image("File:images/rook_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wr.png"));
 
         else if (this.type == "Knight")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/knight_b.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bk.png"));
             else
-                this.setPiece(new Image("File:images/knight_w.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wk.png"));
 
     }
 

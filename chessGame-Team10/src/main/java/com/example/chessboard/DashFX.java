@@ -32,16 +32,21 @@ public class DashFX implements Initializable {
     BorderPane Main;
     @FXML
     private ComboBox<String> boardDesign;
+    @FXML
+    private ComboBox<String> pieceDesign;
 
     public String boardtheme;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         center =new AnchorPane();
-
+        GameDataModel gamedata =new GameDataModel();
         boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
             boardtheme = boardDesign.getSelectionModel().getSelectedItem();});
+        pieceDesign.getItems().addAll("alpha", "california");
+        pieceDesign.setOnAction(e -> {
+            Piece.setPieceDesign(pieceDesign.getSelectionModel().getSelectedItem());});
 
 
 

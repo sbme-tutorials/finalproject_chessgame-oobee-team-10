@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="Main" prefHeight="765.0" prefWidth="1030.0" style="-fx-background-radius: 35;" styleClass="node-id" stylesheets="@fullpackstyling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.DashFX">
+<BorderPane fx:id="Main" prefHeight="836.0" prefWidth="1135.0" style="-fx-background-radius: 35;" styleClass="node-id" stylesheets="@fullpackstyling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.DashFX">
    <left>
       <VBox fx:id="sidBar" prefHeight="713.0" prefWidth="74.0" style="-fx-background-radius: 30; -fx-background-image: url(&quot;images/sidebarBg.jpg&quot;);" styleClass="sideBar" stylesheets="@fullpackstyling.css" BorderPane.alignment="CENTER">
 
@@ -66,13 +66,13 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane fx:id="center" prefHeight="703.0" prefWidth="926.0" styleClass="node-id" stylesheets="@fullpackstyling.css" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="center" prefHeight="783.0" prefWidth="990.0" styleClass="node-id" stylesheets="@fullpackstyling.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <children>
-            <AnchorPane fx:id="aboutPage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-            <AnchorPane fx:id="newGamePage" layoutX="20.0" layoutY="24.0" prefHeight="701.0" prefWidth="886.0" style="-fx-border-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
+            <AnchorPane fx:id="aboutPage" prefHeight="783.0" prefWidth="990.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" visible="false" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="20.0" />
+            <AnchorPane fx:id="newGamePage" layoutX="20.0" layoutY="24.0" prefHeight="783.0" prefWidth="990.0" style="-fx-border-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
                <children>
                   <BorderPane layoutX="569.0" layoutY="404.0" prefHeight="66.0" prefWidth="270.0" />
                   <VBox alignment="TOP_CENTER" layoutX="126.0" layoutY="132.0" prefHeight="438.0" prefWidth="635.0" style="-fx-background-radius: 15; -fx-background-color: #394867;" stylesheets="@fullpackstyling.css">
@@ -144,7 +144,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="homePage" layoutX="19.0" layoutY="23.0" prefHeight="704.0" prefWidth="888.0" style="-fx-background-radius: 20;" stylesheets="@fullpackstyling.css" AnchorPane.leftAnchor="19.0">
+            <AnchorPane fx:id="homePage" layoutX="19.0" layoutY="23.0" prefHeight="778.0" prefWidth="989.0" style="-fx-background-radius: 20;" stylesheets="@fullpackstyling.css" AnchorPane.leftAnchor="19.0">
                <children>
                   <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1d6089;">
                      <children>
