@@ -12,7 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -22,51 +24,59 @@
          <left>
             <VBox prefHeight="740.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="112.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" />
+                  <Pane prefHeight="112.0" prefWidth="74.0" style="-fx-background-color: #1d6089;">
+                     <children>
+                        <Button fx:id="existButt" layoutX="-1.0" layoutY="9.0" mnemonicParsing="false" onAction="#goOut" prefHeight="109.0" prefWidth="85.0" style="-fx-background-color: #1d6089;" text="Exist  " textFill="WHITE" />
+                        <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <AnchorPane fx:id="" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: A6623E;">
                      <!-- Pane content -->
                   </AnchorPane>
                   <Button fx:id="Home" contentDisplay="TOP" mnemonicParsing="false" onAction="#displayHome" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Home" textFill="#fffdff">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="32.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../wallpapers/home.png" />
+                              <Image url="@../../../../../../images/home%20(1).png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button fx:id="newGamePageButt" contentDisplay="TOP" mnemonicParsing="false" onAction="#displayGame" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" styleClass="button3" stylesheets="@fullpackstyling.css" text="New Game" textFill="#fffdff">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../wallpapers/gamepad.png" />
+                              <Image url="@../../../../../../images/gamepad.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button fx:id="scoresPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Scores" textFill="#fffdff">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../wallpapers/score.png" />
+                              <Image url="@../../../../../../images/score.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button fx:id="aboutPageButt" contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#displayAbout" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" styleClass="button3" stylesheets="@fullpackstyling.css" text="About " textFill="#fffdff">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../wallpapers/team.png" />
+                              <Image url="@../../../../../../images/group.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="74.0" style="-fx-background-color: #1d6089;" styleClass="button3" stylesheets="@fullpackstyling.css" text="Contact Us" textFill="#fffdff">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../wallpapers/headset-.png" />
+                              <Image url="@../../../../../../images/headphones.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -80,8 +90,106 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </BorderPane.margin>
                <children>
-                  <AnchorPane fx:id="aboutPage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" />
-                  <AnchorPane fx:id="newGamePage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #ddf0ff;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
+                  <AnchorPane fx:id="aboutPage" layoutX="39.0" prefHeight="702.0" prefWidth="916.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7e0ea" height="387.0" layoutX="9.0" layoutY="33.0" stroke="#ddf0ff" strokeType="INSIDE" width="907.0" />
+                        <Circle fill="#d7e0ea" layoutX="81.0" layoutY="563.0" radius="58.0" stroke="#ddf0ff" strokeType="INSIDE" />
+                        <Circle fill="#d7e0ea" layoutX="259.0" layoutY="563.0" radius="58.0" stroke="#ddf0ff" strokeType="INSIDE" />
+                        <Circle fill="#d7e0ea" layoutX="443.0" layoutY="563.0" radius="58.0" stroke="#ddf0ff" strokeType="INSIDE" />
+                        <Circle fill="#d7e0ea" layoutX="618.0" layoutY="563.0" radius="58.0" stroke="#ddf0ff" strokeType="INSIDE" />
+                        <Circle fill="#d7e0ea" layoutX="800.0" layoutY="561.0" radius="58.0" stroke="#ddf0ff" strokeType="INSIDE" />
+                        <Label layoutX="23.0" layoutY="54.0" text="Modifications On The Game !">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="89.0" layoutY="124.0" text="• A pawn captures (eats) the squares diagonally or the piece in front.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="89.0" layoutY="207.0" text="• The elephant (bishop) can only move three steps on the diagonal and bypass anypieces.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="89.0" layoutY="230.0" text="The elephant also has a new special move, which is to move one square on the horizontal axis so it changes the diagonal color.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="323.0" text="• The knight can move in an L shape, with two squares horizontally or vertically, and then three squares in the perpendicular direction">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="554.0" text="Ahmed-AlDeeb">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="214.0" layoutY="554.0" text="Adbelrahman">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="392.0" layoutY="554.0" text="Ahmed Abdelaal">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="596.0" layoutY="546.0" prefHeight="35.0" prefWidth="43.0" text="Nancy">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="783.0" layoutY="554.0" text="Hajar">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="58.0" fitWidth="53.0" layoutX="23.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/download.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="16.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/images.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="59.0" fitWidth="72.0" layoutX="14.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/360_F_101484857_g2UHD4z3aqmB8ABIB3Axiz1g03tyN4Fu.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="52.0" layoutY="642.0" text="Leader">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="226.0" layoutY="643.0" text="Member 1">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="410.0" layoutY="643.0" text="Member 2">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="585.0" layoutY="643.0" text="Member 3">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="767.0" layoutY="643.0" text="Member 4">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="newGamePage" prefHeight="701.0" prefWidth="886.0" style="-fx-background-color: #ddf0ff;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css" visible="false">
                      <children>
                         <Pane layoutX="214.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1d6089; -fx-background-radius: 10;">
                            <children>
@@ -173,7 +281,7 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="homePage" layoutX="-1.0" prefHeight="704.0" prefWidth="888.0" style="-fx-background-color: #ddf0ff;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css">
+                  <AnchorPane fx:id="homePage" layoutX="-1.0" prefHeight="704.0" prefWidth="888.0" style="-fx-background-color: #ddf0ff;" stylesheets="@../../../../../../../../javafx-sample-dashboard-master/src/sample/fullpackstyling.css" visible="false">
                      <children>
                         <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1d6089;">
                            <children>

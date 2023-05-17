@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +22,8 @@ public class DashFX implements Initializable {
     public Button scoresPageButt;
     public Button aboutPageButt;
     //sideBar buttons
-
+    @FXML
+    public Button existButt;
     @FXML
     Button mainButt, startButt;
     @FXML
@@ -95,5 +97,9 @@ public class DashFX implements Initializable {
     public void displayAbout (ActionEvent event) throws IOException{
         aboutPage.toFront();
 
+    }
+    public void goOut (ActionEvent e) {
+        Stage stage = (Stage) existButt.getScene().getWindow();
+        stage.close();
     }
 }
