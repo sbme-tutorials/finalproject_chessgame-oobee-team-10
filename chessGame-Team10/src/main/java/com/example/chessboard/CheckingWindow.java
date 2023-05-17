@@ -28,8 +28,8 @@ public class CheckingWindow extends Application {
         Button button = new Button("Okay");
 
         // Add the label and buttons to the grid pane
-        gridPane.add(promotionLabel1, 0, 0, 4, 1);
-        gridPane.add(button, 3, 1);
+        gridPane.add(promotionLabel1, 2, 0, 4, 1);
+        gridPane.add(button, 5, 1);
 
         Scene scene = new Scene(gridPane, 400, 100);
 
