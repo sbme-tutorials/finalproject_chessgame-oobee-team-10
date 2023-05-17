@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +25,7 @@ public class DashFX implements Initializable {
 
     @FXML
     Button mainButt, startButt;
+    AnchorPane center;
     @FXML
     AnchorPane innerScene, MainScene;
     @FXML
@@ -35,6 +37,8 @@ public class DashFX implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        center =new AnchorPane();
+
         boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
             boardtheme = boardDesign.getSelectionModel().getSelectedItem();});
@@ -42,7 +46,6 @@ public class DashFX implements Initializable {
 
 
         // Change color and text color when button is clicked
-        startButt.setOnAction(this::handle);
 
         // Change background color when mouse enters
         startButt.setOnMouseEntered(e -> {
@@ -61,6 +64,16 @@ public class DashFX implements Initializable {
 
 
     public void startClicked(MouseEvent mouseEvent) {
+        startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
+
+        GridPane board = new GridPane();
+        Game newgame = new Game(board, boardtheme,new GameDataModel());
+        FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
+        try {
+            Main.setCenter(gameScene.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void startIn(MouseEvent mouseEvent) {
@@ -88,13 +101,8 @@ public class DashFX implements Initializable {
 
     }
 
-    private void handle(ActionEvent e) {
-        startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
+    private void handle(ActionEvent e) throws IOException {
 
-        GridPane board = new GridPane();
-        Game newgame = new Game(board, boardtheme,new GameDataModel());
-        FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
-        Main.setCenter(board);
 
 
     }

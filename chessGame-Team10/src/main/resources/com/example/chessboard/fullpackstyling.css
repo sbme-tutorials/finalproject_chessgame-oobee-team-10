@@ -63,13 +63,13 @@
 
 .combo-box
 {
-    -fx-background-color : #141124;
-    -fx-border-color:  #515658;
+    -fx-background-color : #394867;
+    -fx-border-color :  linear-gradient(to bottom left, #05BFDB,#00FFCA);
+    -fx-border-width: 3;
     -fx-border-radius: 30;
 }
 .combo-box:hover
 {
-    -fx-background-color : #141124;
     -fx-border-color:  #FFFF;
     -fx-border-radius: 30;
 }
@@ -149,4 +149,85 @@
 .linear-grad
 {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
+.sideBar {
+    -fx-background-color: #0A4D68;
+}
+
+.button {
+    -fx-background-insets: 0, 1, 2,0;
+    -fx-background-radius :  10 0 0 10;
+    -fx-padding: 10 10 10 10;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+    -fx-content-display: Top;
+        -fx-background-image: url("images/sidebarBg.jpg");
+    -fx-background-color: linear-gradient(to bottom left, #00FFCA, #088395);
+
+}
+
+.button:focused {
+
+    -fx-background-color: rgb(60,127,177),
+    linear-gradient(
+        to bottom,
+        rgb(55,213,254) 0%,
+        rgb(54,212,253) 50%,
+        rgb(49,210,251) 50%,
+        rgb(44,206,248) 100%),
+    linear-gradient(
+        to bottom,
+        rgb(178,234,250) 0%,
+        rgb(173,231,247) 50%,
+        rgb(158,222,241) 50%,
+        rgb(144,212,234) 100%),
+    linear-gradient(
+        to bottom,
+        rgb(237,245,249) 0%,
+        rgb(231,241,246) 50%,
+        rgb(208,229,240) 50%,
+        rgb(191,218,233) 100%);
+
+    -fx-background-insets: 0, 1, 2, 3;
+    -fx-background-radius: 3, 2, 2, 1;
+}
+
+/* OK */
+.button:hover {
+
+    -fx-background-color: rgb(60, 127, 177),
+    linear-gradient(
+        to bottom,
+        rgb(250, 253, 254) 0%,
+        rgb(245, 251, 254) 50%,
+        rgb(239, 249, 254) 50%,
+        rgb(232, 245, 252) 100%),
+    linear-gradient(
+        to bottom,
+        rgb(234, 246, 253) 0%,
+        rgb(217, 240, 252) 50%,
+        rgb(190, 230, 253) 50%,
+        rgb(167, 217, 245) 100%);
+}
+
+/* OK */
+.button:armed {
+
+    -fx-background-color: rgb(44, 98, 139),
+    linear-gradient(
+        to bottom,
+        rgb(157, 175, 185) 0%,
+        rgb(154, 186, 203) 50%,
+        rgb(120, 170, 197) 50%,
+        rgb(85, 146, 181) 100%),
+    linear-gradient(
+        to bottom,
+        rgb(228, 243, 251) 0%,
+        rgb(196, 229, 246) 50%,
+        rgb(152, 209, 239) 50%,
+        rgb(104, 178, 218) 100%);
+
+    -fx-color: -fx-pressed-base;
+    -fx-background-insets: 0, 1, 2 2 1 2;
+    -fx-background-radius: 3, 2, 2;
 }
