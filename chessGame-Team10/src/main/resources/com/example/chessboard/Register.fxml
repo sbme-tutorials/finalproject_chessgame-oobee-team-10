@@ -15,12 +15,12 @@
    <children>
       <ImageView fitHeight="697.0" fitWidth="988.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../LoginWallpaper2%20-%20Copy.jpg" />
+            <Image url="@../../../../../../../../../../../LoginWallpaper2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="33.0" layoutY="159.0" opacity="0.9" prefHeight="394.0" prefWidth="427.0" style="-fx-background-color: #ddf0ff;">
+      <AnchorPane layoutX="33.0" layoutY="159.0" opacity="0.61" prefHeight="394.0" prefWidth="427.0" style="-fx-background-color: #000000;">
          <children>
-            <Label layoutX="21.0" layoutY="127.0" text="Password" textFill="#1d6089">
+            <Label layoutX="21.0" layoutY="127.0" text="Password" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -30,12 +30,12 @@
                   <Reflection />
                </effect>
             </PasswordField>
-            <Button fx:id="signupButton" layoutX="104.0" layoutY="222.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="41.0" prefWidth="218.0" text="SignUp" textFill="#1d6089">
+            <Button fx:id="signupButton" layoutX="136.0" layoutY="223.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="42.0" prefWidth="155.0" text="SignUp" textFill="#1d6089">
                <font>
                   <Font name="System Italic" size="19.0" />
                </font>
             </Button>
-            <Label layoutX="18.0" layoutY="54.0" text="Username" textFill="#1d6089">
+            <Label layoutX="18.0" layoutY="54.0" text="Username" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

@@ -14,17 +14,17 @@
    <children>
       <ImageView fitHeight="661.0" fitWidth="911.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../LoginWallpaper1%20-%20Copy.jpg" />
+            <Image url="@../../../../../../../../../../../LoginWallpaper1%20-%20Copy.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="37.0" layoutY="140.0" opacity="0.81" prefHeight="428.0" prefWidth="391.0" style="-fx-background-color: #F1F6F9;">
+      <AnchorPane layoutX="37.0" layoutY="140.0" opacity="0.76" prefHeight="428.0" prefWidth="391.0" style="-fx-background-color: #000000;">
          <children>
-            <Label layoutX="23.0" layoutY="61.0" text="UserName" textFill="#1d6089">
+            <Label layoutX="23.0" layoutY="61.0" text="UserName" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="124.0" prefHeight="30.0" prefWidth="112.0" text="Password" textFill="#1d6089">
+            <Label layoutX="26.0" layoutY="124.0" prefHeight="30.0" prefWidth="112.0" text="Password" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
