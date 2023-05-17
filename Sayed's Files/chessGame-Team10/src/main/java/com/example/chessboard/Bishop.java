@@ -16,7 +16,7 @@ public class Bishop extends Piece{
         String name;
         this.possibleMoves = new ArrayList<>();
         this.unpossibleMoves = new ArrayList<>();
-
+        this.kingcheck = new ArrayList<>();
 
         // bishop at left edge of board
         if (x == 0) {

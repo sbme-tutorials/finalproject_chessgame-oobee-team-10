@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public class Piece extends ImageView {
+    ArrayList<String> kingcheck ;
     String type;
     String color;
     int posX, posY;
@@ -165,6 +166,39 @@ public class Piece extends ImageView {
         }
     }
 
+
+    public void KingInCheck(boolean val){
+        clearHighlighting();
+        Glow glow = new Glow();
+        if(val){
+            glow.setLevel(0.25);
+            // Set the background color of a block to red
+            for(String move : kingcheck){
+                Square square = getSquareByName(move);
+                square.setEffect(glow);
+                square.setStyle("-fx-background-color: blue;");
+                Piece piece = getPieceByName(move);
+                if(piece == null) continue;
+                if(piece.type.equals("King")){
+//
+                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
+                }
+                else{
+                    square.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.2))));
+                }
+            }
+        }
+        else{
+            for(String move : kingcheck){
+                Square square = getSquareByName(move);
+                square.setEffect(null);
+                square.setBorder(new Border(new BorderStroke(Color.BLACK,
+                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            }
+        }
+    }
 
 
     //get the position of Square as a String
