@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="733.0" prefWidth="1000.0" style="-fx-background-color: #69aebb; -fx-background-radius: 25;"  xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Controller">
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="733.0" prefWidth="1000.0" style="-fx-background-color: #69aebb; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Controller">
 <HBox layoutX="9.0" layoutY="8.0" prefHeight="717.0" prefWidth="983.0" style="-fx-background-radius: 25; -fx-background-color: white;">
     <children>
         <VBox prefHeight="730.0" prefWidth="652.0" style="-fx-background-color: no;">
@@ -87,4 +88,4 @@
         </VBox>
     </children>
 </HBox>
-</Pane>
+</AnchorPane>

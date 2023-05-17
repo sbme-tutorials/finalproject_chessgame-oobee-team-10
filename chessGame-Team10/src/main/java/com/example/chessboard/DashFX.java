@@ -7,10 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,7 +28,9 @@ public class DashFX implements Initializable {
 
     @FXML
     Button mainButt, startButt;
-    AnchorPane center;
+    @FXML
+    ImageView backGround,homeIcon,newGameIcon,aboutIcon,onePlayerIcon;
+    AnchorPane mainPage;
     @FXML
     AnchorPane innerScene, MainScene;
     @FXML
@@ -39,7 +44,13 @@ public class DashFX implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        center =new AnchorPane();
+        backGround.setImage(new Image("File:images/backGround.png"));
+        homeIcon.setImage(new Image("File:images/icons/home.png"));
+        aboutIcon.setImage(new Image("File:images/icons/info.png"));
+        newGameIcon.setImage(new Image("File:images/icons/console.png"));
+        onePlayerIcon.setImage(new Image("File:images/icons/alone.png"));
+
+         mainPage =new AnchorPane();
         GameDataModel gamedata =new GameDataModel();
         boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
@@ -69,7 +80,6 @@ public class DashFX implements Initializable {
 
 
     public void startClicked(MouseEvent mouseEvent) {
-        startButt.setStyle("-fx-background-color: #0000FF; -fx-text-fill: #FFFFFF;");
 
         GridPane board = new GridPane();
         Game newgame = new Game(board, boardtheme,new GameDataModel());

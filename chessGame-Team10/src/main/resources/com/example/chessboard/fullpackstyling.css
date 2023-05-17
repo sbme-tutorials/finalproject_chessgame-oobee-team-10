@@ -1,12 +1,16 @@
 .button1
 {
--fx-background-color : #393351;
--fx-background-radius :  30 0 0 30;
+-fx-background-color : # #F6F1F1;
+-fx-background-radius :  15 0 15 0;
+ -fx-border-width: 3;
+ -fx-border-radius: 15 0 15 0;
 }
 .button1:hover
 {
--fx-background-color : #524A7B ;
--fx-background-radius :  30 0 0 30;
+-fx-border-color :  linear-gradient(to bottom left, #05BFDB,#00FFCA);
+-fx-background-radius :  15 0 15 0;
+ -fx-border-radius: 15 0 15 0;
+
 }
 .button1:pressed
 {
@@ -16,18 +20,23 @@
 
 .button2
 {
--fx-background-color : #393351;
--fx-background-radius :  20;
+-fx-background-color : #19A7CE;
+-fx-background-radius: 0;
+
 }
 .button2:hover
 {
--fx-background-color : #524A7B ;
--fx-background-radius :  20;
+-fx-background-color : #F6F1F1;
+-fx-background-radius :  15 0 15 0;
+-fx-text-fill: black;
+
 }
 .button2:pressed
 {
--fx-background-color : #2F2B43 ;
+-fx-background-color : #F6F1F1;
 -fx-background-radius :  20;
+-fx-text-fill: black;
+
 }
 
 .button3
@@ -63,15 +72,19 @@
 
 .combo-box
 {
-    -fx-background-color : #394867;
+    -fx-background-color : #F6F1F1;
     -fx-border-color :  linear-gradient(to bottom left, #05BFDB,#00FFCA);
     -fx-border-width: 3;
     -fx-border-radius: 30;
+    -fx-text-fill: white;
+
 }
 .combo-box:hover
 {
     -fx-border-color:  #FFFF;
     -fx-border-radius: 30;
+    -fx-text-fill: white;
+
 }
 .combo-box:pressed
 {
@@ -87,7 +100,7 @@
 }
 .table-view .column-header .label{
 
-   -fx-text-fill: white;
+   -fx-text-fill: #000000;
    -fx-font-weight: bold;
    -fx-alignment: CENTER_LEFT;
 }
@@ -151,17 +164,25 @@
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
 .sideBar {
-    -fx-background-color: #0A4D68;
+    -fx-background-color: #146C94;
 }
 
 .button {
     -fx-background-insets: 0, 1, 2,0;
-    -fx-background-radius :  10 0 0 10;
+    -fx-background-radius :  10 10 10 10;
     -fx-padding: 10 10 10 10;
     -fx-text-fill: white;
     -fx-alignment: CENTER;
     -fx-content-display: Top;
-        -fx-background-image: url("images/sidebarBg.jpg");
+
+}
+
+.label {
+    -fx-background-insets: 0, 1, 2,0;
+    -fx-background-radius :  10 10 10 10;
+    -fx-padding: 10 10 10 10;
+    -fx-text-fill: #000000;
+    -fx-alignment: CENTER;
     -fx-background-color: linear-gradient(to bottom left, #00FFCA, #088395);
 
 }
