@@ -205,7 +205,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
-//      InCheck(square , true);
+        InCheck(square , true);
         promotePawn(square);
         whiteTimer.pauseAndPlay(currentPlayer);
         blackTimer.pauseAndPlay(currentPlayer);
@@ -233,7 +233,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
-//        InCheck(square , true);
+        InCheck(square , true);
         promotePawn(square);
         deselectPiece(true);
         if (killedPiece.type.equals("King")) {this.game = false;
@@ -382,31 +382,31 @@ public class Game {
     }
 
 
-//
-//    public void InCheck(Square square ,boolean val){
-//        clearHighlighting();
-//        Glow glow = new Glow();
-//        if (val){
-//            glow.setLevel(1);
-//            Piece piece = (Piece) square.getChildren().get(0);
-//            piece.getAllPossibleMoves();
-//            for(String move : piece.possibleMoves){
-//                Square square_pointer = getSquareByName(move);
-//                if (square_pointer.occupied){
-//                    Piece checked = (Piece) square_pointer.getChildren().get(0);
-//                    if (checked.type.equals("King") && checked.color != piece.color){
-//                        System.out.println("Game.InCheck");
-////                        Checkmate(square);
-//                        square_pointer.setEffect(glow);
-//                        square_pointer.setBackgroundColor(Color.BLUE);
-//                        Stage stage = new Stage();
-//                        CheckingWindow checking = new CheckingWindow();
-//                        checking.start(stage);// Set the background color to red
-//                        break;
-//                    }
-//            }}
-//        }
-//    }
+
+    public void InCheck(Square square ,boolean val){
+        clearHighlighting();
+        Glow glow = new Glow();
+        if (val){
+            glow.setLevel(1);
+            Piece piece = (Piece) square.getChildren().get(0);
+            piece.getAllPossibleMoves();
+            for(String move : piece.possibleMoves){
+                Square square_pointer = getSquareByName(move);
+                if (square_pointer.occupied){
+                    Piece checked = (Piece) square_pointer.getChildren().get(0);
+                    if (checked.type.equals("King") && checked.color != piece.color){
+                        System.out.println("Game.InCheck");
+//                        Checkmate(square);
+                        square_pointer.setEffect(glow);
+                        square_pointer.setBackgroundColor(Color.BLUE);
+                        Stage stage = new Stage();
+                        CheckingWindow checking = new CheckingWindow();
+                        checking.start(stage);// Set the background color to red
+                        break;
+                    }
+            }}
+        }
+    }
 
 
 //    public void testCheck()
