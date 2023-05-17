@@ -164,6 +164,7 @@ public class Game {
 
 
     private void selectPiece(boolean game) {
+        clearHighlighting();
         if (!game) {
             currentPiece = null;
             return;
@@ -181,7 +182,7 @@ public class Game {
 
 
     private void deselectPiece(boolean changePlayer) {
-        //currentPiece.clearHighlighting();
+        clearHighlighting();
         currentPiece.setEffect(null);
         currentPiece.showAllPossibleMoves(false);
         currentPiece.showAllUnPossibleMoves(false);
@@ -193,6 +194,7 @@ public class Game {
     }
 
     private void dropPiece(Square square) {
+        clearHighlighting();
         if (!currentPiece.possibleMoves.contains(square.name)) {
 
             return;
