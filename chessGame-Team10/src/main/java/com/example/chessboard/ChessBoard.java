@@ -108,6 +108,8 @@ public class ChessBoard {
         square.occupied = true;
     }
 
+
+
     //Initializing the position of Pieces
     private void addPieces(){
         for(Square square : squares){
@@ -165,6 +167,18 @@ public class ChessBoard {
         }
     }
 
+
+    //get the position of the opponent king to Check the Checkmate
+    public  Piece getOppenentKing()
+    {
+        for (Square square :Game.testboard.squares)
+        {
+            Piece piece =(Piece) square.getChildren().get(0);
+            if (piece.type.equals("King")&&!piece.color.equals(Game.currentPiece))
+                return piece;
+        }
+        return null ;
+    }
 
     public StatusBar getStatusBar()
     {

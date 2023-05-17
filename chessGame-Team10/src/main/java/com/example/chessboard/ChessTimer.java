@@ -16,6 +16,7 @@ public class ChessTimer {
     private int remainingTime;
 
 
+    //Set the timer of each Player
     public void setTimerColor(String color) {
         this.timerColor =color;
     }
@@ -38,7 +39,7 @@ public class ChessTimer {
 
                     if (remainingTime <= 0) {
                         // Time's up! The current player loses the game.
-                        //stopTimer();
+                        stopTimer();
                         handleTimeUp();
                     } else {
                         updateTimerLabel();
@@ -54,6 +55,10 @@ public class ChessTimer {
             timeline.play();
         else timeline.pause();
 
+    }
+
+    public void stopTimer() {
+        timeline.stop();
     }
 
     private void handleTimeUp() {

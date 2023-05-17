@@ -31,7 +31,6 @@ public class PawnPromotionWindow extends Application {
 
         // Create a label with the promotion message
         Label promotionLabel1 = new Label("Congratulations you get a promotion :)");
-//        Label promotionLabel2 = new Label("Choose a piece to promote your pawn to:");
 
         // Create four buttons for the promotion types
         Button queenButton = new Button("Queen");
@@ -41,7 +40,6 @@ public class PawnPromotionWindow extends Application {
 
         // Add the label and buttons to the grid pane
         gridPane.add(promotionLabel1, 0, 0, 4, 1);
-//        gridPane.add(promotionLabel2, 0, 0, 4, 1);
         gridPane.add(queenButton, 0, 1);
         gridPane.add(knightButton, 1, 1);
         gridPane.add(bishopButton, 2, 1);

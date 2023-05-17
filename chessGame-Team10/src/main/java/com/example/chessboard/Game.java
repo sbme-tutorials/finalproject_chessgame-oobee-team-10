@@ -21,7 +21,7 @@ import static com.example.chessboard.Piece.getSquareByName;
 
 public class Game {
     GameDataModel gameData;
-
+    public static ChessBoard testboard;
     public HBox wKilledPiecesBox = new HBox(15);
     public HBox bKilledPiecesBox = new HBox(15); // container for killed pieces
 
@@ -386,8 +386,9 @@ public class Game {
                 Square square_pointer = getSquareByName(move);
                 if (square_pointer.occupied){
                     Piece checked = (Piece) square_pointer.getChildren().get(0);
-                    if (checked.type.equals("King")){
+                    if (checked.type.equals("King") && checked.color != piece.color){
                         System.out.println("Game.InCheck");
+//                        Checkmate(square);
                         square_pointer.setEffect(glow);
                         square_pointer.setBackgroundColor(Color.BLUE);
                         Stage stage = new Stage();
@@ -399,7 +400,57 @@ public class Game {
         }
     }
 
-    // Define a callback interface
+
+    public void testCheck()
+    {
+        Piece OppenentKing = cb.getOppenentKing();
+        ((King) OppenentKing).isCheck();
+        if (((King) OppenentKing).isCheck)
+        {   testboard = new ChessBoard();//  I'm not sure if things related to board will need somethig to access or not
+            testboard.squares.addAll(cb.squares);//  might be problem here because I'm not sure if this enough to set pieces in their places or will we even need that
+            Piece.setPiecesforTest(); //
+            for (Square square: testboard.squares)
+            {   if (square.occupied) {
+
+
+                Piece piece = (Piece) square.getChildren().get(0);
+                if (piece.color.equals(OppenentKing.color)) {
+                    for (String move :piece.possibleMoves)
+                    {
+                        Square newSquare=Piece.getSquareByName(move);
+                        square.getChildren().remove(piece);
+                        square.occupied=false;
+                        newSquare.getChildren().add(piece);
+                        newSquare.occupied=true;
+                        piece.posX= newSquare.x;
+                        piece.posY= newSquare.y;
+                        ((King) OppenentKing).isCheck();
+                        if (!((King) OppenentKing).isCheck) {
+                            deselectPiece(true );
+                            break;
+                        }
+                        // restore the piece
+                        newSquare.getChildren().remove(piece);
+                        square.occupied=false;
+                        square.getChildren().add(piece);
+                        square.occupied=true;
+                        piece.posX= square.x;
+                        piece.posY= square.y;
+
+                    }
+                }
+            }else continue;
+            }
+            if (((King) OppenentKing).isCheck)
+                game=false;
+        }
+    }
+
+
+    public  void stopGame(boolean flag){
+        this.game = false;
+    }
+
     interface PromotionCallback {
         void onPromotionSelected(String piece);
     }

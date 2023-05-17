@@ -16,7 +16,7 @@ public class Bishop extends Piece{
         String name;
         this.possibleMoves = new ArrayList<>();
         this.unpossibleMoves = new ArrayList<>();
-
+        this.mayCheck = new ArrayList<>();
 
         // bishop at left edge of board
         if (x == 0) {
@@ -53,6 +53,7 @@ public class Bishop extends Piece{
             name = "Square" + i + j;
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
 
@@ -73,6 +74,7 @@ public class Bishop extends Piece{
 
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else{
@@ -93,6 +95,7 @@ public class Bishop extends Piece{
                 name = "Square" + i + j;
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else {
@@ -112,6 +115,7 @@ public class Bishop extends Piece{
 
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else
@@ -131,6 +135,7 @@ public class Bishop extends Piece{
             name = "Square" + i + j;
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
 
@@ -149,6 +154,7 @@ public class Bishop extends Piece{
 
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else
@@ -167,6 +173,7 @@ public class Bishop extends Piece{
 
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else
@@ -185,6 +192,7 @@ public class Bishop extends Piece{
 
             if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
                 unpossibleMoves.add(name);
+                mayCheck.add(name);
                 showAllUnPossibleMoves(true);
                 continue;}
             else

@@ -20,12 +20,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashFX implements Initializable {
+    @FXML
+    AnchorPane center;
+    @FXML
+    AnchorPane gameContainer;
     public Button newGamePageButt;
     public Button Home;
     public Button scoresPageButt;
     public Button aboutPageButt;
     //sideBar buttons
-
+    @FXML
+    public Button existButt;
     @FXML
     Button mainButt, startButt;
     @FXML
@@ -83,9 +88,10 @@ public class DashFX implements Initializable {
 
         GridPane board = new GridPane();
         Game newgame = new Game(board, boardtheme,new GameDataModel());
-        FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
+        FXMLLoader gameScene = new FXMLLoader(Game.class.getResource("sample.fxml"));
         try {
-            Main.setCenter(gameScene.load());
+            gameContainer.getChildren().add(gameScene.load());
+            gameContainer.toFront();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -115,10 +121,9 @@ public class DashFX implements Initializable {
         aboutPage.toFront();
 
     }
-
-    private void handle(ActionEvent e) throws IOException {
-
-
-
+    public void goOut (ActionEvent e) {
+        Stage stage = (Stage) existButt.getScene().getWindow();
+        stage.close();
     }
+
 }
