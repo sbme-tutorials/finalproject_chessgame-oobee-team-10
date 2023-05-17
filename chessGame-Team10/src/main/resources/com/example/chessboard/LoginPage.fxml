@@ -55,9 +55,13 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="57.0" fitWidth="103.0" layoutX="204.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="64.0" fitWidth="75.0" layoutX="204.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
+<!--<<<<<<< HEAD-->
+            <Image url="@../../../../../../images/login.png" />
+<!--=======-->
             <Image url="@../../../../java/com/example/chessboard/icons/0080eeaeaa2f2fba77af3e1efeade565.jpg" />
+<!--&gt;>>>>>> cbc35bc3bea021be365a530c6ddd12836df33f2c-->
          </image>
       </ImageView>
       <Label fx:id="wronglogin" layoutX="340.0" layoutY="49.0" prefHeight="30.0" prefWidth="434.0" textFill="#ea3a3a">

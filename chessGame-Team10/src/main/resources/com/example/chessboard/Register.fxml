@@ -66,7 +66,11 @@
       </Label>
       <ImageView fitHeight="63.0" fitWidth="114.0" layoutX="429.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
+<!--<<<<<<< HEAD-->
+            <Image url="@../../../../../../images/file.png" />
+<!--=======-->
             <Image url="@../../../../java/com/example/chessboard/icons/9fca235ce31e38cfa597a2a47bcc8525.jpg" />
+<!--&gt;>>>>>> cbc35bc3bea021be365a530c6ddd12836df33f2c-->
          </image>
       </ImageView>
    </children>
