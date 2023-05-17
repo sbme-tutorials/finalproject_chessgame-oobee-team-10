@@ -108,8 +108,8 @@ public class Piece extends ImageView {
         Glow glow = new Glow();
         if(val){
           glow.setLevel(0.25);
-            // Set the background color of a block to green
 
+            // Set the background color of a block to green
             for(String move : possibleMoves){
                 Square square = getSquareByName(move);
                 square.setEffect(glow);
@@ -117,9 +117,6 @@ public class Piece extends ImageView {
                 Piece piece = getPieceByName(move);
                 if(piece == null) continue;
                 if(piece.type.equals("King")){
-//
-//                    square.setBorder(new Border(new BorderStroke(Color.DARKRED,
-//                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));
                     square.setEffect(glow);
                     square.setStyle("-fx-background-color: blue;");
                 }
@@ -153,7 +150,6 @@ public class Piece extends ImageView {
                 square.setStyle("-fx-background-color: red;");
                 Piece piece = getPieceByName(move);
                 if(piece == null) continue;
-//
             }
         }
         else{
@@ -226,3 +222,5 @@ public class Piece extends ImageView {
 
 }
 
+//      square.setBorder(new Border(new BorderStroke(Color.DARKRED,
+//       BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1.5))));

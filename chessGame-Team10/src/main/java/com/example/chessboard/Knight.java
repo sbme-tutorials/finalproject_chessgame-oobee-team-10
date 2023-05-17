@@ -17,6 +17,7 @@ public class Knight extends Piece{
         this.possibleMoves = new ArrayList<>();
         this.unpossibleMoves = new ArrayList<>();
 
+        //set all Possible Moves of Knight
         moves.add("Square" + (x+3) + (y+2));
         moves.add("Square" + (x+3) + (y-2));
         moves.add("Square" + (x+2) + (y+3));
@@ -27,6 +28,7 @@ public class Knight extends Piece{
         moves.add("Square" + (x-2) + (y-3));
 
 
+        //Store it in Dynamic Array
         for(String move : moves){
             if(getSquareByName(move) != null){
                 if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)) {

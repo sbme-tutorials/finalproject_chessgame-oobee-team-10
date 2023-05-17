@@ -20,7 +20,7 @@ public class Pawn extends Piece {
         this.unpossibleMoves = new ArrayList<>();
 
 
-
+        //Set the Available moves of the Pawn
         if (color.equals("black")) {
             moves.add("Square" + (x + 1) + (y + 1));
             moves.add("Square" + (x) + (y + 1));
@@ -33,6 +33,8 @@ public class Pawn extends Piece {
             if (posY == 6) moves.add("Square" + x + 4);
         }
 
+
+        //Store it in Dynamic Array
         for (String move : moves) {
             if (getSquareByName(move) != null) {
                 if (getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)){

@@ -21,7 +21,6 @@ public class Rook extends Piece{
 
         for(int i=x-1; i>=0; i--){
             name = "Square" + i + y;
-
             if (getSquareByName(name).occupied){
                 if (getPieceByName(name).getColor().equals(Game.currentPlayer)){
                     if (getPieceByName(name).type.equals("King")){

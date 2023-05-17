@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,8 +26,7 @@ public class DashFX implements Initializable {
     public Button scoresPageButt;
     public Button aboutPageButt;
     //sideBar buttons
-    @FXML
-   public Button existButt;
+
     @FXML
     Button mainButt, startButt;
     @FXML
@@ -78,7 +76,7 @@ public class DashFX implements Initializable {
 
         GridPane board = new GridPane();
         Game newgame = new Game(board, boardtheme,new GameDataModel());
-        FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
+        FXMLLoader gameScene = new FXMLLoader(Game.class.getResource("sample.fxml"));
         try {
             gameContainer.getChildren().add(gameScene.load());
             gameContainer.toFront();
@@ -111,16 +109,10 @@ public class DashFX implements Initializable {
         aboutPage.toFront();
 
     }
-<<<<<<< HEAD
-    public void goOut(ActionEvent e) {
-        Stage stage = (Stage) existButt.getScene().getWindow();
-        stage.close();
-=======
 
     private void handle(ActionEvent e) throws IOException {
 
 
 
->>>>>>> c108e4c0b32931b8e6d5bd8530b5609c0abf963a
     }
 }

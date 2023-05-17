@@ -4,8 +4,6 @@ package com.example.chessboard;
 import java.util.ArrayList;
 import java.util.Objects;
 
-//import static com.example.chessboard.Game.stopGame;
-
 public class King extends Piece{
 
     boolean isCheck =false;
@@ -52,6 +50,9 @@ public class King extends Piece{
         }
     }
 
+
+
+    //Check Detection Function
     public void isCheck ()
     {
         for (Square square :Game.testboard.squares)
@@ -71,6 +72,8 @@ public class King extends Piece{
 
     }
 
+
+    //CheckMate Function
     public boolean Is_square_attacked(String move) {
         for (Square square : Game.testboard.squares) {
             if (square.occupied) {

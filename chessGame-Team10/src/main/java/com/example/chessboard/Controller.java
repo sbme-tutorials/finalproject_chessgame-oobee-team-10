@@ -27,7 +27,7 @@ public class Controller {
     public void initialize() {
         newGameData = new GameDataModel();
         boardtheme = newGameData.getTheme();
-        Game game = new Game(boardGrid, "Sayed",newGameData);
+        Game game = new Game(boardGrid, "Demo",newGameData);
         bKilled.getChildren().add(game.bKilledPiecesBox);
 
         wKilled.getChildren().add(game.wKilledPiecesBox);

@@ -11,49 +11,60 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.2" prefWidth="993.0" style="-fx-background-color: #1d6089;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="988.0" style="-fx-background-color: #1d6089;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.HelloController">
    <children>
-      <AnchorPane layoutX="47.0" layoutY="156.0" prefHeight="527.0" prefWidth="898.0" style="-fx-background-color: #ddf0ff;" />
-      <Text fill="WHITE" layoutX="48.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Account">
+      <ImageView fitHeight="697.0" fitWidth="988.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../LoginWallpaper2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="33.0" layoutY="158.0" opacity="0.65" prefHeight="394.0" prefWidth="427.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="21.0" layoutY="127.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordPasswordField" layoutX="155.0" layoutY="127.0" prefHeight="35.0" prefWidth="235.0" promptText="Password" style="-fx-background-color: EEEDE6;">
+               <effect>
+                  <Reflection />
+               </effect>
+            </PasswordField>
+            <Button fx:id="signupButton" layoutX="104.0" layoutY="220.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="41.0" prefWidth="218.0" text="SignUp" textFill="#1d6089">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="18.0" layoutY="54.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTextField" layoutX="155.0" layoutY="54.0" prefHeight="35.0" prefWidth="235.0" promptText="Username" style="-fx-background-color: EEEDE6;">
+               <effect>
+                  <Reflection />
+               </effect>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="cancelButton" layoutX="104.0" layoutY="281.0" mnemonicParsing="false" onAction="#CancelButtonOnAction" prefHeight="41.0" prefWidth="218.0" text="Cancel" textFill="#1d6089">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <Text fill="WHITE" layoutX="22.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Account">
          <font>
-            <Font name="Impact" size="36.0" />
+            <Font name="Impact" size="48.0" />
          </font>
       </Text>
-      <TextField fx:id="usernameTextField" layoutX="214.0" layoutY="254.0" prefHeight="35.0" prefWidth="616.0" promptText="Username" style="-fx-background-color: EEEDE6;">
-         <effect>
-            <Reflection />
-         </effect>
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font></TextField>
-      <Label layoutX="70.0" layoutY="254.0" text="Username" textFill="#1d6089">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="62.0" layoutY="402.0" text="Password" textFill="#1d6089">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="passwordPasswordField" layoutX="214.0" layoutY="402.0" prefHeight="35.0" prefWidth="616.0" promptText="Password" style="-fx-background-color: EEEDE6;">
-         <effect>
-            <Reflection />
-         </effect></PasswordField>
-      <Button fx:id="signupButton" layoutX="359.0" layoutY="542.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="41.0" prefWidth="218.0" text="SignUp" textFill="#1d6089">
-         <font>
-            <Font name="System Italic" size="19.0" />
-         </font></Button>
-      <Button fx:id="cancelButton" layoutX="359.0" layoutY="608.0" mnemonicParsing="false" onAction="#CancelButtonOnAction" prefHeight="41.0" prefWidth="218.0" text="Cancel" textFill="#1d6089">
-         <font>
-            <Font name="System Italic" size="19.0" />
-         </font></Button>
       <Label fx:id="signupMessageLabel" layoutX="270.0" layoutY="105.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="63.0" fitWidth="114.0" layoutX="372.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="63.0" fitWidth="114.0" layoutX="429.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../java/com/example/chessboard/icons/9fca235ce31e38cfa597a2a47bcc8525.jpg" />
          </image>
