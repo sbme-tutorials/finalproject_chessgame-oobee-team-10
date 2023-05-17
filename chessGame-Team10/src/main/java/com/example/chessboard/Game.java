@@ -207,10 +207,12 @@ public class Game {
         currentPiece.posY = square.y;
         InCheck(square , true);
         promotePawn(square);
-        deselectPiece(true);
-        gameData.setCurrentPlayer(currentPlayer);
         whiteTimer.pauseAndPlay(currentPlayer);
         blackTimer.pauseAndPlay(currentPlayer);
+        deselectPiece(true);
+        gameData.setCurrentPlayer(currentPlayer);
+
+
 
 
 
@@ -234,7 +236,10 @@ public class Game {
         InCheck(square , true);
         promotePawn(square);
         deselectPiece(true);
-        if (killedPiece.type.equals("King")) this.game = false;
+        if (killedPiece.type.equals("King")) {this.game = false;
+        whiteTimer.timeline.stop();
+        blackTimer.timeline.stop();
+        }
 
         if(killedPiece.color.equals("white")) {
             Piece killed = killedPiece;

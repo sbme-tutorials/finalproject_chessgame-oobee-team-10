@@ -70,6 +70,9 @@ public class DashFX implements Initializable {
         pieceDesign.setOnAction(e -> {
             Piece.setPieceDesign(pieceDesign.getSelectionModel().getSelectedItem());});
 
+        gamedata.setTheme(boardtheme);
+        gamedata.setPieceTheme(String.valueOf(pieceDesign));
+
 
 
         // Change color and text color when button is clicked
