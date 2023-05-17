@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="661.0" fitWidth="911.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../LoginWallpaper1.jpg" />
+            <Image url="@../../../../LoginWallpaper1%20-%20Copy.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="37.0" layoutY="140.0" opacity="0.81" prefHeight="428.0" prefWidth="391.0" style="-fx-background-color: #F1F6F9;">
