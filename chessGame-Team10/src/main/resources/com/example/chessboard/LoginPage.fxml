@@ -12,19 +12,19 @@
 
 <AnchorPane fx:id="LogIn" prefHeight="571.0" prefWidth="871.0" style="-fx-background-color: #212A3E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Login">
    <children>
-      <ImageView fitHeight="606.0" fitWidth="915.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="661.0" fitWidth="911.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../LoginWallpaper1.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="37.0" layoutY="140.0" opacity="0.7" prefHeight="428.0" prefWidth="391.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="37.0" layoutY="140.0" opacity="0.81" prefHeight="428.0" prefWidth="391.0" style="-fx-background-color: #F1F6F9;">
          <children>
-            <Label layoutX="23.0" layoutY="61.0" text="UserName" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="61.0" text="UserName" textFill="#1d6089">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="124.0" prefHeight="30.0" prefWidth="112.0" text="Password" textFill="WHITE">
+            <Label layoutX="26.0" layoutY="124.0" prefHeight="30.0" prefWidth="112.0" text="Password" textFill="#1d6089">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Reflection />
                </effect>
             </PasswordField>
-            <Button fx:id="login" layoutX="123.0" layoutY="255.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="42.0" prefWidth="163.0" text="LogIn" textFill="#1d6089">
+            <Button fx:id="login" layoutX="97.0" layoutY="254.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="41.0" prefWidth="218.0" text="LogIn" textFill="#1d6089">
                <font>
                   <Font size="19.0" />
                </font></Button>
@@ -55,13 +55,9 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="64.0" fitWidth="75.0" layoutX="204.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="57.0" fitWidth="103.0" layoutX="204.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-<!--<<<<<<< HEAD-->
-            <Image url="@../../../../../../images/login.png" />
-<!--=======-->
             <Image url="@../../../../java/com/example/chessboard/icons/0080eeaeaa2f2fba77af3e1efeade565.jpg" />
-<!--&gt;>>>>>> cbc35bc3bea021be365a530c6ddd12836df33f2c-->
          </image>
       </ImageView>
       <Label fx:id="wronglogin" layoutX="340.0" layoutY="49.0" prefHeight="30.0" prefWidth="434.0" textFill="#ea3a3a">
