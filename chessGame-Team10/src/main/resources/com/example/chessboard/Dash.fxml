@@ -21,7 +21,7 @@
    <children>
       <BorderPane fx:id="Main" prefHeight="842.0" prefWidth="1080.0" style="-fx-background-radius: 35; -fx-background-color: #F6F1F1;" styleClass="node-id" stylesheets="@fullpackstyling.css">
          <left>
-            <VBox fx:id="sidBar" prefHeight="842.0" prefWidth="77.0" style="-fx-background-radius: 30;" styleClass="sideBar" stylesheets="@fullpackstyling.css" BorderPane.alignment="CENTER">
+            <VBox fx:id="sidBar" prefHeight="751.0" prefWidth="74.0" style="-fx-background-radius: 30;" styleClass="sideBar" stylesheets="@fullpackstyling.css" BorderPane.alignment="CENTER">
       
                <children>
                   <AnchorPane fx:id="" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: A6623E;">
@@ -89,14 +89,14 @@
                </BorderPane.margin>
                <children>
                   <AnchorPane fx:id="aboutPage" layoutX="-4.0" layoutY="-3.0" prefHeight="805.0" prefWidth="971.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="-3.0" />
-                  <AnchorPane fx:id="newGamePage" layoutX="-1.0" layoutY="-4.0" prefHeight="806.0" prefWidth="970.0" style="-fx-background-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
+                  <AnchorPane fx:id="newGamePage" layoutX="2.0" layoutY="-4.0" prefHeight="804.0" prefWidth="1007.0" style="-fx-background-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
                      <children>
-                        <ImageView fx:id="backGround" fitHeight="802.0" fitWidth="968.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="backGround" fitHeight="817.0" fitWidth="1020.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../images/backGround.png" />
+                              <Image url="@../../../../../../../../../../../wallpaperflare.com_wallpaper_5_1080x842.jpg" />
                            </image>
                         </ImageView>
-                        <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="173.0" prefHeight="438.0" prefWidth="635.0" style="-fx-background-radius: 15; -fx-background-color: #F6F1F1;" stylesheets="@fullpackstyling.css">
+                        <VBox alignment="TOP_CENTER" layoutX="178.0" layoutY="173.0" opacity="0.83" prefHeight="438.0" prefWidth="635.0" style="-fx-background-radius: 15; -fx-background-color: #F6F1F1;" stylesheets="@fullpackstyling.css">
                            <children>
                               <HBox alignment="CENTER" prefHeight="60.0" prefWidth="635.0" style="-fx-border-width: 5;" styleClass="button1" stylesheets="@fullpackstyling.css">
                                  <children>

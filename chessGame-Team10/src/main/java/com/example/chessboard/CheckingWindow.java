@@ -1,4 +1,4 @@
-package com.example.chessboard;
+package com.example.chessboard;//package com.example.chessboard;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 
 public class CheckingWindow extends Application {
     public void start(Stage primaryStage) {
-        // Create the window and handle the promotion type selection as before
         // Create a grid pane to hold the buttons and label
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
@@ -25,9 +24,13 @@ public class CheckingWindow extends Application {
         // Create button for the Warning message
         Button button = new Button("Okay");
 
-        // Add the label and buttons to the grid pane
-        gridPane.add(promotionLabel1, 2, 0, 4, 1);
-        gridPane.add(button, 5, 1);
+        // Add the label and button to the grid pane
+        gridPane.add(promotionLabel1, 0, 0);
+        gridPane.add(button, 0, 1);
+
+        // Center the button in the grid pane
+        GridPane.setHalignment(button, javafx.geometry.HPos.CENTER);
+
         Scene scene = new Scene(gridPane, 400, 100);
 
         // Set the stage title and scene
@@ -35,14 +38,11 @@ public class CheckingWindow extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
         button.setOnAction(event -> {
             primaryStage.close();
-
         });
-
-
     }
+
     public static void main(String[] args) {
         launch(args);
     }

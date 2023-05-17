@@ -205,7 +205,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
-        InCheck(square , true);
+//      InCheck(square , true);
         promotePawn(square);
         whiteTimer.pauseAndPlay(currentPlayer);
         blackTimer.pauseAndPlay(currentPlayer);
@@ -220,10 +220,10 @@ public class Game {
 
 
     private void killPiece(Square square) {
+        clearHighlighting();
         if (!currentPiece.possibleMoves.contains(square.name)) return;
 
         Piece killedPiece = (Piece) square.getChildren().get(0);
-
 
         Square initialSquare = (Square) currentPiece.getParent();
         square.getChildren().remove(0);
@@ -233,7 +233,7 @@ public class Game {
         initialSquare.occupied = false;
         currentPiece.posX = square.x;
         currentPiece.posY = square.y;
-        InCheck(square , true);
+//        InCheck(square , true);
         promotePawn(square);
         deselectPiece(true);
         if (killedPiece.type.equals("King")) {this.game = false;
@@ -382,77 +382,77 @@ public class Game {
     }
 
 
-
-    public void InCheck(Square square ,boolean val){
-        clearHighlighting();
-        Glow glow = new Glow();
-        if (val){
-            glow.setLevel(1);
-            Piece piece = (Piece) square.getChildren().get(0);
-            piece.getAllPossibleMoves();
-            for(String move : piece.possibleMoves){
-                Square square_pointer = getSquareByName(move);
-                if (square_pointer.occupied){
-                    Piece checked = (Piece) square_pointer.getChildren().get(0);
-                    if (checked.type.equals("King") && checked.color != piece.color){
-                        System.out.println("Game.InCheck");
-//                        Checkmate(square);
-                        square_pointer.setEffect(glow);
-                        square_pointer.setBackgroundColor(Color.BLUE);
-                        Stage stage = new Stage();
-                        CheckingWindow checking = new CheckingWindow();
-                        checking.start(stage);// Set the background color to red
-                        break;
-                    }
-            }}
-        }
-    }
-
-
-    public void testCheck()
-    {
-        Piece OppenentKing = cb.getOppenentKing();
-        ((King) OppenentKing).isCheck();
-        if (((King) OppenentKing).isCheck)
-        {   testboard = new ChessBoard();//  I'm not sure if things related to board will need somethig to access or not
-            testboard.squares.addAll(cb.squares);//  might be problem here because I'm not sure if this enough to set pieces in their places or will we even need that
-            Piece.setPiecesforTest(); //
-            for (Square square: testboard.squares)
-            {   if (square.occupied) {
+//
+//    public void InCheck(Square square ,boolean val){
+//        clearHighlighting();
+//        Glow glow = new Glow();
+//        if (val){
+//            glow.setLevel(1);
+//            Piece piece = (Piece) square.getChildren().get(0);
+//            piece.getAllPossibleMoves();
+//            for(String move : piece.possibleMoves){
+//                Square square_pointer = getSquareByName(move);
+//                if (square_pointer.occupied){
+//                    Piece checked = (Piece) square_pointer.getChildren().get(0);
+//                    if (checked.type.equals("King") && checked.color != piece.color){
+//                        System.out.println("Game.InCheck");
+////                        Checkmate(square);
+//                        square_pointer.setEffect(glow);
+//                        square_pointer.setBackgroundColor(Color.BLUE);
+//                        Stage stage = new Stage();
+//                        CheckingWindow checking = new CheckingWindow();
+//                        checking.start(stage);// Set the background color to red
+//                        break;
+//                    }
+//            }}
+//        }
+//    }
 
 
-                Piece piece = (Piece) square.getChildren().get(0);
-                if (piece.color.equals(OppenentKing.color)) {
-                    for (String move :piece.possibleMoves)
-                    {
-                        Square newSquare=Piece.getSquareByName(move);
-                        square.getChildren().remove(piece);
-                        square.occupied=false;
-                        newSquare.getChildren().add(piece);
-                        newSquare.occupied=true;
-                        piece.posX= newSquare.x;
-                        piece.posY= newSquare.y;
-                        ((King) OppenentKing).isCheck();
-                        if (!((King) OppenentKing).isCheck) {
-                            deselectPiece(true );
-                            break;
-                        }
-                        // restore the piece
-                        newSquare.getChildren().remove(piece);
-                        square.occupied=false;
-                        square.getChildren().add(piece);
-                        square.occupied=true;
-                        piece.posX= square.x;
-                        piece.posY= square.y;
-
-                    }
-                }
-            }else continue;
-            }
-            if (((King) OppenentKing).isCheck)
-                game=false;
-        }
-    }
+//    public void testCheck()
+//    {
+//        Piece OppenentKing = cb.getOppenentKing();
+//        ((King) OppenentKing).isCheck();
+//        if (((King) OppenentKing).isCheck)
+//        {   testboard = new ChessBoard();//  I'm not sure if things related to board will need somethig to access or not
+//            testboard.squares.addAll(cb.squares);//  might be problem here because I'm not sure if this enough to set pieces in their places or will we even need that
+//            Piece.setPiecesforTest(); //
+//            for (Square square: testboard.squares)
+//            {   if (square.occupied) {
+//
+//
+//                Piece piece = (Piece) square.getChildren().get(0);
+//                if (piece.color.equals(OppenentKing.color)) {
+//                    for (String move :piece.possibleMoves)
+//                    {
+//                        Square newSquare=Piece.getSquareByName(move);
+//                        square.getChildren().remove(piece);
+//                        square.occupied=false;
+//                        newSquare.getChildren().add(piece);
+//                        newSquare.occupied=true;
+//                        piece.posX= newSquare.x;
+//                        piece.posY= newSquare.y;
+//                        ((King) OppenentKing).isCheck();
+//                        if (!((King) OppenentKing).isCheck) {
+//                            deselectPiece(true );
+//                            break;
+//                        }
+//                        // restore the piece
+//                        newSquare.getChildren().remove(piece);
+//                        square.occupied=false;
+//                        square.getChildren().add(piece);
+//                        square.occupied=true;
+//                        piece.posX= square.x;
+//                        piece.posY= square.y;
+//
+//                    }
+//                }
+//            }else continue;
+//            }
+//            if (((King) OppenentKing).isCheck)
+//                game=false;
+//        }
+//    }
 
 
     public  void stopGame(boolean flag){

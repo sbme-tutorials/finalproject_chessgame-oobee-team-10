@@ -26,7 +26,9 @@ public class Pawn extends Piece {
             moves.add("Square" + (x) + (y + 1));
             moves.add("Square" + (x - 1) + (y + 1));
             if (posY == 1) moves.add("Square" + x + 3);
-        } else {
+        }
+
+        else {
             moves.add("Square" + (x) + (y - 1));
             moves.add("Square" + (x + 1) + (y - 1));
             moves.add("Square" + (x - 1) + (y - 1));
@@ -40,6 +42,7 @@ public class Pawn extends Piece {
                 if (getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)){
                     unpossibleMoves.add(move);
                     showAllUnPossibleMoves(true);
+                    continue;
                 }
                 else if (!getSquareByName(move).occupied && getSquareByName(move).y != posY && getSquareByName(move).x != posX)
                     continue;
