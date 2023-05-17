@@ -3,7 +3,7 @@
 # ![ganttCahrt](https://github.com/sbme-tutorials/finalproject_chessgame-oobee-team-10/assets/125357872/7858ef86-99ac-4642-a1be-87695d602e32)
 
 ## Game Description
-The chess game you are describing is a GUI-based game built using JavaFX and Scene Builder, and it features a menu that allows users to navigate to different pages. These pages include the home page, new game, scores, about the game, and contact us.
+The chess game is a GUI-based game built using JavaFX and Scene Builder, and it features a menu that allows users to navigate to different pages. These pages include the home page, new game, scores, about the game, and contact us.
 
 ## How the Game works ♟️
 * When the user selects the new game option from the menu, they are directed to a login page where they can enter their username and password to access the game. If the user is not registered, they can proceed to the register page to create an account.
