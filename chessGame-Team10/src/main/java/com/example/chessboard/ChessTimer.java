@@ -51,7 +51,7 @@ public class ChessTimer {
     }
 
     public void pauseAndPlay(String playerColor) {
-        if(timerColor.equals(playerColor))
+        if(!timerColor.equals(playerColor))
             timeline.play();
         else timeline.pause();
 
