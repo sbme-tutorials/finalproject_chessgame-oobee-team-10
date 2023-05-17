@@ -17,75 +17,125 @@ public class Queen extends Piece {
         String name;
 
         this.possibleMoves = new ArrayList<>();
+        this.unpossibleMoves = new ArrayList<>();
 
+        //Left Move
         for(int i=x-1; i>=0; i--){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Right Move
         for(int i=x+1; i<8; i++){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Upp Move
         for(int j=y-1; j>=0; j--){
             name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Down Move
         for(int j=y+1; j<8; j++){
             name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Left Bottom Move
         for(int i=x-1, j=y+1; i>=0 && j<8; i--, j++){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Right Bottom Move
         for(int i=x+1, j=y+1; i<8 && j<8; i++, j++){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Upper Right Move
         for(int i=x+1, j=y-1; i<8 && j>=0; i++, j--){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }
 
+
+        //Upper Left Move
         for(int i=x-1, j=y-1; i>=0 && j>=0; i--, j--){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) {
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                break;
+            }
+            else {
+                possibleMoves.add(name);
+            }
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
         }

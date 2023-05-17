@@ -1,6 +1,5 @@
 package com.example.chessboard;
 
-
 import java.util.ArrayList;
 
 public class Rook extends Piece{
@@ -15,46 +14,135 @@ public class Rook extends Piece{
         int x = this.posX;
         int y = this.posY;
         String name;
-
         this.possibleMoves = new ArrayList<>();
+        this.unpossibleMoves = new ArrayList<>();
+
+
 
         for(int i=x-1; i>=0; i--){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if (getSquareByName(name).occupied){
+                if (getPieceByName(name).getColor().equals(Game.currentPlayer)){
+                    if (getPieceByName(name).type.equals("King")){
+                        if(!this.hasMoved && !getPieceByName(name).hasMoved){
+                            this.possibleMoves.add(name);
+                            break;
+                        }
+                        else {
+                            this.unpossibleMoves.add(name);
+                            showAllUnPossibleMoves(true);
+                            break;
+                        }
+                    }
+                    else {
+                        this.unpossibleMoves.add(name);
+                        showAllUnPossibleMoves(true);
+                        break;
+                    }
+                }
+                else {
+                    this.possibleMoves.add(name);
+                    break;
+                }
+            }
+            else
+                this.possibleMoves.add(name);
         }
+
 
         for(int i=x+1; i<8; i++){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if (getSquareByName(name).occupied){
+                if (getPieceByName(name).getColor().equals(Game.currentPlayer)){
+                    if (getPieceByName(name).type.equals("King")){
+                        if(!this.hasMoved && !getPieceByName(name).hasMoved){
+                            this.possibleMoves.add(name);
+                            break;
+                        }
+                        else {
+                            this.unpossibleMoves.add(name);
+                            showAllUnPossibleMoves(true);
+                            break;
+                        }
+                    }
+                    else {
+                        this.unpossibleMoves.add(name);
+                        showAllUnPossibleMoves(true);
+                        break;
+                    }
+                }
+                else {
+                    this.possibleMoves.add(name);
+                    break;
+                }
+            }
+            else
+                this.possibleMoves.add(name);
         }
+
 
         for(int j=y-1; j>=0; j--){
-            name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            name = "Square" + x + j;;
+            if (getSquareByName(name).occupied){
+                if (getPieceByName(name).getColor().equals(Game.currentPlayer)){
+                    if (getPieceByName(name).type.equals("King")){
+                        if(!this.hasMoved && !getPieceByName(name).hasMoved){
+                            this.possibleMoves.add(name);
+                            break;
+                        }
+                        else {
+                            this.unpossibleMoves.add(name);
+                            showAllUnPossibleMoves(true);
+                            break;
+                        }
+                    }
+                    else {
+                        this.unpossibleMoves.add(name);
+                        showAllUnPossibleMoves(true);
+                        break;
+                    }
+                }
+                else {
+                    this.possibleMoves.add(name);
+                    break;
+                }
+            }
+            else
+                this.possibleMoves.add(name);
         }
+
+
 
         for(int j=y+1; j<8; j++){
             name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
-
-            possibleMoves.add(name);
-
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if (getSquareByName(name).occupied){
+                if (getPieceByName(name).getColor().equals(Game.currentPlayer)){
+                    if (getPieceByName(name).type.equals("King")){
+                        if(!this.hasMoved && !getPieceByName(name).hasMoved){
+                            this.possibleMoves.add(name);
+                            break;
+                        }
+                        else {
+                            this.unpossibleMoves.add(name);
+                            showAllUnPossibleMoves(true);
+                            break;
+                        }
+                    }
+                    else {
+                        this.unpossibleMoves.add(name);
+                        showAllUnPossibleMoves(true);
+                        break;
+                    }
+                }
+                else {
+                    this.possibleMoves.add(name);
+                    break;
+                }
+            }
+            else
+                this.possibleMoves.add(name);
         }
 
 
     }
 }
-

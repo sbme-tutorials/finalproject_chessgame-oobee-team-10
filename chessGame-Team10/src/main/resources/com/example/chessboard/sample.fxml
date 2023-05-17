@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane fx:id="chessBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Controller">
-    <columnConstraints>
-    </columnConstraints>
-    <rowConstraints>
-    </rowConstraints>
-</GridPane>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="733.0" prefWidth="1000.0" style="-fx-background-color: #69aebb; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Controller">
+<HBox layoutX="9.0" layoutY="8.0" prefHeight="717.0" prefWidth="983.0" style="-fx-background-radius: 25; -fx-background-color: white;">
+    <children>
+        <VBox prefHeight="730.0" prefWidth="652.0" style="-fx-background-color: no;">
+            <children>
+                <HBox fx:id="bKilled" prefHeight="60.0" prefWidth="644.0" spacing="10.0" style="-fx-background-color: yellow; -fx-background-radius: 20;">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </padding>
+                </HBox>
+                <Pane fx:id="boardContainer" prefHeight="594.0" prefWidth="652.0" style="-fx-background-color: black;">
+                  <children>
+                     <GridPane fx:id="boardGrid">
+                       <columnConstraints>
+
+                       </columnConstraints>
+                       <rowConstraints>
+
+                       </rowConstraints>
+                     </GridPane>
+                  </children></Pane>
+                <HBox fx:id="wKilled" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="644.0" spacing="10.0" style="-fx-background-color: yellow; -fx-background-radius: 20;">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox prefHeight="677.0" prefWidth="315.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+            <HBox.margin>
+                <Insets bottom="30.0" left="60.0" right="60.0" top="30.0" />
+            </HBox.margin>
+            <children>
+                <Pane fx:id="bPlayerContainer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cc9962;">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </VBox.margin>
+                </Pane>
+                <Pane fx:id="bTimer" layoutX="30.0" layoutY="30.0" prefHeight="72.0" prefWidth="223.0" style="-fx-background-color: #f7d299;">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </VBox.margin>
+                  <children>
+                     <Label fx:id="bTimerLabel" prefHeight="48.0" prefWidth="223.0" text="Label">
+                        <font>
+                           <Font size="36.0" />
+                        </font>
+                     </Label>
+                  </children>
+                </Pane>
+                <Pane fx:id="wPlayerContainer" layoutX="10.0" layoutY="265.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #51a0af;">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </VBox.margin>
+                </Pane>
+                <Pane fx:id="wTimer" layoutX="10.0" layoutY="265.0" prefHeight="77.0" prefWidth="263.0" style="-fx-background-color: #51a0af;">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </VBox.margin>
+                  <children>
+                     <Label fx:id="wTimerLabel" prefHeight="48.0" prefWidth="223.0" text="Label">
+                        <font>
+                           <Font size="36.0" />
+                        </font>
+                     </Label>
+                  </children>
+                </Pane>
+            </children>
+        </VBox>
+    </children>
+</HBox>
+</AnchorPane>

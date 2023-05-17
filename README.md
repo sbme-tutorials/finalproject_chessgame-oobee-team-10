@@ -1,36 +1,21 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/s-rx3t9_)
 #
-# Chess game
-This is a chess game built using JavaFX and SceneBuilder. It includes special moves for some pieces which are Bishop , Pawn , Horse.
-## Installation
+## Game Description
+The chess game you are describing is a GUI-based game built using JavaFX and Scene Builder, and it features a menu that allows users to navigate to different pages. These pages include the home page, new game, scores, about the game, and contact us.
 
-To run this game, you'll need to have JavaFX and Java 20 or later installed. You can download JavaFX from here [JavaFx ](https://openjfx.io/).
+## How the Game works
+* When the user selects the new game option from the menu, they are directed to a login page where they can enter their username and password to access the game. If the user is not registered, they can proceed to the register page to create an account.
+* Once the user has logged in, they are directed to a page where they can choose the color and shape of the pieces they want to play with. They can also set the timer for the entire game, which starts when it's the player's turn and is paused when they move one of their pieces.
+* The game begins when player select its pieces and set the timer. Players take turns making moves until one player checkmates the other or until the timer runs out. When the game ends, the scores of each player and the name of the winner are displayed on the scores page.
+* The user is allowed to save the current state of the game to a file, which could then be loaded later to resume the game.
+
 
 ## Features
-* A number of GUI Event Handlers were implemented
-* GUI Developed using JavaFx
-* Backtracking to determine all possible moves of a piece
+* The menu system allows for easy navigation between pages
+* the login and registration pages ensure that only authorized users can access the game. 
+* The customizable pieces and timer add an extra layer of strategy to the game, making it more challenging and engaging.
 * Highlight available moves
-* Special moves for some pieces, including the knight's L-shaped move and the pawn's en passant capture
-
-
-
-## How to Play
-To move a piece, click on it and then click on the square you want to move it to. The available moves for each piece will be highlighted in blue.
-
-In addition to the standard moves for each piece, some pieces have special moves:
-
-* The knight can move in an L shape, jumping over any pieces in its way.
-* If a pawn moves two squares forward on its first move and lands next to an opponent's pawn, the opponent's pawn may capture it en passant on the next move.
-* Other special is also added to the game , depending on the game settings.
-To win the game, you must checkmate your opponent's king. If your king is in check and you have no legal moves to get out of check, then you lose the game.
-
-## Troubleshooting
-If you encounter any issues while running the game, try the following:
-
-* Make sure you have inserted JavaFX liberary 
-* Check that you have nstalled Java 20 version
-* Try running the game in a different environment, such as a different operating system or a different Java version
+* it is possible for users to save their game progress and resume it later.
 
 ## liberary
 
