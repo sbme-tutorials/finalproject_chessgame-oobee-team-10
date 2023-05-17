@@ -17,7 +17,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="mainPage" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.DashFX">
    <children>
       <BorderPane fx:id="Main" prefHeight="842.0" prefWidth="1080.0" style="-fx-background-radius: 35; -fx-background-color: #F6F1F1;" styleClass="node-id" stylesheets="@fullpackstyling.css">
@@ -78,6 +77,9 @@
                      </font>
                   </Button>
                </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
             </VBox>
          </left>
          <center>
@@ -161,13 +163,10 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <Button fx:id="startButt" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#startClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
+                              <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" layoutX="267.0" layoutY="385.0" mnemonicParsing="false" onAction="#startClicked" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
                                  <font>
                                     <Font name="Impact" size="27.0" />
                                  </font>
-                                 <VBox.margin>
-                                    <Insets top="15.0" />
-                                 </VBox.margin>
                               </Button>
                            </children>
                         </VBox>
@@ -269,7 +268,7 @@
                                     <ComboBox fx:id="secondAvatar1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6; -fx-background-radius: 30;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
                                  </children>
                               </HBox>
-                              <Button fx:id="startButt1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#mainClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
+                              <Button fx:id="startButt1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
                                  <font>
                                     <Font name="Impact" size="27.0" />
                                  </font>

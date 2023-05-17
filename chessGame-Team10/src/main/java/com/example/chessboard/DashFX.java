@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashFX implements Initializable {
+    public Button startButt1;
     @FXML
     AnchorPane center;
     @FXML
@@ -32,9 +33,10 @@ public class DashFX implements Initializable {
     @FXML
     public Button existButt;
     @FXML
-    Button mainButt, startButt;
+    Button mainButt, startButton;
     @FXML
     ImageView backGround,homeIcon,newGameIcon,aboutIcon,onePlayerIcon;
+    @FXML
     AnchorPane mainPage;
     @FXML
     AnchorPane innerScene, MainScene;
@@ -44,9 +46,14 @@ public class DashFX implements Initializable {
     private ComboBox<String> boardDesign;
     @FXML
     private ComboBox<String> pieceDesign;
-
+    @FXML
+    private AnchorPane homePage;
     public String boardtheme;
+    @FXML
+    private AnchorPane newGamePage;
 
+    @FXML
+    private AnchorPane aboutPage;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backGround.setImage(new Image("File:images/backGround.png"));
@@ -55,7 +62,6 @@ public class DashFX implements Initializable {
         newGameIcon.setImage(new Image("File:images/icons/console.png"));
         onePlayerIcon.setImage(new Image("File:images/icons/alone.png"));
 
-         mainPage =new AnchorPane();
         GameDataModel gamedata =new GameDataModel();
         boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
         boardDesign.setOnAction(e -> {
@@ -69,54 +75,30 @@ public class DashFX implements Initializable {
         // Change color and text color when button is clicked
 
         // Change background color when mouse enters
-        startButt.setOnMouseEntered(e -> {
-            startButt.setStyle("-fx-background-color: #FF0000;");
-        });
 
-        // Change background color when mouse exits
-        startButt.setOnMouseExited(e -> {
-            startButt.setStyle("-fx-background-color: #FFFFFF;");
-        });
-
-    }
-    public void mainClicked(ActionEvent actionEvent) throws IOException {
 
     }
 
 
-    public void startClicked(MouseEvent mouseEvent) {
 
-        GridPane board = new GridPane();
-        Game newgame = new Game(board, boardtheme,new GameDataModel());
-        FXMLLoader gameScene = new FXMLLoader(Game.class.getResource("sample.fxml"));
-        try {
-            gameContainer.getChildren().add(gameScene.load());
-            gameContainer.toFront();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    public void startIn(MouseEvent mouseEvent) {
 
-    }
 
-    public void startOut(MouseEvent mouseEvent) {
-    }
-    @FXML
-    private AnchorPane homePage;
+
+
+
+
+    
     public void displayHome (ActionEvent event) throws IOException{
         homePage.toFront();
 
     }
-    @FXML
-    private AnchorPane newGamePage;
+
     public void displayGame (ActionEvent event) throws IOException{
         newGamePage.toFront();
 
     }
-    @FXML
-    private AnchorPane aboutPage;
+
     public void displayAbout (ActionEvent event) throws IOException{
         aboutPage.toFront();
 
@@ -126,4 +108,14 @@ public class DashFX implements Initializable {
         stage.close();
     }
 
+    public void startClicked(ActionEvent actionEvent) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        center.getChildren().add(root);
+    }
 }

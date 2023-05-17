@@ -46,13 +46,12 @@ public class Game {
     }
 
 
-    public Game(GridPane chessBoard, String theme,GameDataModel gameDataModel) {
+    public Game(GridPane chessBoard, String theme) {
         cb = new ChessBoard(chessBoard, theme);
         currentPiece = null;
         currentPlayer = "white";
         this.game = true;
         addEventHandlers(cb.chessBoard);
-        this.gameData =gameDataModel;
     }
 
     public void selectSquare(Square square) {
@@ -239,11 +238,15 @@ public class Game {
 
         if(killedPiece.color.equals("white")) {
             Piece killed = killedPiece;
+            killed.setFitHeight(50);
+            killed.setFitWidth(40);
             wKilledPiecesBox.getChildren().add(killed);
         }
         else
         if(killedPiece.color.equals("black")){
             Piece killed = killedPiece;
+            killed.setFitHeight(50);
+            killed.setFitWidth(40);
             bKilledPiecesBox.getChildren().add(killed);
 
         }

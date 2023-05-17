@@ -2,6 +2,7 @@ package com.example.chessboard;
 
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -25,9 +26,11 @@ public class Controller {
     GameDataModel newGameData;
 
     public void initialize() {
+        GridPane.setMargin( boardContainer,new Insets(25));
+
         newGameData = new GameDataModel();
         boardtheme = newGameData.getTheme();
-        Game game = new Game(boardGrid, "Demo",newGameData);
+        Game game = new Game(boardGrid, "Demo");
         bKilled.getChildren().add(game.bKilledPiecesBox);
 
         wKilled.getChildren().add(game.wKilledPiecesBox);
@@ -35,7 +38,6 @@ public class Controller {
         game.whiteTimer.setTimerLabel(wTimerLabel);
 
         game.whiteTimer.startTimer();
-        game.blackTimer.startTimer();
         game.whiteTimer.setTimerColor("white");
         game.blackTimer.setTimerColor("black");
 
