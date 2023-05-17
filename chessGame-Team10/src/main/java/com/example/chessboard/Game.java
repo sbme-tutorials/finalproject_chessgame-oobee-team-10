@@ -219,6 +219,7 @@ public class Game {
 
 
     private void killPiece(Square square) {
+        clearHighlighting();
         if (!currentPiece.possibleMoves.contains(square.name)) return;
 
         Piece killedPiece = (Piece) square.getChildren().get(0);

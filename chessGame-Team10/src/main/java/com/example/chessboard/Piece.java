@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public class Piece extends ImageView {
-     ArrayList<String> mayCheck;
+    ArrayList<String> mayCheck;
     String type;
     static String piecDesign="original";
     String color;
