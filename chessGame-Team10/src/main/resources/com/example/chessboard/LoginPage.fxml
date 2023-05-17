@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="LogIn" prefHeight="571.0" prefWidth="871.0" style="-fx-background-color: #212A3E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.Login">
    <children>
-      <ImageView fitHeight="661.0" fitWidth="911.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1000.0" fitWidth="1200.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../LoginWallpaper1%20-%20Copy.jpg" />
          </image>
