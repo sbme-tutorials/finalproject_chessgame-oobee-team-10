@@ -30,7 +30,7 @@
                   <Reflection />
                </effect>
             </PasswordField>
-            <Button fx:id="signupButton" layoutX="104.0" layoutY="220.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="41.0" prefWidth="218.0" text="SignUp" textFill="#1d6089">
+            <Button fx:id="signupButton" layoutX="138.0" layoutY="219.0" mnemonicParsing="false" onAction="#signupUser" prefHeight="42.0" prefWidth="150.0" text="SignUp" textFill="#1d6089">
                <font>
                   <Font name="System Italic" size="19.0" />
                </font>

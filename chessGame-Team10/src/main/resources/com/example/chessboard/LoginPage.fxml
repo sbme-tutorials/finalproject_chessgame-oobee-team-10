@@ -45,7 +45,7 @@
                   <Reflection />
                </effect>
             </PasswordField>
-            <Button fx:id="login" layoutX="97.0" layoutY="254.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="41.0" prefWidth="218.0" text="LogIn" textFill="#1d6089">
+            <Button fx:id="login" layoutX="123.0" layoutY="255.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="42.0" prefWidth="163.0" text="LogIn" textFill="#1d6089">
                <font>
                   <Font size="19.0" />
                </font></Button>
