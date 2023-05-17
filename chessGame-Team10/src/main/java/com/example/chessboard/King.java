@@ -2,6 +2,9 @@
 package com.example.chessboard;
 
 import java.util.ArrayList;
+import java.util.Objects;
+
+//import static com.example.chessboard.Game.stopGame;
 
 public class King extends Piece{
 
@@ -32,25 +35,28 @@ public class King extends Piece{
         moves.add("Square" + (x-1) + (y+1));
         moves.add("Square" + (x-1) + (y));
         moves.add("Square" + (x-1) + (y-1));
-      /*  if (!hasMoved)
-        {
-            moves.add("Square" + (x+2) + (y));
-            moves.add("Square" + (x-2) + (y));
-        }*/
-
 
         for(String move : moves){
             if(getSquareByName(move) != null){
-                if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)) continue;
-                possibleMoves.add(move);
+                if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)){
+                    this.unpossibleMoves.add(move);
+                    continue;
+                }
+                else
+                    possibleMoves.add(move);
+
+                if (Is_square_attacked(move)){
+                    getPossibleMoves().remove(move);
+                }
             }
         }
     }
+
     public void isCheck ()
     {
-        for (Square square :Game.cb.squares)
+        for (Square square :Game.testboard.squares)
         {   Piece piece = (Piece) square.getChildren().get(0);
-            if (piece.color != this.color)
+            if (!Objects.equals(piece.color, this.color))
             {
                 for (String move:piece.possibleMoves)
                 {   Square newSquare=(Square) this.getParent();
@@ -65,6 +71,27 @@ public class King extends Piece{
 
     }
 
-
+    public boolean Is_square_attacked(String move) {
+        for (Square square : Game.testboard.squares) {
+            if (square.occupied) {
+                {
+                    Piece piece = (Piece) square.getChildren().get(0);
+                    piece.getAllPossibleMoves();
+                    if (!Objects.equals(piece.color, this.color)) {
+                        if (piece.unpossibleMoves.contains(move))
+                            return true;
+                    }
+                }
+            } else if (!square.occupied) {
+                Piece piece = (Piece) square.getChildren().get(0);
+                piece.getAllPossibleMoves();
+                if (!Objects.equals(piece.color, this.color)) {
+                    if (piece.possibleMoves.contains(move))
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
 
 }

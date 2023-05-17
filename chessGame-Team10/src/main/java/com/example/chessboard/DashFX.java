@@ -17,6 +17,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashFX implements Initializable {
+    @FXML
+    AnchorPane center;
+    @FXML
+    AnchorPane gameContainer;
     public Button newGamePageButt;
     public Button Home;
     public Button scoresPageButt;
@@ -25,7 +29,6 @@ public class DashFX implements Initializable {
 
     @FXML
     Button mainButt, startButt;
-    AnchorPane center;
     @FXML
     AnchorPane innerScene, MainScene;
     @FXML
@@ -75,7 +78,8 @@ public class DashFX implements Initializable {
         Game newgame = new Game(board, boardtheme,new GameDataModel());
         FXMLLoader gameScene = new FXMLLoader(gameApp.class.getResource("sample.fxml"));
         try {
-            Main.setCenter(gameScene.load());
+            gameContainer.getChildren().add(gameScene.load());
+            gameContainer.toFront();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

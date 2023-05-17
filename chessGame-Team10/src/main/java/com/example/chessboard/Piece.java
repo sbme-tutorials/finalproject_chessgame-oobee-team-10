@@ -12,8 +12,9 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public class Piece extends ImageView {
+     ArrayList<String> mayCheck;
     String type;
-    static String piecDesign="alpha";
+    static String piecDesign="original";
     String color;
     int posX, posY;
     boolean hasMoved = false;
@@ -59,9 +60,9 @@ public class Piece extends ImageView {
 
         else if (this.type == "King")
             if (this.color == "black")
-                this.setPiece(new Image("File:images/"+piecDesign+"/bk.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/bkn.png"));
             else
-                this.setPiece(new Image("File:images/"+piecDesign+"/wk.png"));
+                this.setPiece(new Image("File:images/"+piecDesign+"/wkn.png"));
 
         else if (this.type == "Queen")
             if (this.color == "black")
@@ -165,6 +166,9 @@ public class Piece extends ImageView {
         }
     }
 
+    public ArrayList<String> getPossibleMoves(){
+        return possibleMoves;
+    }
 
 
     //get the position of Square as a String
@@ -200,6 +204,19 @@ public class Piece extends ImageView {
 
     }
 
+
+    public static void setPiecesforTest()
+    {
+        for (Square square:Game.testboard.squares)
+        {   if (square.occupied) {
+            Piece piece = (Piece) square.getChildren().get(0);
+            piece.posX = square.x;
+            piece.posY = square.y;
+        }else continue;
+        }
+
+
+    }
 
     @Override
     public String toString() {

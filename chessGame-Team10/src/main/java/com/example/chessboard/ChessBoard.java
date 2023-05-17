@@ -166,6 +166,17 @@ public class ChessBoard {
     }
 
 
+    public  Piece getOppenentKing()
+    {
+        for (Square square :Game.testboard.squares)
+        {
+            Piece piece =(Piece) square.getChildren().get(0);
+            if (piece.type.equals("King")&&!piece.color.equals(Game.currentPiece))
+                return piece;
+        }
+        return null ;
+    }
+
     public StatusBar getStatusBar()
     {
         return (statusBar);

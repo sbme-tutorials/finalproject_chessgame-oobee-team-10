@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -25,7 +24,7 @@
             <AnchorPane fx:id="" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: A6623E;">
                      <!-- Pane content -->
                   </AnchorPane>
-            <Button fx:id="home" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Profile" textFill="#a868a0">
+            <Button fx:id="home" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Home" textFill="#a868a0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -71,6 +70,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <children>
+            <AnchorPane fx:id="gameContainer" layoutX="30.0" layoutY="30.0" prefHeight="783.0" prefWidth="990.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" />
             <AnchorPane fx:id="aboutPage" prefHeight="783.0" prefWidth="990.0" style="-fx-background-color: #ddf0ff;" stylesheets="@fullpackstyling.css" visible="false" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="20.0" />
             <AnchorPane fx:id="newGamePage" layoutX="20.0" layoutY="24.0" prefHeight="783.0" prefWidth="990.0" style="-fx-border-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
                <children>
@@ -144,43 +144,10 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="homePage" layoutX="19.0" layoutY="23.0" prefHeight="778.0" prefWidth="989.0" style="-fx-background-radius: 20;" stylesheets="@fullpackstyling.css" AnchorPane.leftAnchor="19.0">
+            <AnchorPane fx:id="homePage" layoutX="19.0" layoutY="23.0" prefHeight="778.0" prefWidth="989.0" style="-fx-background-radius: 20;" stylesheets="@fullpackstyling.css" visible="false" AnchorPane.leftAnchor="19.0">
                <children>
-                  <Pane layoutX="39.0" layoutY="507.0" prefHeight="66.0" prefWidth="472.0" style="-fx-background-color: #1d6089;">
-                     <children>
-                        <Label layoutX="58.0" layoutY="14.0" text="QUANTITY TIPS:" textFill="#41951c">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="58.0" layoutY="34.0" text="Save 0.03 per gold if you buy more 100 more gold" textFill="WHITE">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Line endX="100.0" layoutX="445.0" layoutY="54.0" startX="100.0" startY="418.0" stroke="#b9b1b1" strokeDashOffset="2.0" />
-                  <Label layoutX="569.0" layoutY="377.0" text="What is wow " textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="675.0" layoutY="377.0" text="Gold?" textFill="#fff600">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <BorderPane layoutX="569.0" layoutY="404.0" prefHeight="66.0" prefWidth="270.0">
-                     <top>
-                        <Label alignment="CENTER" prefWidth="265.0" text="Mythic + dangerous 5 player dungeons where you must try to finish the run before a timer runs out. The time is applied to the dungeons you can play in normal/heroic/ mythic diff" textFill="#9a9292" wrapText="true" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                     </top>
-                  </BorderPane>
-                  <VBox alignment="TOP_CENTER" layoutX="61.0" layoutY="57.0" prefHeight="438.0" prefWidth="428.0" style="-fx-background-color: #ddf0ff; -fx-background-radius: 15;">
+                  <Line endX="100.0" layoutX="469.0" layoutY="130.0" startX="100.0" startY="514.9999389648438" stroke="#b9b1b1" strokeDashOffset="2.0" />
+                  <VBox alignment="TOP_CENTER" layoutX="90.0" layoutY="199.0" prefHeight="327.0" prefWidth="428.0" style="-fx-background-color: #ddf0ff; -fx-background-radius: 15;">
                      <children>
                         <Text fill="#f2eeee" strokeType="OUTSIDE" strokeWidth="0.0" text="New GAME" textAlignment="CENTER" wrappingWidth="284.13671875">
                            <font>
@@ -189,6 +156,11 @@
                            <effect>
                               <ImageInput />
                            </effect>
+                        </Text>
+                        <Text fill="#05bfdb" strokeType="OUTSIDE" strokeWidth="0.0" text="Start  Fast  Game" textAlignment="CENTER" wrappingWidth="300.5367616713047">
+                           <font>
+                              <Font name="Impact" size="43.0" />
+                           </font>
                         </Text>
                         <HBox alignment="CENTER" prefHeight="63.0" prefWidth="428.0" style="-fx-background-color: #ddf0ff;">
                            <children>
@@ -202,50 +174,41 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="428.0">
                            <children>
-                              <Text fill="#1d6089" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Peices Design:" wrappingWidth="219.017578125">
-                                 <font>
-                                    <Font name="Impact" size="20.0" />
-                                 </font>
-                              </Text>
-                              <ComboBox fx:id="pieceDesign1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                              <HBox alignment="CENTER" prefHeight="98.0" prefWidth="428.0">
+                                 <children>
+                                    <Text fill="#1d6089" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the timer" wrappingWidth="219.017578125">
+                                       <font>
+                                          <Font name="Impact" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <ComboBox fx:id="timerSetter1" prefHeight="29.0" prefWidth="179.0" promptText="5:00" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
+                                 </children>
+                              </HBox>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="54.0" prefWidth="428.0">
-                           <children>
-                              <Text fill="#1d6089" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the timer" wrappingWidth="219.017578125">
-                                 <font>
-                                    <Font name="Impact" size="20.0" />
-                                 </font>
-                              </Text>
-                              <ComboBox fx:id="timerSetter1" prefHeight="29.0" prefWidth="179.0" promptText="5:00" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="118.0" prefHeight="54.0" prefWidth="428.0">
-                           <children>
-                              <Text fill="#1d6089" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
-                                 <font>
-                                    <Font name="Impact" size="20.0" />
-                                 </font>
-                              </Text>
-                              <ComboBox fx:id="fistAvattar1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="142.0" prefHeight="70.0" prefWidth="428.0">
-                           <children>
-                              <Text fill="#1d6089" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 Avatar" wrappingWidth="219.017578125">
-                                 <font>
-                                    <Font name="Impact" size="20.0" />
-                                 </font>
-                              </Text>
-                              <ComboBox fx:id="secondAvatar1" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: EEEDE6; -fx-background-radius: 30;" styleClass="combo-box" stylesheets="@fullpackstyling.css" />
-                           </children>
-                        </HBox>
-                        <Button fx:id="startButt1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#mainClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
+                        <Button fx:id="startButt1" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseClicked="#mainClicked" onMouseEntered="#startIn" onMouseExited="#startOut" prefHeight="39.0" prefWidth="122.0" stylesheets="@fullpackstyling.css" text="Start" textAlignment="CENTER" textFill="#1d6089" textOverrun="CENTER_ELLIPSIS">
                            <font>
                               <Font name="Impact" size="27.0" />
                            </font>
                         </Button>
                      </children>
+                  </VBox>
+                  <VBox fx:id="currenGameHP" layoutX="646.0" layoutY="199.0" opacity="0.89" prefHeight="344.0" prefWidth="346.0" style="-fx-effect: shadow;" styleClass="button" stylesheets="@fullpackstyling.css">
+                     <children>
+                        <Label fx:id="currentPiecesHP" lineSpacing="3.0" prefHeight="78.0" prefWidth="249.0" style="-fx-background-color: white; -fx-opacity: 0.65; -fx-background-radius: 20;" text="Label" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Impact" size="53.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="currentPlayerHP" graphicTextGap="5.0" layoutX="59.0" layoutY="143.0" prefHeight="78.0" prefWidth="249.0" style="-fx-background-color: white; -fx-opacity: 0.65; -fx-background-radius: 20;" text="Label" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Impact" size="53.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </VBox>
                </children>
                <styleClass>
