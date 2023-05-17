@@ -2,6 +2,7 @@ package com.example.chessboard;
 
 import java.util.ArrayList;
 public class Bishop extends Piece{
+
     public Bishop(String color, int posX, int posY) {
         super(color, posX, posY);
         this.type = "Bishop";
@@ -14,6 +15,7 @@ public class Bishop extends Piece{
         int y = this.posY;
         String name;
         this.possibleMoves = new ArrayList<>();
+        this.unpossibleMoves = new ArrayList<>();
 
 
         // bishop at left edge of board
@@ -49,9 +51,14 @@ public class Bishop extends Piece{
         //Main Diagonal //bottom left diagonal
         for(int i=x-1, j=y+1 , steps = 0; i>=0 && j<8 && steps < 3; i--, j++ , steps++){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer))   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
-                break;
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+
+            else {
+                possibleMoves.add(name);
+            }
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
@@ -63,10 +70,14 @@ public class Bishop extends Piece{
                 break; // exit loop if indices are out of bounds
             }
             name = "Square" + i + j;
-            if (getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer))
-                break;
 
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else{
+                possibleMoves.add(name);
+            }
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
@@ -80,10 +91,14 @@ public class Bishop extends Piece{
         //Main Diagonal             //Bottom right diagonal
         for(int i=x+1, j=y+1, steps = 0; i<8 && j<8 && steps<3; i++, j++ ,steps++ ) {   //bottom right diagonal
                 name = "Square" + i + j;
-                if (getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer))
-                    break;
-
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else {
                 possibleMoves.add(name);
+            }
+
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
 
@@ -94,10 +109,14 @@ public class Bishop extends Piece{
                 break; // exit loop if indices are out of bounds
             }
             name = "Square" + i + j;
-            if (getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer))
-                break;
 
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else
+                possibleMoves.add(name);
+
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
 
@@ -110,9 +129,13 @@ public class Bishop extends Piece{
         //main Diagonal          //Upper Right Diagonal
         for(int i=x+1, j=y-1, steps=0; i<8 && j>=0 && steps<3; i++, j--, steps++){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
 
-            possibleMoves.add(name);
+            else
+                possibleMoves.add(name);
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
@@ -123,9 +146,13 @@ public class Bishop extends Piece{
                 break; // exit loop if indices are out of bounds
             }
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
 
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else
+                possibleMoves.add(name);
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
@@ -137,10 +164,13 @@ public class Bishop extends Piece{
         //main Diagonal     //Upper Left
         for(int i=x-1, j=y-1 , steps = 0; i>=0 && j>=0 &&steps < 3; i--, j-- , steps++){
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer))
-                break;
 
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else
+                possibleMoves.add(name);
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;
@@ -152,9 +182,13 @@ public class Bishop extends Piece{
                 break; // exit loop if indices are out of bounds
             }
             name = "Square" + i + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
 
-            possibleMoves.add(name);
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)){   //لو في قطعة موجودة و نفس النوع بتاعك يخرج
+                unpossibleMoves.add(name);
+                showAllUnPossibleMoves(true);
+                continue;}
+            else
+                possibleMoves.add(name);
 
             if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer))
                 break;

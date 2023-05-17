@@ -3,27 +3,40 @@ package com.example.chessboard;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
+
+
 public class ChessBoard {
     GridPane chessBoard;
     String theme;
-    public ArrayList<Square> squares = new ArrayList<>();
+    StatusBar statusBar = new StatusBar();
+
+    public static ArrayList<Square> squares = new ArrayList<>();
+    public ChessBoard(){}
     public ChessBoard(GridPane chessBoard, String theme){
         this.chessBoard = chessBoard;
         this.theme = theme;
 
         makeBoard(this.chessBoard, theme);
+
+        //Set the Settings of the timer
+        statusBar.whitePlayerAlert.setText("White Player turn");
+        statusBar.blackPlayerAlert.setText("");
+        statusBar.whitePlayerTimer.setText("White timer: 15:00");
+        statusBar.blackPlayerTimer.setText("Black timer: 15:00");
+
     }
-    // بعمل بانال بسميها container بعد كدا بخلي الكونستراكتور فيها null
-    // panal container = new panal(null)
-    // بعد كدا بستخدم setbound عشان احدد مكانها
+
+
+    //Design Game Board
     private void makeBoard(GridPane chessBoard, String theme){
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
                 Square square = new Square(i,j);
                 square.setName("Square" + i + j);
-                square.setPrefHeight(70);
-                square.setPrefWidth(70);
+                square.setPrefHeight(73);
+                square.setPrefWidth(73);
                 square.setBorder(new Border(new BorderStroke(Color.BLACK,
                         BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 setTheme(square, theme, i, j);
@@ -34,11 +47,17 @@ public class ChessBoard {
         addPieces();
     }
 
+
+    //Themes of the Board
     private void setTheme(Square square, String theme, int i, int j){
         Color color1 = Color.web("#ffffff00");
         Color color2 = Color.web("#ffffff00");
 
         switch (theme) {
+            case "Sayed" -> {
+                color1 = Color.web("#210062");
+                color2 = Color.web("#FFD93D");
+            }
             case "Demo" -> {
                 color1 = Color.web("#146C94");
                 color2 = Color.web("#AFD3E2");
@@ -82,11 +101,14 @@ public class ChessBoard {
 
     }
 
-    private void addPiece(Square square, Piece piece){
+
+    //Add a new Piece in the Board
+    public void addPiece(Square square, Piece piece){
         square.getChildren().add(piece);
         square.occupied = true;
     }
 
+    //Initializing the position of Pieces
     private void addPieces(){
         for(Square square : squares){
             if(square.occupied) continue;
@@ -135,9 +157,17 @@ public class ChessBoard {
         }
     }
 
-//    public static void main(String []args)
-//    {
-//        ChessBoard cb = new ChessBoard();
-//    }
 
+    //Same Function of the other clearing Highlight
+    public static void clearHighlighting() {
+        for (Square square : squares) {
+            square.setStyle("");
+        }
+    }
+
+
+    public StatusBar getStatusBar()
+    {
+        return (statusBar);
+    }
 }
