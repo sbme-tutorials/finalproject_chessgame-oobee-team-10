@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.2" prefWidth="993.0" style="-fx-background-color: #1d6089;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.HelloController">
    <children>
-      <AnchorPane layoutX="37.0" layoutY="156.0" prefHeight="527.0" prefWidth="898.0" style="-fx-background-color: #ddf0ff;" />
+      <AnchorPane layoutX="47.0" layoutY="156.0" prefHeight="527.0" prefWidth="898.0" style="-fx-background-color: #ddf0ff;" />
       <Text fill="WHITE" layoutX="48.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Account">
          <font>
             <Font name="Impact" size="36.0" />
@@ -55,7 +55,7 @@
       </Label>
       <ImageView fitHeight="63.0" fitWidth="114.0" layoutX="372.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../wallpapers/9fca235ce31e38cfa597a2a47bcc8525.jpg" />
+            <Image url="@../../../../java/com/example/chessboard/icons/9fca235ce31e38cfa597a2a47bcc8525.jpg" />
          </image>
       </ImageView>
    </children>
