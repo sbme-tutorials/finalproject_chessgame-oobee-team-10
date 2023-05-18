@@ -7,3 +7,5 @@ sayed,123
 zisco,000
 abdoo,111
 abdo,12321
+salah,111
+ahmed,0000

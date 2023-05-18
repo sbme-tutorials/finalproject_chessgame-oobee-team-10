@@ -45,8 +45,8 @@ public class Game {
     public Game() {
     }
 
-
-    public Game(GridPane chessBoard, String theme) {
+ String theme =DashFX.boardtheme;
+    public Game(GridPane chessBoard) {
         cb = new ChessBoard(chessBoard, theme);
         currentPiece = null;
         currentPlayer = "white";
@@ -398,7 +398,7 @@ public class Game {
                     Piece checked = (Piece) square_pointer.getChildren().get(0);
                     if (checked.type.equals("King") && checked.color != piece.color){
                         System.out.println("Game.InCheck");
-//                        Checkmate(square);
+//                      Checkmate(square);
                         square_pointer.setEffect(glow);
                         square_pointer.setBackgroundColor(Color.BLUE);
                         Stage stage = new Stage();

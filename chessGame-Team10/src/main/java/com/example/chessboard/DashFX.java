@@ -48,7 +48,7 @@ public class DashFX implements Initializable {
     private ComboBox<String> pieceDesign;
     @FXML
     private AnchorPane homePage;
-    public String boardtheme;
+    public static String boardtheme;
     @FXML
     private AnchorPane newGamePage;
 
@@ -63,10 +63,10 @@ public class DashFX implements Initializable {
         onePlayerIcon.setImage(new Image("File:images/icons/alone.png"));
 
         GameDataModel gamedata =new GameDataModel();
-        boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle");
+        boardDesign.getItems().addAll("Demo", "Coral", "Dusk","Wheat","Marine","Emerald","Sandcastle","Sayed" , "Ahmed");
         boardDesign.setOnAction(e -> {
             boardtheme = boardDesign.getSelectionModel().getSelectedItem();});
-        pieceDesign.getItems().addAll("alpha", "california");
+        pieceDesign.getItems().addAll("alpha", "california","chessnut" , "chessicons" , "governor");
         pieceDesign.setOnAction(e -> {
             Piece.setPieceDesign(pieceDesign.getSelectionModel().getSelectedItem());});
 
